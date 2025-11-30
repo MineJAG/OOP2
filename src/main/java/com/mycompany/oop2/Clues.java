@@ -8,6 +8,11 @@ package com.mycompany.oop2;
  *
  * @author ajone
  */
-public class Clues {
+public class Clues extends Item{
+    String name;
+    String description;
     
+    public Clues(String name, String description) {
+        super(name, description);
+    }
 }
