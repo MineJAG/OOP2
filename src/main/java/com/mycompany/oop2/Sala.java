@@ -4,6 +4,7 @@
  */
 package com.mycompany.oop2;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,18 +14,20 @@ public class Sala {
     private String name, description;
     private Sala directionN, directionS, directionE, directionW;
     private Inventory roomInventory = new Inventory();
-    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, ArrayList<Inventory> inventory){
+    private List<Item> roomItens = new ArrayList<>();
+
+    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory){
         this.name = name;
         this.description = description;
         this.directionN = directionN;
         this.directionS = directionS;
         this.directionE = directionE;
         this.directionW = directionW;
-        this.inventory = inventory;
+        this.roomInventory = roomInventory;
     }   
     
-    public ArrayList<Inventory> getInventory() {
-        return inventory;
+    public Inventory getInventory() {
+        return roomInventory;
     }
 
     public String getName(){

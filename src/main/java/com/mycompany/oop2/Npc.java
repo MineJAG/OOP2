@@ -15,9 +15,9 @@ public class Npc extends Character {
         this.dialogs = dialogs;
     }
 
-    public String talk(){
+    //public String talk(){
         
-    }
+    //}
     
 
 }
