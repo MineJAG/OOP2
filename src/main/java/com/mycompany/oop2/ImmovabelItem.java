@@ -6,14 +6,8 @@ package com.mycompany.oop2;
 
 /**
  *
- * @author ajone
+ * @author Bibby
  */
-public class LookCommand {
-    String text;
-    
-    public LookCommand(String text) {
-        this.text = text;
-    }
-
+public class ImmovabelItem {
     
 }
