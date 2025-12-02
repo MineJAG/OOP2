@@ -16,7 +16,7 @@ public class Sala {
     private Inventory roomInventory = new Inventory();
     private List<Item> roomItens = new ArrayList<>();
 
-    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory){
+    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, List<Item> roomItens){
         this.name = name;
         this.description = description;
         this.directionN = directionN;
@@ -24,10 +24,15 @@ public class Sala {
         this.directionE = directionE;
         this.directionW = directionW;
         this.roomInventory = roomInventory;
+        this.roomItens = roomItens;
     }   
     
     public Inventory getInventory() {
         return roomInventory;
+    }
+
+    public List<Item> getRoomItens() {
+        return roomItens;
     }
 
     public String getName(){
