@@ -27,10 +27,6 @@ public class Inventory {
         this.inventory = inventory;
     }
 
-    public List<Item> getInventory() {
-        return inventory;
-    }
-
     private int getIndexItem(String name) {
         for (int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i).getName().equals(name)) {

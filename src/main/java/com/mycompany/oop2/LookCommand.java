@@ -26,7 +26,10 @@ public class LookCommand implements Comands {
     }
 
     public void execute(Player player) {
-        Inventory inventory = player.getPresentRoom().getInventory();
-        System.out.println(text);
+        Sala room = player.getPresentRoom();
+        Inventory inventory = room.getInventory();
+        System.out.println("O Sherlock observa a sala " + room.getName());
+        System.out.println(room.getDescription());
+        System.out.println(inventory.toString());
     }
 }

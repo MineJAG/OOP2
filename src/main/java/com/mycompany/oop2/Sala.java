@@ -34,7 +34,7 @@ public class Sala {
         return name;
     }
     
-    public String getDescriprion(){
+    public String getDescription(){
         return description;
     }
     
