@@ -4,11 +4,26 @@
  */
 package com.mycompany.oop2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Bibby
  */
 public class InventoryUsableItem extends Inventory implements Comands{
+    List<UsableItem> usables;
+
+    public InventoryUsableItem() {
+        usables = new ArrayList<>();
+    }
     
-    
+    @Override
+    public String toString() {
+        String result = "Usables: \n";
+        for (UsableItem usable : usables) {
+            result += "- " + usable.getName() + "\n";
+        }
+        return result;
+    }
 }

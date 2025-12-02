@@ -4,10 +4,26 @@
  */
 package com.mycompany.oop2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Bibby
  */
 public class InventoryClues {
+    List<Clues> clues;
+
+    public InventoryClues() {
+        clues = new ArrayList<>();
+    }
     
+    @Override
+    public String toString() {
+        String result = "Clues: \n";
+        for (Clues clue : clues) {
+            result += "- " + clue.getName() + "\n";
+        }
+        return result;
+    }
 }

@@ -10,30 +10,30 @@ import java.util.List;
  * @author ajone
  */
 public class Inventory {
-    List<Item> inventario;
+    List<Item> inventory;
     /*    String type;
 
     public Inventory(boolean isUsable, String type) {
-        inventario = new ArrayList<>();
+        inventory = new ArrayList<>();
         this.type = type;
     }
         */
 
     public Inventory() {
-        inventario = new ArrayList<>();
+        inventory = new ArrayList<>();
     }
 
-    public Inventory(List<Item> inventario) {
-        this.inventario = inventario;
+    public Inventory(List<Item> inventory) {
+        this.inventory = inventory;
     }
 
-    public List<Item> getInventario() {
-        return inventario;
+    public List<Item> getInventory() {
+        return inventory;
     }
 
     private int getIndexItem(String name) {
-        for (int i = 0; i < inventario.size(); i++) {
-            if (inventario.get(i).getName().equals(name)) {
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getName().equals(name)) {
                 return i;
             }
         }
@@ -42,25 +42,25 @@ public class Inventory {
 
     public void addItem(Item item) {
         if (!(item instanceof ImmovabelItem)) {
-            inventario.add(item);
+            inventory.add(item);
         }
     }    
 
     public void removeItem(Item item) {
-        inventario.remove(item);
+        inventory.remove(item);
     }
 
     public void removeItem(String name) {
         int index = getIndexItem(name);
         if (index != -1) {
-            inventario.remove(index);
+            inventory.remove(index);
         }
     }
 
     public Item getItem(String name) {
         int index = getIndexItem(name);
         if (index != -1) {
-            return inventario.get(index);
+            return inventory.get(index);
         }
         return null;
     }
@@ -68,27 +68,11 @@ public class Inventory {
     @Override
     public String toString() {
         String result = "Inventário: \n";
-        for (Item item : inventario) {
+        for (Item item : inventory) {
             result += "- " + item.getName() + "\n";
         }
         return result;
     }
-    public String toStringClues() {
-        String result = "Clues: \n";
-        for (Item item : inventario) {
-            if (item instanceof Clues){
-                result += "- " + item.getName() + "\n";
-            }
-        }
-        return result;
-    }
-    public String toStringUsableItems() {
-        String result = "Usables: \n";
-        for (Item item : inventario) {
-            if (item instanceof UsableItem){
-                result += "- " + item.getName() + "\n";
-            }
-        }
-        return result;
-    }
+    
+    
 }
