@@ -9,9 +9,9 @@ package com.mycompany.oop2;
  * @author ajone
  */
 public class UsableItem extends Item{
-    String name;
-    String description;
-    boolean used;
+    private String name;
+    private String description;
+    private boolean used;
 
     public UsableItem(String name, String description) {
         super(name, description);

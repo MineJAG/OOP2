@@ -9,5 +9,7 @@ package com.mycompany.oop2;
  * @author ajone
  */
 public interface Comands {
+    public boolean verifyName(String name); //verificar se é para usar mesmo esse comando
+    public void execute(Player player);
     
 }

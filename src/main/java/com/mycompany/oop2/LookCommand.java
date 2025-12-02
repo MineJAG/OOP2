@@ -8,12 +8,25 @@ package com.mycompany.oop2;
  *
  * @author ajone
  */
-public class LookCommand {
-    String text;
-    
+public class LookCommand implements Comands {
+    private String text;
+    public static final String[] COMMAND_NAMES = {"look", "olhar", "olha", "vision", "visualizar", "visualize", "visionar"};
+
     public LookCommand(String text) {
         this.text = text;
     }
 
-    
+    public boolean verifyName(String name) {
+        for (String commandName : COMMAND_NAMES) {
+            if (commandName.equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void execute(Player player) {
+        Sala room = player.getPresentRoom();
+        System.out.println(text);
+    }
 }

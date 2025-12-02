@@ -12,7 +12,7 @@ import java.util.List;
  * @author Bibby
  */
 public class InventoryUsableItem extends Inventory implements Comands{
-    List<UsableItem> usables;
+    private List<UsableItem> usables;
 
     public InventoryUsableItem() {
         usables = new ArrayList<>();

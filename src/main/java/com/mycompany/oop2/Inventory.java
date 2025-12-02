@@ -10,7 +10,7 @@ import java.util.List;
  * @author ajone
  */
 public class Inventory {
-    List<Item> inventory;
+    private List<Item> inventory;
     /*    String type;
 
     public Inventory(boolean isUsable, String type) {

@@ -9,9 +9,26 @@ package com.mycompany.oop2;
  * @author Bibby
  */
 public class ImmovabelItem extends Item {
-    String name;
-    String description;
+    private String name;
+    private String description;
+
     public ImmovabelItem(String name, String description) {
         super(name, description);
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

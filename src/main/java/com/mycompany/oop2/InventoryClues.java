@@ -12,7 +12,7 @@ import java.util.List;
  * @author Bibby
  */
 public class InventoryClues {
-    List<Clues> clues;
+    private List<Clues> clues;
 
     public InventoryClues() {
         clues = new ArrayList<>();
