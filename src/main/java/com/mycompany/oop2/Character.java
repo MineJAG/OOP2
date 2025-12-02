@@ -9,8 +9,8 @@ package com.mycompany.oop2;
  * @author ajone
  */
 public class Character {
-    String name;
-    Sala salaN;
+    private String name;
+    private Sala salaN;
     public Character(String name, Sala salaN){
         this.name = name;
         this.salaN = salaN;

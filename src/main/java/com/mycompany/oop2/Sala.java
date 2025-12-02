@@ -3,22 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.oop2;
+import java.util.ArrayList;
 
 /**
  *
  * @author ajone
  */
 public class Sala {
-    String name, description;
-    Sala directionN, directionS, directionE, directionW;
-    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW){
+    private String name, description;
+    public Sala directionN, directionS, directionE, directionW;
+    public ArrayList<Inventory> inventory = new ArrayList<Inventory>();
+    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, ArrayList<Inventory> inventory){
         this.name = name;
         this.description = description;
         this.directionN = directionN;
         this.directionS = directionS;
         this.directionE = directionE;
         this.directionW = directionW;
-    }
+        this.inventory = inventory;
+    }   
     
     public String getName(){
         return name;
