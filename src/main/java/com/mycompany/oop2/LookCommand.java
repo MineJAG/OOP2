@@ -26,7 +26,7 @@ public class LookCommand implements Comands {
     }
 
     public void execute(Player player) {
-        Sala room = player.getPresentRoom();
+        Inventory inventory = player.getPresentRoom().getInventory();
         System.out.println(text);
     }
 }

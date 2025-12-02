@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.oop2;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 /**
  *
  * @author ajone

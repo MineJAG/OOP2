@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class Sala {
     private String name, description;
-    public Sala directionN, directionS, directionE, directionW;
-    public ArrayList<Inventory> inventory = new ArrayList<Inventory>();
+    private Sala directionN, directionS, directionE, directionW;
+    private Inventory roomInventory = new Inventory();
     public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, ArrayList<Inventory> inventory){
         this.name = name;
         this.description = description;
@@ -23,6 +23,10 @@ public class Sala {
         this.inventory = inventory;
     }   
     
+    public ArrayList<Inventory> getInventory() {
+        return inventory;
+    }
+
     public String getName(){
         return name;
     }

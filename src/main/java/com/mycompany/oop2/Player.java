@@ -10,9 +10,28 @@ package com.mycompany.oop2;
  */
 public class Player extends Character {
     private Sala presentRoom;
+    private InventoryClues inventoryClues = new InventoryClues();
+    private InventoryUsableItem inventoryUsableItem = new InventoryUsableItem();
+
     public Player(String name, Sala salaN, Sala presentRoom){
         super(name, salaN);
         this.presentRoom = presentRoom;
+    }
+
+    public InventoryClues getInventoryClues() {
+        return inventoryClues;
+    }
+
+    public void setInventoryClues(InventoryClues inventoryClues) {
+        this.inventoryClues = inventoryClues;
+    }
+
+    public InventoryUsableItem getInventoryUsableItem() {
+        return inventoryUsableItem;
+    }
+
+    public void setInventoryUsableItem(InventoryUsableItem inventoryUsableItem) {
+        this.inventoryUsableItem = inventoryUsableItem;
     }
 
     public Sala getPresentRoom(){
