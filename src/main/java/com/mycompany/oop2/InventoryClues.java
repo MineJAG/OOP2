@@ -8,10 +8,6 @@ package com.mycompany.oop2;
  *
  * @author Bibby
  */
-public class ImmovabelItem extends Item {
-    String name;
-    String description;
-    public ImmovabelItem(String name, String description) {
-        super(name, description);
-    }
+public class InventoryClues {
+    
 }

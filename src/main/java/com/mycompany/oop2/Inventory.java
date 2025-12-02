@@ -11,16 +11,20 @@ import java.util.List;
  */
 public class Inventory {
     List<Item> inventario;
-    boolean isUsable;
+    /*    String type;
 
-    public Inventory(boolean isUsable) {
+    public Inventory(boolean isUsable, String type) {
         inventario = new ArrayList<>();
-        this.isUsable = isUsable;
+        this.type = type;
+    }
+        */
+
+    public Inventory() {
+        inventario = new ArrayList<>();
     }
 
-    public Inventory(List<Item> inventario, boolean isUsable) {
+    public Inventory(List<Item> inventario) {
         this.inventario = inventario;
-        this.isUsable = isUsable;
     }
 
     public List<Item> getInventario() {
@@ -37,7 +41,9 @@ public class Inventory {
     }
 
     public void addItem(Item item) {
-        inventario.add(item);
+        if (!(item instanceof ImmovabelItem)) {
+            inventario.add(item);
+        }
     }    
 
     public void removeItem(Item item) {
@@ -64,6 +70,24 @@ public class Inventory {
         String result = "Inventário: \n";
         for (Item item : inventario) {
             result += "- " + item.getName() + "\n";
+        }
+        return result;
+    }
+    public String toStringClues() {
+        String result = "Clues: \n";
+        for (Item item : inventario) {
+            if (item instanceof Clues){
+                result += "- " + item.getName() + "\n";
+            }
+        }
+        return result;
+    }
+    public String toStringUsableItems() {
+        String result = "Usables: \n";
+        for (Item item : inventario) {
+            if (item instanceof UsableItem){
+                result += "- " + item.getName() + "\n";
+            }
         }
         return result;
     }
