@@ -9,11 +9,9 @@ package com.mycompany.oop2;
  * @author ajone
  */
 public class LookCommand implements Comands {
-    private String text;
-    public static final String[] COMMAND_NAMES = {"look", "olhar", "olha", "vision", "visualizar", "visualize", "visionar"};
+    public static final String[] COMMAND_NAMES = {"look", "olhar", "olha", "vision", "visualizar", "visualize", "visionar", "ver", "ve"};
 
-    public LookCommand(String text) {
-        this.text = text;
+    public LookCommand() {
     }
 
     public boolean verifyName(String name) {
