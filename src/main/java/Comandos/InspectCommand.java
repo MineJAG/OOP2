@@ -12,14 +12,17 @@ import java.util.*;
  *
  * @author ajone
  */
-public class InspectCommand implements Comands {
+public class InspectCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
-    private List<String> phrase = new ArrayList<>();
+    private String name;
 
-    public InspectCommand() {
+    
+    public static String[] getCommandNames() {
+        return COMMAND_NAMES;
     }
 
     public boolean verifyCommand(String userInput) {
+        List<String> phrase = new ArrayList<>();
         String x = "";
         for (int i = 0; i < userInput.length(); i++) {
             x+=userInput.charAt(i);
@@ -43,18 +46,17 @@ public class InspectCommand implements Comands {
         return false;
     }
 
-    //acabar
-    public void execute(Player player, String userInput) {
-        if (!verifyCommand(userInput)) {
-            return;
-        }
+    public String verifyObject(Player player, String userInput) {
         Sala room = player.getPresentRoom();
         Inventory inventory = room.getInventory();
-        for (String word : phrase) {
-            for (int i = 0; i < inventory.getSize(); i++) {
-                
-            }
-        }
+        for ()
+        return null;        
+    }
+
+    public void execute(Player player, String object) {
+        Sala room = player.getPresentRoom();
+        Inventory inventory = room.getInventory();
+        
         System.out.println(room.getDescription());
         System.out.println(inventory.toString());
     }

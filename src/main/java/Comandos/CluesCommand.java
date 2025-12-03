@@ -4,17 +4,11 @@
  */
 package Comandos;
 
-import Items_Inventario.Clues;
-import java.util.ArrayList;
-import java.util.List;
-
-import Characters.Player;
-
 /**
  *
  * @author Bibby
  */
-public class cluesCommands implements Comands {    
+public class CluesCommand {
     public static final String[] COMMAND_NAMES = {"clues", "pistas"};
 
     private boolean verifyCommand(String userInput) {
@@ -35,3 +29,4 @@ public class cluesCommands implements Comands {
         
     }
 }
+

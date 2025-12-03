@@ -10,7 +10,8 @@ import Characters.Player;
  *
  * @author ajone
  */
-public interface Comands {
-    public void execute(Player player, String userInput);
+public interface Commands {
+    public boolean verifyCommand(String userInput);
+    public void execute(Player player);
     
 }
