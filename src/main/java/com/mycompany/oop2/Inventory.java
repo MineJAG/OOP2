@@ -27,13 +27,23 @@ public class Inventory {
         this.inventory = inventory;
     }
 
-    private int getIndexItem(String name) {
+    //conseguir o indice por nome
+    private int getIndexName(String name) {
         for (int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i).getName().equals(name)) {
                 return i;
             }
         }
         return -1;
+    }
+
+    //conseguir o item pelo indice
+    public Item getItemIndex(int index) {
+        return inventory.get(index);
+    }
+
+    public int getSize() {
+        return inventory.size();
     }
 
     public void addItem(Item item) {
@@ -47,14 +57,14 @@ public class Inventory {
     }
 
     public void removeItem(String name) {
-        int index = getIndexItem(name);
+        int index = getIndexName(name);
         if (index != -1) {
             inventory.remove(index);
         }
     }
 
     public Item getItem(String name) {
-        int index = getIndexItem(name);
+        int index = getIndexName(name);
         if (index != -1) {
             return inventory.get(index);
         }
