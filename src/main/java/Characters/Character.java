@@ -12,10 +12,10 @@ import Rooms.Sala;
  */
 public class Character {
     private String name;
-    private Sala salaN;
-    public Character(String name, Sala salaN){
+    private Sala presentRoom;
+    public Character(String name, Sala presentRoom){
         this.name = name;
-        this.salaN = salaN;
+        this.presentRoom = presentRoom;
     }
     
     public String getName(){
@@ -23,11 +23,11 @@ public class Character {
     }
     
     public Sala getSalaN(){
-        return salaN;
+        return presentRoom;
     }
     
     public Sala setSalaN(Sala newSala){
-        return this.salaN = newSala;
+        return this.presentRoom = newSala;
     }
             
 }

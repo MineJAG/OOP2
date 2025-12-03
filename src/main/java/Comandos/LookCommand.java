@@ -19,7 +19,7 @@ public class LookCommand implements Comands {
     public LookCommand() {
     }
 
-    public boolean verifyName(String name) {
+    public boolean verifyCommand(String name) {
         for (String commandName : COMMAND_NAMES) {
             if (commandName.equals(name)) {
                 return true;

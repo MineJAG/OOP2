@@ -11,7 +11,7 @@ import Characters.Player;
  * @author ajone
  */
 public interface Comands {
-    public boolean verifyName(String name); //verificar se é para usar mesmo esse comando
+    public boolean verifyCommand(String name); //verificar se é para usar mesmo esse comando
     public void execute(Player player);
     
 }

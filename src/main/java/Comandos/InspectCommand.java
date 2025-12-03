@@ -19,7 +19,7 @@ public class InspectCommand {
     public InspectCommand() {
     }
 
-    public boolean verifyName(String name) {
+    public boolean verifyCommand(String name) {
         String x = "";
         for (int i = 0; i < name.length(); i++) {
             x+=name.charAt(i);
