@@ -71,5 +71,9 @@ public class Inventory {
             result += "- " + item.getName() + "\n";
         }
         return result;
+    }
+
+    public List<Item> getInventory() {
+        return inventory;
     }    
 }

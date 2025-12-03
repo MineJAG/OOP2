@@ -5,6 +5,7 @@
 package Rooms;
 import Items_Inventario.Inventory;
 import Items_Inventario.Item;
+import Characters.Npc;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public abstract class Sala {
     private String name, description;
     private Sala directionN, directionS, directionE, directionW;
     private Inventory roomInventory = new Inventory();
+    private List<Npc> npcs = new ArrayList<Npc>();
 
     public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory){
         this.name = name;
@@ -27,6 +29,14 @@ public abstract class Sala {
         this.roomInventory = roomInventory;
     }   
     
+    public List<Npc> getNpcs() {
+        return npcs;
+    }
+
+    public void setNpcs(List<Npc> npcs) {
+        this.npcs = npcs;
+    }
+
     public Inventory getInventory() {
         return roomInventory;
     }

@@ -11,7 +11,6 @@ import Characters.Player;
  * @author ajone
  */
 public interface Commands {
-    public boolean verifyCommand(String userInput);
     public void execute(Player player);
     
 }

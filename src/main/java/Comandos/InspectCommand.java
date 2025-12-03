@@ -14,13 +14,22 @@ import java.util.*;
  */
 public class InspectCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
-    private String name;
+    private String object;
 
     
     public static String[] getCommandNames() {
         return COMMAND_NAMES;
     }
 
+    public String getObject() {
+        return object;
+    }
+
+    public void setObject(String object) {
+        this.object = object;
+    }
+
+    /*
     public boolean verifyCommand(String userInput) {
         List<String> phrase = new ArrayList<>();
         String x = "";
@@ -52,12 +61,14 @@ public class InspectCommand implements Commands {
         for ()
         return null;        
     }
+*/
 
-    public void execute(Player player, String object) {
+    public void execute(Player player) {
         Sala room = player.getPresentRoom();
         Inventory inventory = room.getInventory();
         
         System.out.println(room.getDescription());
         System.out.println(inventory.toString());
+        object = null;
     }
 }
