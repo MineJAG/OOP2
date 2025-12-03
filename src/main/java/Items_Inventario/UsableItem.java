@@ -9,8 +9,6 @@ package Items_Inventario;
  * @author ajone
  */
 public class UsableItem extends Item{
-    private String name;
-    private String description;
     private boolean used;
 
     public UsableItem(String name, String description) {
@@ -25,15 +23,4 @@ public class UsableItem extends Item{
     public void setUsed(boolean used) {
         this.used = used;
     }
-
-        public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-
-
 }

@@ -7,7 +7,7 @@ package Comandos;
 import java.util.*;
 import Characters.*;
 import Items_Inventario.*;
-import Rooms.Sala;
+import Rooms.*;
 
 /**
  *
@@ -28,19 +28,24 @@ public class CommandRunner {
 
 
     private void separate(String userInput) {
-        String x = "";
-        for (int i = 0; i < userInput.length(); i++) {
-            x+=userInput.charAt(i);
-            if (x.equals(" ")|| x.equals(".")|| x.equals(",")|| x.equals("!")|| x.equals("?")) {
-                if (x.length() <= 2) {
-                    x = "";
-                } else {
-                    words.add(x);
-                    x = "";
-                }
+    words.clear();
+    String x = "";
+
+    for (int i = 0; i < userInput.length(); i++) {
+        char c = userInput.charAt(i);
+        if (c == ' ' || c == '.' || c == ',' || c == '!' || c == '?') {
+            if (!x.isEmpty()) {
+                words.add(x);
+                x = "";
             }
+        } else {
+            x += c;
         }
     }
+    if (!x.isEmpty()) {
+        words.add(x);
+    }
+}
 
     private boolean verifyCommand(String[] commandNames) {
         for (String word : words) {
@@ -55,23 +60,23 @@ public class CommandRunner {
 
     private String getObject(Inventory pInventory, Inventory rInventory, List<Npc> npcs, Sala room) {
         for (String word : words) {
-            for (Item item : pInventory.getInventory()) {
-                if (item.getName().equals(word)) {
-                    return item.getName();
+            if (pInventory!=null && pInventory.getItem(word)!=null) {
+                return pInventory.getItem(word).getName();
+            }
+            if (rInventory!=null && rInventory.getItem(word)!=null) {
+                return rInventory.getItem(word).getName();
+            }
+            if (npcs!=null) {
+                for (Npc npc : npcs) {
+                    if (npc.getName().equalsIgnoreCase(word)) {
+                        return npc.getName();
+                    }
                 }
             }
-            for (Item item : rInventory.getInventory()) {
-                if (item.getName().equals(word)) {
-                    return item.getName();
+            if (room!=null) {
+                if (room.getName().equalsIgnoreCase(word)) {
+                    return room.getName();
                 }
-            }
-            for (Npc npc : npcs) {
-                if (npc.getName().equals(word)) {
-                    return npc.getName();
-                }
-            }
-            if (room.getName().equals(word)) {
-                return room.getName();
             }
         }
         return null;
@@ -98,7 +103,7 @@ public class CommandRunner {
 
 
     public void runCommands(Player player, String userInput) {
-        separate(userInput.toLowerCase());
+        separate(userInput);
         Inventory pInventory = player.getInventory();
         Inventory rInventory = player.getPresentRoom().getInventory();
         List<Npc> npcs = player.getPresentRoom().getNpcs();
@@ -108,7 +113,7 @@ public class CommandRunner {
             if (words.isEmpty()) {
                 throw new Exception("Tem de escrever um comando.");
             }
-            if (verifyAllCommands()) {
+            if (!verifyAllCommands()) {
                 throw new Exception("Comando inválido.");
             }
             if (verifyCommand(inspectCommand.COMMAND_NAMES) &&
@@ -119,6 +124,7 @@ public class CommandRunner {
             if (verifyCommand(LookCommand.COMMAND_NAMES)) {
                 lookCommand.execute(player);
             } else if (verifyCommand(InspectCommand.COMMAND_NAMES)) {
+                inspectCommand.setObject(getObject(pInventory, rInventory, null, room));
                 inspectCommand.execute(player);
             } else if (verifyCommand(CluesCommand.COMMAND_NAMES)) {
                 cluesCommand.execute(player);
@@ -129,6 +135,5 @@ public class CommandRunner {
             System.out.println(e.getMessage());
         }
         words.clear();
-    
-}
+    }
 }

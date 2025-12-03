@@ -8,19 +8,8 @@ package Items_Inventario;
  *
  * @author ajone
  */
-public class Clues extends Item{
-    String name;
-    String description;
-    
+public class Clues extends Item{   
     public Clues(String name, String description) {
         super(name, description);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }

@@ -10,7 +10,7 @@ import Rooms.Sala;
  *
  * @author ajone
  */
-public class Character {
+public abstract class Character {
     private String name;
     private Sala presentRoom;
     public Character(String name, Sala presentRoom){
@@ -22,11 +22,11 @@ public class Character {
         return name;
     }
     
-    public Sala getSalaN(){
+    public Sala getPresentRoom(){
         return presentRoom;
     }
     
-    public Sala setSalaN(Sala newSala){
+    public Sala setPresentRoom(Sala newSala){
         return this.presentRoom = newSala;
     }
             

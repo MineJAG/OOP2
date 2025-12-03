@@ -12,12 +12,10 @@ import Rooms.Sala;
  * @author ajone
  */
 public class Player extends Character {
-    private Sala presentRoom;
     private Inventory inventory = new Inventory();
 
-    public Player(String name, Sala salaN, Sala presentRoom){
-        super(name, salaN);
-        this.presentRoom = presentRoom;
+    public Player(String name, Sala presentRoom){
+        super(name, presentRoom);
     }
     
     public Inventory getInventory(){
@@ -26,13 +24,5 @@ public class Player extends Character {
     
     public void setInventory(Inventory inventory){
         this.inventory = inventory;
-    }
-
-    public Sala getPresentRoom(){
-        return presentRoom;
-    }
-
-    public Sala setPresentRoom(Sala newPresentRoom){
-        return this.presentRoom = newPresentRoom;
     }
 }

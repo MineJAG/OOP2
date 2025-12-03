@@ -20,16 +20,6 @@ public class Inventory {
         this.inventory = inventory;
     }
 
-    //conseguir o indice por nome
-    private int getIndexName(String name) {
-        for (int i = 0; i < inventory.size(); i++) {
-            if (inventory.get(i).getName().equals(name)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     //conseguir o item pelo indice
     public Item getItemIndex(int index) {
         return inventory.get(index);
@@ -40,27 +30,19 @@ public class Inventory {
     }
 
     public void addItem(Item item) {
-        if (!(item instanceof ImmovabelItem)) {
-            inventory.add(item);
-        }
+        inventory.add(item);
     }    
 
     public void removeItem(Item item) {
         inventory.remove(item);
     }
 
-    public void removeItem(String name) {
-        int index = getIndexName(name);
-        if (index != -1) {
-            inventory.remove(index);
-        }
-    }
-
     //usado
     public Item getItem(String name) {
-        int index = getIndexName(name);
-        if (index != -1) {
-            return inventory.get(index);
+        for (Item item : inventory) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                return item;
+            }
         }
         return null;
     }

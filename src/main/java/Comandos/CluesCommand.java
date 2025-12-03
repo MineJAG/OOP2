@@ -16,7 +16,7 @@ public class CluesCommand implements Commands {
     
     public void execute(Player player) {
         Inventory inventory = player.getInventory();
-        String result = "Clues: \n";
+        String result = "Pistas: \n";
         for (Item item : inventory.getClues()) {
             result += "- " + item.getName() + "\n";
         }

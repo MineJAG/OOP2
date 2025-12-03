@@ -22,7 +22,7 @@ public class UsableItemsCommand implements Commands {
     
     public void execute(Player player) {
         Inventory inventory = player.getInventory();
-        String result = "Clues: \n";
+        String result = "Itens usáveis: \n";
         for (Item item : inventory.getUsables()) {
             result += "- " + item.getName() + "\n";
         }

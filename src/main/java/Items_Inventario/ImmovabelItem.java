@@ -9,18 +9,7 @@ package Items_Inventario;
  * @author Bibby
  */
 public class ImmovabelItem extends Item {
-    private String name;
-    private String description;
-
     public ImmovabelItem(String name, String description) {
         super(name, description);
-    }
-    
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }
