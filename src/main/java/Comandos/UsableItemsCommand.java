@@ -4,28 +4,31 @@
  */
 package Comandos;
 
+import Items_Inventario.Inventory;
+import Items_Inventario.Item;
 import Items_Inventario.UsableItem;
 import java.util.ArrayList;
 import java.util.List;
+
+import Characters.Player;
+import Items_Inventario.*;
 
 /**
  *
  * @author Bibby
  */
-public class UsableItemsCommand {
-    private List<UsableItem> usables;
-
-    public InventoryUsableItem() {
-        usables = new ArrayList<>();
-    }
+public class UsableItemsCommand implements Commands {
+    public static final String[] COMMAND_NAMES = {"item", "itens", "itens", "usable", "usables", "usaveis"};
     
-    @Override
-    public String toString() {
-        String result = "Usables: \n";
-        for (UsableItem usable : usables) {
-            result += "- " + usable.getName() + "\n";
+    public void execute(Player player) {
+        Inventory inventory = player.getInventory();
+        String result = "Clues: \n";
+        for (Item item : inventory.getUsables()) {
+            result += "- " + item.getName() + "\n";
         }
-        return result;
+        System.out.println(result);
+        
+        
     }
 }
 

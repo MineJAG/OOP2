@@ -56,6 +56,7 @@ public class Inventory {
         }
     }
 
+    //usado
     public Item getItem(String name) {
         int index = getIndexName(name);
         if (index != -1) {
@@ -76,4 +77,24 @@ public class Inventory {
     public List<Item> getInventory() {
         return inventory;
     }    
+
+    public List<Item> getClues() {
+        List<Item> clues = new ArrayList<>();
+        for (Item item : inventory) {
+            if (item instanceof Clues) {
+                clues.add(item);
+            }
+        }
+        return clues;
+    }
+
+    public List<Item> getUsables() {
+        List<Item> usables = new ArrayList<>();
+        for (Item item : inventory) {
+            if (item instanceof UsableItem) {
+                usables.add(item);
+            }
+        }
+        return usables;
+    }
 }

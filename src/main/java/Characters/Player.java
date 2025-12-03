@@ -4,9 +4,7 @@
  */
 package Characters;
 
-import Characters.Character;
-import Comandos.InventoryUsableItem;
-import Items_Inventario.InventoryClues;
+import Items_Inventario.*;
 import Rooms.Sala;
 
 /**
@@ -15,28 +13,19 @@ import Rooms.Sala;
  */
 public class Player extends Character {
     private Sala presentRoom;
-    private InventoryClues inventoryClues = new InventoryClues();
-    private InventoryUsableItem inventoryUsableItem = new InventoryUsableItem();
+    private Inventory inventory = new Inventory();
 
     public Player(String name, Sala salaN, Sala presentRoom){
         super(name, salaN);
         this.presentRoom = presentRoom;
     }
-
-    public InventoryClues getInventoryClues() {
-        return inventoryClues;
+    
+    public Inventory getInventory(){
+        return inventory;
     }
-
-    public void setInventoryClues(InventoryClues inventoryClues) {
-        this.inventoryClues = inventoryClues;
-    }
-
-    public InventoryUsableItem getInventoryUsableItem() {
-        return inventoryUsableItem;
-    }
-
-    public void setInventoryUsableItem(InventoryUsableItem inventoryUsableItem) {
-        this.inventoryUsableItem = inventoryUsableItem;
+    
+    public void setInventory(Inventory inventory){
+        this.inventory = inventory;
     }
 
     public Sala getPresentRoom(){
@@ -46,7 +35,4 @@ public class Player extends Character {
     public Sala setPresentRoom(Sala newPresentRoom){
         return this.presentRoom = newPresentRoom;
     }
-    
-    
-    
 }

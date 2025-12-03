@@ -4,6 +4,8 @@
  */
 package Comandos;
 import Items_Inventario.Inventory;
+import Items_Inventario.Item;
+import Characters.Npc;
 import Characters.Player;
 import Rooms.Sala;
 import java.lang.String;
@@ -16,11 +18,6 @@ public class InspectCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
     private String object;
 
-    
-    public static String[] getCommandNames() {
-        return COMMAND_NAMES;
-    }
-
     public String getObject() {
         return object;
     }
@@ -29,46 +26,22 @@ public class InspectCommand implements Commands {
         this.object = object;
     }
 
-    /*
-    public boolean verifyCommand(String userInput) {
-        List<String> phrase = new ArrayList<>();
-        String x = "";
-        for (int i = 0; i < userInput.length(); i++) {
-            x+=userInput.charAt(i);
-            if (x.equals(" ")|| x.equals(".")|| x.equals(",")|| x.equals("!")|| x.equals("?")) {
-                phrase.add(x);
-                x = "";
-            }
-        }
-
-        if (x!="") {phrase.add(x);}
-
-        for (String word : phrase) {
-            for (String commandName : COMMAND_NAMES) {
-                if (commandName.equals(word)) {
-                    return true;
-                }
-            }
-        }
-
-        phrase.clear();
-        return false;
-    }
-
-    public String verifyObject(Player player, String userInput) {
-        Sala room = player.getPresentRoom();
-        Inventory inventory = room.getInventory();
-        for ()
-        return null;        
-    }
-*/
-
     public void execute(Player player) {
         Sala room = player.getPresentRoom();
-        Inventory inventory = room.getInventory();
-        
-        System.out.println(room.getDescription());
-        System.out.println(inventory.toString());
+        Inventory pInventory = player.getInventory();
+        Inventory rInventory = room.getInventory();
+        String description;
+
+        if (pInventory.getItem(object) != null) {
+            description = pInventory.getItem(object).getDescription();
+        } else if (rInventory.getItem(object) != null) {
+            description = rInventory.getItem(object).getDescription();
+        } else if (room.getName().equals(object)) {
+            description = room.getDescription();
+        }
+
+        System.out.println("O Sherlock inspeciona o objeto: " + object + ".");
+        System.out.println(description);
         object = null;
     }
 }

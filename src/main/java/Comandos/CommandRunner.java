@@ -77,6 +77,7 @@ public class CommandRunner {
         return null;
     }
 
+    /* so usar quando todos os comandos tiverem acabados
     private boolean verifyAllCommands() {
         return verifyCommand(LookCommand.COMMAND_NAMES) ||
                 verifyCommand(InspectCommand.COMMAND_NAMES) ||
@@ -87,9 +88,17 @@ public class CommandRunner {
                 verifyCommand(CluesCommand.COMMAND_NAMES) ||
                 verifyCommand(UsableItemsCommand.COMMAND_NAMES);
     }
+                */
+    private boolean verifyAllCommands() {
+        return verifyCommand(LookCommand.COMMAND_NAMES) ||
+                verifyCommand(InspectCommand.COMMAND_NAMES) ||
+                verifyCommand(CluesCommand.COMMAND_NAMES) ||
+                verifyCommand(UsableItemsCommand.COMMAND_NAMES);
+    }
+
 
     public void runCommands(Player player, String userInput) {
-        separate(userInput);
+        separate(userInput.toLowerCase());
         Inventory pInventory = Player.getInventory();
         Inventory rInventory = player.getPresentRoom().getInventory();
         List<Npc> npcs = player.getPresentRoom().getNpcs();
@@ -103,26 +112,18 @@ public class CommandRunner {
                 throw new Exception("Comando inválido.");
             }
             if (verifyCommand(inspectCommand.COMMAND_NAMES) &&
-                getObject(pInventory, rInventory, npcs, room) == null) {
+                getObject(pInventory, rInventory, null, room) == null) {
                 throw new Exception("Tem de usar um objeto válido. Tente escrever: comando objeto.");
             }
 
-            if (verifyCommand(LookCommand.)) {
-                lookCommand.execute(player, userInput);
+            if (verifyCommand(LookCommand.COMMAND_NAMES)) {
+                lookCommand.execute(player);
             } else if (verifyCommand(InspectCommand.COMMAND_NAMES)) {
-                inspectCommand.execute();
-            } else if (verifyCommand(TalkCommand.COMMAND_NAMES)) {
-                talkCommand.execute(player, getObject(player.getInventory());
-            } else if (verifyCommand(ExitCommand.COMMAND_NAMES)) {
-                exitCommand.execute(player, userInput);
-            } else if (verifyCommand(HelpCommand.COMMAND_NAMES)) {
-                helpCommand.execute(player, userInput);
-            } else if (verifyCommand(DialogueLoaderCommand.COMMAND_NAMES)) {
-                dialogueLoaderCommand.execute(player, userInput);
+                inspectCommand.execute(player);
             } else if (verifyCommand(CluesCommand.COMMAND_NAMES)) {
-                cluesCommand.execute(player, userInput);
+                cluesCommand.execute(player);
             } else if (verifyCommand(UsableItemsCommand.COMMAND_NAMES)) {
-                usableItemsCommand.execute(player, userInput);
+                usableItemsCommand.execute(player);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -130,4 +131,5 @@ public class CommandRunner {
         }
         words.clear();
     }
+}
 }

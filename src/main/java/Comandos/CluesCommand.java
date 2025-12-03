@@ -4,28 +4,24 @@
  */
 package Comandos;
 
+import Characters.Player;
+import Items_Inventario.*;
+
 /**
  *
  * @author Bibby
  */
-public class CluesCommand {
-    public static final String[] COMMAND_NAMES = {"clues", "pistas"};
-
-    private boolean verifyCommand(String userInput) {
-        for (String commandName : COMMAND_NAMES) {
-            if (commandName.equals(userInput)) {
-                return true;
-            }
-        }
-        return false;
-    }
+public class CluesCommand implements Commands {
+    public static final String[] COMMAND_NAMES = {"pistas", "clues", "pista", "clue"};
     
-    public void execute(Player player, String userInput) {
-
+    public void execute(Player player) {
+        Inventory inventory = player.getInventory();
         String result = "Clues: \n";
-        for (Clues clue : clues) {
-            result += "- " + clue.getName() + "\n";
+        for (Item item : inventory.getClues()) {
+            result += "- " + item.getName() + "\n";
         }
+        System.out.println(result);
+        
         
     }
 }
