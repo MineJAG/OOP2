@@ -6,7 +6,6 @@ package Comandos;
 
 import Items_Inventario.Inventory;
 import Rooms.Sala;
-import Comandos.Comands;
 import Characters.Player;
 
 /**

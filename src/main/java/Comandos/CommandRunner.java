@@ -99,7 +99,7 @@ public class CommandRunner {
 
     public void runCommands(Player player, String userInput) {
         separate(userInput.toLowerCase());
-        Inventory pInventory = Player.getInventory();
+        Inventory pInventory = player.getInventory();
         Inventory rInventory = player.getPresentRoom().getInventory();
         List<Npc> npcs = player.getPresentRoom().getNpcs();
         Sala room = player.getPresentRoom();
@@ -124,12 +124,11 @@ public class CommandRunner {
                 cluesCommand.execute(player);
             } else if (verifyCommand(UsableItemsCommand.COMMAND_NAMES)) {
                 usableItemsCommand.execute(player);
-        }
-        catch (Exception e) {
+            } 
+        }catch (Exception e) {
             System.out.println(e.getMessage());
-
         }
         words.clear();
-    }
+    
 }
 }

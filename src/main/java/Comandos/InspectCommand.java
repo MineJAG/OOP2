@@ -30,7 +30,7 @@ public class InspectCommand implements Commands {
         Sala room = player.getPresentRoom();
         Inventory pInventory = player.getInventory();
         Inventory rInventory = room.getInventory();
-        String description;
+        String description = "";
 
         if (pInventory.getItem(object) != null) {
             description = pInventory.getItem(object).getDescription();
