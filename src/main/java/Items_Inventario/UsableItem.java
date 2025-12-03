@@ -18,12 +18,20 @@ public class UsableItem extends Item{
         used = false;
     }
 
-    public boolean isUsed() {
+    public boolean getUsed() {
         return used;
     }
 
     public void setUsed(boolean used) {
         this.used = used;
+    }
+
+        public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
 

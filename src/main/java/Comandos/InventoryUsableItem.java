@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Items_Inventario;
+package Comandos;
 
 import Items_Inventario.UsableItem;
 import Items_Inventario.Inventory;
-import Comandos.Comands;
+
 import java.util.ArrayList;
 import java.util.List;
 

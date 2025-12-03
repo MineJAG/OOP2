@@ -5,7 +5,7 @@
 package Characters;
 
 import Characters.Character;
-import Items_Inventario.InventoryUsableItem;
+import Comandos.InventoryUsableItem;
 import Items_Inventario.InventoryClues;
 import Rooms.Sala;
 

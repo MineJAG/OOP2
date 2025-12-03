@@ -11,13 +11,6 @@ import java.util.*;
  */
 public class Inventory {
     private List<Item> inventory;
-    /*    String type;
-
-    public Inventory(boolean isUsable, String type) {
-        inventory = new ArrayList<>();
-        this.type = type;
-    }
-        */
 
     public Inventory() {
         inventory = new ArrayList<>();
@@ -78,7 +71,5 @@ public class Inventory {
             result += "- " + item.getName() + "\n";
         }
         return result;
-    }
-    
-    
+    }    
 }
