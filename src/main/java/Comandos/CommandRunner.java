@@ -25,8 +25,6 @@ public class CommandRunner {
     UsableItemsCommand usableItemsCommand = new UsableItemsCommand();
     LookCommand lookCommand = new LookCommand();
     
-
-
     private void separate(String userInput) {
     words.clear();
     String x = "";

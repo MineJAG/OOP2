@@ -4,10 +4,16 @@
  */
 package com.mycompany.oop2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Bibby
  */
 public class UserInputReader {
-    
+    Scanner scanner = new Scanner(System.in);
+
+    public String readInputLine() {
+        return scanner.nextLine();
+    }
 }
