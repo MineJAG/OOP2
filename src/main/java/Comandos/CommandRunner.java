@@ -26,7 +26,6 @@ public class CommandRunner {
     LookCommand lookCommand = new LookCommand();
     
     private void separate(String userInput) {
-    words.clear();
     String x = "";
 
     for (int i = 0; i < userInput.length(); i++) {
@@ -54,30 +53,6 @@ public class CommandRunner {
             }
         }
         return false;
-    }
-
-    private String getObject(Inventory pInventory, Inventory rInventory, List<Npc> npcs, Sala room) {
-        for (String word : words) {
-            if (pInventory!=null && pInventory.getItem(word)!=null) {
-                return pInventory.getItem(word).getName();
-            }
-            if (rInventory!=null && rInventory.getItem(word)!=null) {
-                return rInventory.getItem(word).getName();
-            }
-            if (npcs!=null) {
-                for (Npc npc : npcs) {
-                    if (npc.getName().equalsIgnoreCase(word)) {
-                        return npc.getName();
-                    }
-                }
-            }
-            if (room!=null) {
-                if (room.getName().equalsIgnoreCase(word)) {
-                    return room.getName();
-                }
-            }
-        }
-        return null;
     }
 
     /* so usar quando todos os comandos tiverem acabados
@@ -114,15 +89,11 @@ public class CommandRunner {
             if (!verifyAllCommands()) {
                 throw new Exception("Comando inválido.");
             }
-            if (verifyCommand(inspectCommand.COMMAND_NAMES) &&
-                getObject(pInventory, rInventory, null, room) == null) {
-                throw new Exception("Tem de usar um objeto válido. Tente escrever: comando objeto.");
-            }
 
             if (verifyCommand(LookCommand.COMMAND_NAMES)) {
                 lookCommand.execute(player);
             } else if (verifyCommand(InspectCommand.COMMAND_NAMES)) {
-                inspectCommand.setObject(getObject(pInventory, rInventory, null, room));
+                inspectCommand.setObject(words);
                 inspectCommand.execute(player);
             } else if (verifyCommand(CluesCommand.COMMAND_NAMES)) {
                 cluesCommand.execute(player);

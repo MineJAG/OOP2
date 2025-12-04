@@ -16,13 +16,13 @@ import java.util.*;
  */
 public class InspectCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
-    private String object;
+    private List<String> object;
 
-    public String getObject() {
+    public List<String> getObject() {
         return object;
     }
 
-    public void setObject(String object) {
+    public void setObject(List<String> object) {
         this.object = object;
     }
 
@@ -30,14 +30,21 @@ public class InspectCommand implements Commands {
         Sala room = player.getPresentRoom();
         Inventory pInventory = player.getInventory();
         Inventory rInventory = room.getInventory();
-        String description = "";
+        String description = null;
 
-        if (pInventory.getItem(object) != null) {
-            description = pInventory.getItem(object).getDescription();
-        } else if (rInventory.getItem(object) != null) {
-            description = rInventory.getItem(object).getDescription();
-        } else if (room.getName().equals(object)) {
-            description = room.getDescription();
+        for (String o : object) {
+            if (pInventory.getItem(o) != null) {
+                description = pInventory.getItem(o).getDescription();
+            } else if (rInventory.getItem(o) != null) {
+                description = rInventory.getItem(o).getDescription();
+            } else if (room.getName().equals(o)) {
+                description = room.getDescription();
+            }
+        }
+        
+        if (description == null) {
+            System.out.println("Tem de usar um objeto válido. Tente escrever: comando objeto.");
+            return;
         }
 
         System.out.println("O Sherlock inspeciona o objeto: " + object + ".");
