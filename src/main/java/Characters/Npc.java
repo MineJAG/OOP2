@@ -11,8 +11,8 @@ import java.util.ArrayList;
  * @author ajone
  */
 public class Npc extends Character {
-    private ArrayList<String> dialogs = new ArrayList<String>(); 
-    public Npc(String name, Sala salaN, ArrayList<String> dialogs){
+    private ArrayList<DialogueLines> dialogs = new ArrayList<DialogueLines>(); 
+    public Npc(String name, Sala salaN, ArrayList<DialogueLines> dialogs){
         super(name, salaN);
         this.dialogs = dialogs;
     }
