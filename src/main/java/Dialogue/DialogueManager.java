@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Characters;
+package Dialogue;
 
+import Characters.Npc;
 import java.util.ArrayList;
 
 /**
@@ -36,7 +37,6 @@ public class DialogueManager {
             if (npcs.get(i).getName().equals(Dialogue.get(i).get(0).getLine())){
                 npcs.get(i).setDialogs(Dialogue.get(i));
             }
-            i++;
         }
     }
     
@@ -52,6 +52,9 @@ public class DialogueManager {
     public void startDialogue(Npc npc){
         currentNpc = npc;
         System.out.println(npc.getName() + " : " + currentLine.getLine());
+            for(int i = 0; i < currentLine.getOptions().getOptions().size(); i++){
+                System.out.println(currentLine.getOptions().getOptions().get(i));
+            }
         currentLine.getOptions().selectOption(this);
     }
 

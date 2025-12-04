@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Characters;
+package Dialogue;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -35,10 +35,7 @@ public class DialogueOptions {
         this.NextLines = NextLines;
     }
     public void selectOption(DialogueManager dialogueManager){
-        for(int i = 0; i < Options.size(); i++){
-                System.out.println(Options.get(i));
-            }
-            try (Scanner scanner = new Scanner(System.in)) {
+            Scanner scanner = new Scanner(System.in);
             String choice = scanner.nextLine();
             Boolean exists = false;
             for(int j = 0; j < Options.size(); j++){
@@ -54,8 +51,6 @@ public class DialogueOptions {
                     System.out.println("Npc:" + NextLines.get(0).getLine() + " does not exist");
                 }
             }
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            scanner.close();
         }
     }
-}
