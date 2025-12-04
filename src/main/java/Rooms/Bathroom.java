@@ -3,17 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import Items_Inventario.Inventory;
+
 import java.util.ArrayList;
+
 import Characters.Npc;
+import Items_Inventario.Inventory;
 
 /**
  *
  * @author tiago
  */
-public class Foggy_balcony extends Sala{
-    public Foggy_balcony(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
+public class Bathroom extends Sala{
+    public Bathroom(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
         super(name, description, directionN, directionS, directionE, directionW, roomInventory, npcs);    
     }
-    
 }

@@ -4,7 +4,6 @@
  */
 package Rooms;
 import Items_Inventario.Inventory;
-import Items_Inventario.Item;
 import Characters.Npc;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ public abstract class Sala {
     private Inventory roomInventory = new Inventory();
     private List<Npc> npcs = new ArrayList<Npc>();
 
-    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory){
+    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
         this.name = name;
         this.description = description;
         this.directionN = directionN;
@@ -27,6 +26,7 @@ public abstract class Sala {
         this.directionE = directionE;
         this.directionW = directionW;
         this.roomInventory = roomInventory;
+        this.npcs = npcs;
     }   
     
     public List<Npc> getNpcs() {

@@ -3,34 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-
 import Items_Inventario.Inventory;
-import Items_Inventario.Item;
-
 import java.util.ArrayList;
-import java.util.*;
-
 import Characters.Npc;
-import Items_Inventario.*;
 
 /**
  *
  * @author tiago
  */
-public class Bar extends Sala{
-    private String name, description;
-    private Sala directionN, directionS, directionE, directionW = null;
-    private Inventory roomInventory = new Inventory();
-    public Bar(String name, String description, Inventory roomInventory) {
-        super(name,description, null, null, null, null,roomInventory, null);
-        
-        
-        
-    } 
- 
-
-
-
-    
-    
+public class Bar extends Sala {
+    public Bar(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
+        super(name, description, directionN, directionS, directionE, directionW, roomInventory, npcs);
+    }
 }
