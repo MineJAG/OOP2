@@ -33,6 +33,10 @@ public class Inventory {
         inventory.add(item);
     }    
 
+    public void addInventory(Inventory inventory) {
+        this.inventory.addAll(inventory.getInventory());
+    }
+
     public void removeItem(Item item) {
         inventory.remove(item);
     }
@@ -53,7 +57,7 @@ public class Inventory {
 
     @Override
     public String toString() {
-        String result = "Inventário: \n";
+        String result = "";
         for (Item item : inventory) {
             result += "- " + item.getName() + "\n";
         }
@@ -82,5 +86,17 @@ public class Inventory {
             }
         }
         return usables;
+    }
+
+    public int size() {
+        return inventory.size();
+    }
+
+    public boolean isEmpty() {
+        return inventory.isEmpty();
+    }
+
+    public void clear() {
+        inventory.clear();
     }
 }
