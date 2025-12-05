@@ -9,12 +9,19 @@ import Characters.*;
  * @author Bibby
  */
 public class AddCommand {
-    public void execute(Player player, Item item) {
+    public void addOne(Player player, Item item) {
         Inventory rInventory = player.getPresentRoom().getInventory();
-        if (rInventory.itemInInventory(item) && !(item instanceof ImmovabelItem)) {
+        if (rInventory.itemInInventory(item)) {
             rInventory.removeItem(item);
             player.getInventory().addItem(item);
             System.out.println("O item " + item.getName() + " foi adicionado ao inventário.");
+        }
+    }
+
+    public void addMany(Player player, Inventory inventory) {
+        if (!inventory.isEmpty()) {
+            player.getInventory().addInventory(inventory);
+            System.out.println("Os items foram adicionados ao inventário.");
         }
     }
 }

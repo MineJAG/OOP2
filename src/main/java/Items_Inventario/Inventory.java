@@ -68,21 +68,21 @@ public class Inventory {
         return inventory;
     }    
 
-    public List<Item> getClues() {
-        List<Item> clues = new ArrayList<>();
+    public Inventory getClues() {
+        Inventory clues = new Inventory();
         for (Item item : inventory) {
             if (item instanceof Clues) {
-                clues.add(item);
+                clues.addItem(item);
             }
         }
         return clues;
     }
 
-    public List<Item> getUsables() {
-        List<Item> usables = new ArrayList<>();
+    public Inventory getUsables() {
+        Inventory usables = new Inventory();
         for (Item item : inventory) {
             if (item instanceof UsableItem) {
-                usables.add(item);
+                usables.addItem(item);
             }
         }
         return usables;
@@ -98,5 +98,9 @@ public class Inventory {
 
     public void clear() {
         inventory.clear();
+    }
+
+    public Inventory copy() {
+        return new Inventory(new ArrayList<>(inventory));
     }
 }

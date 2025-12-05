@@ -33,10 +33,18 @@ public class InspectCommand implements Commands {
         return false;
     }
 
-    public void execute(Player player) {        
+    public void execute(Player player) {
+        ImmovableItemManager immovableState = new ImmovableItemManager();
+
         System.out.println("O Sherlock inspeciona o objeto: " + item.getName() + ".");
-        System.out.println(item.getDescription());
-        addCommand.execute(player, item);
+
+        if (item instanceof ImmovabelItem) {
+                addCommand.addMany(player, immovableState.immovableState((ImmovabelItem) item)); 
+        } else {
+            System.out.println(item.getDescription());
+            addCommand.addOne(player, item);
+        }
+        
         item = null;
     }
 }
