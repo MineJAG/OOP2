@@ -10,19 +10,5 @@ package Dialogue;
  * @author ajone
  */
 public class DialogueLine {
-    private final String line;
-    private final DialogueOptions options;
     
-    public DialogueLine(String line, DialogueOptions options){
-        this.line = line;
-        this.options = options;
-    }
-    
-    public DialogueOptions getOptions(){
-        return options;
-    }
-
-    public String getLine(){
-        return line;
-    }
 }
