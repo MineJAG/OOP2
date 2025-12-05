@@ -22,6 +22,7 @@ public class CommandRunner {
     CluesCommand cluesCommand = new CluesCommand();
     UsableItemsCommand usableItemsCommand = new UsableItemsCommand();
     LookCommand lookCommand = new LookCommand();
+    GoCommand goCommand = new GoCommand();
     
     private void separate(String userInput) {
         String x = "";
@@ -69,7 +70,8 @@ public class CommandRunner {
         return verifyCommand(LookCommand.COMMAND_NAMES) ||
                 verifyCommand(InspectCommand.COMMAND_NAMES) ||
                 verifyCommand(CluesCommand.COMMAND_NAMES) ||
-                verifyCommand(UsableItemsCommand.COMMAND_NAMES);
+                verifyCommand(UsableItemsCommand.COMMAND_NAMES) ||
+                verifyCommand(GoCommand.COMMAND_NAMES);
     }
 
 
@@ -89,13 +91,21 @@ public class CommandRunner {
                 } else {
                     throw new Exception("Não existe nenhum objeto com esse nome. Tente escrever comando objeto.");
                 }
+            } else if (verifyCommand(GoCommand.COMMAND_NAMES)){
+                if (!goCommand.coorrectDirection(player, words)) {
+                    throw new Exception("Não existe nenhuma direção com esse nome. Tente escrever comando direção.");
+                } else if (!goCommand.canGo(player)) {
+                    throw new Exception("Não posso ir nessa direção.");
+                } else if (goCommand.canGo(player)) {
+                    goCommand.execute(player);
+                }
             } else if (verifyCommand(LookCommand.COMMAND_NAMES)) {
                 lookCommand.execute(player);
             } else if (verifyCommand(CluesCommand.COMMAND_NAMES)) {
                 cluesCommand.execute(player);
             } else if (verifyCommand(UsableItemsCommand.COMMAND_NAMES)) {
                 usableItemsCommand.execute(player);
-            } 
+            }
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
