@@ -6,8 +6,6 @@ package Comandos;
 
 import java.util.*;
 import Characters.*;
-import Items_Inventario.*;
-import Rooms.*;
 
 /**
  *
@@ -15,7 +13,7 @@ import Rooms.*;
  */
 public class CommandRunner {
     List<String> words = new ArrayList<>();
-
+            
     TalkCommand talkCommand = new TalkCommand();
     InspectCommand inspectCommand = new InspectCommand();
     ExitCommand exitCommand = new ExitCommand();
@@ -26,22 +24,22 @@ public class CommandRunner {
     LookCommand lookCommand = new LookCommand();
     
     private void separate(String userInput) {
-    String x = "";
+        String x = "";
 
-    for (int i = 0; i < userInput.length(); i++) {
-        char c = userInput.charAt(i);
-        if (c == ' ' || c == '.' || c == ',' || c == '!' || c == '?') {
-            if (!x.isEmpty()) {
-                words.add(x);
-                x = "";
+        for (int i = 0; i < userInput.length(); i++) {
+            char c = userInput.charAt(i);
+            if (c == ' ' || c == '.' || c == ',' || c == '!' || c == '?') {
+                if (!x.isEmpty()) {
+                    words.add(x);
+                    x = "";
+                }
+            } else {
+                x += c;
             }
-        } else {
-            x += c;
         }
-    }
-    if (!x.isEmpty()) {
-        words.add(x);
-    }
+        if (!x.isEmpty()) {
+            words.add(x);
+        }
 }
 
     private boolean verifyCommand(String[] commandNames) {
@@ -77,10 +75,6 @@ public class CommandRunner {
 
     public void runCommands(Player player, String userInput) {
         separate(userInput);
-        Inventory pInventory = player.getInventory();
-        Inventory rInventory = player.getPresentRoom().getInventory();
-        List<Npc> npcs = player.getPresentRoom().getNpcs();
-        Sala room = player.getPresentRoom();
 
         try {
             if (words.isEmpty()) {
@@ -89,12 +83,14 @@ public class CommandRunner {
             if (!verifyAllCommands()) {
                 throw new Exception("Comando inválido.");
             }
-
-            if (verifyCommand(LookCommand.COMMAND_NAMES)) {
+            if (verifyCommand(InspectCommand.COMMAND_NAMES)) {
+                if (inspectCommand.hasObject(player, words)) {
+                    inspectCommand.execute(player);
+                } else {
+                    throw new Exception("Não existe nenhum objeto com esse nome. Tente escrever comando objeto.");
+                }
+            } else if (verifyCommand(LookCommand.COMMAND_NAMES)) {
                 lookCommand.execute(player);
-            } else if (verifyCommand(InspectCommand.COMMAND_NAMES)) {
-                inspectCommand.setObject(words);
-                inspectCommand.execute(player);
             } else if (verifyCommand(CluesCommand.COMMAND_NAMES)) {
                 cluesCommand.execute(player);
             } else if (verifyCommand(UsableItemsCommand.COMMAND_NAMES)) {

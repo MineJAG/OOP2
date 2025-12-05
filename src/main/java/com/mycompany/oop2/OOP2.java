@@ -16,8 +16,7 @@ import java.util.*;
 public class OOP2 {
 
     public static void main(String[] args) {
-        /*
-        Bar bar = new Bar("niga bat", "nsnansnasns", new Inventory());
+        Bar bar = new Bar("niam bat", "nsnansnasns",null, null,null,null, new Inventory(), null);
         Player player = new Player("Sherlock Holmes", bar);
         Inventory inn = player.getInventory();
         inn.addItem((Item)new Clues("elfo", "elfo1"));
@@ -40,6 +39,6 @@ public class OOP2 {
             
         }
         scanner.close();
-        */
+       
     }
 }

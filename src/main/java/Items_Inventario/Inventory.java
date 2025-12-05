@@ -47,6 +47,10 @@ public class Inventory {
         return null;
     }
 
+    public boolean itemInInventory(Item item) {
+        return inventory.contains(item);
+    }
+
     @Override
     public String toString() {
         String result = "Inventário: \n";

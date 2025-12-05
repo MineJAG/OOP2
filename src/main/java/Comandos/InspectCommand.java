@@ -3,11 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Comandos;
-import Items_Inventario.Inventory;
-import Items_Inventario.Item;
-import Characters.Npc;
-import Characters.Player;
-import Rooms.Sala;
+import Items_Inventario.*;
+import Characters.*;
+import Rooms.*;
 import java.lang.String;
 import java.util.*;
 /**
@@ -16,39 +14,29 @@ import java.util.*;
  */
 public class InspectCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
-    private List<String> object;
+    private AddCommand addCommand = new AddCommand();
+    private Item item;
 
-    public List<String> getObject() {
-        return object;
-    }
-
-    public void setObject(List<String> object) {
-        this.object = object;
-    }
-
-    public void execute(Player player) {
+    public boolean hasObject(Player player, List<String> object) {
         Sala room = player.getPresentRoom();
         Inventory pInventory = player.getInventory();
         Inventory rInventory = room.getInventory();
-        String description = null;
-
         for (String o : object) {
             if (pInventory.getItem(o) != null) {
-                description = pInventory.getItem(o).getDescription();
+                item = pInventory.getItem(o);
+                return true;
             } else if (rInventory.getItem(o) != null) {
-                description = rInventory.getItem(o).getDescription();
-            } else if (room.getName().equals(o)) {
-                description = room.getDescription();
+                item = rInventory.getItem(o);
+                return true;
             }
         }
-        
-        if (description == null) {
-            System.out.println("Tem de usar um objeto válido. Tente escrever: comando objeto.");
-            return;
-        }
+        return false;
+    }
 
-        System.out.println("O Sherlock inspeciona o objeto: " + object + ".");
-        System.out.println(description);
-        object = null;
+    public void execute(Player player) {        
+        System.out.println("O Sherlock inspeciona o objeto: " + item.getName() + ".");
+        System.out.println(item.getDescription());
+        addCommand.execute(player, item);
+        item = null;
     }
 }
