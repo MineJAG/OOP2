@@ -4,10 +4,17 @@
  */
 package Comandos;
 
+import Characters.Player;
+
 /**
  *
  * @author ajone
  */
-public class ExitCommand {
+public class ExitCommand implements Commands {
+   public static final String[] COMMAND_NAMES = {"exit", "sair", "quit", "fechar", "close", "terminar", "end", "finalizar"};    
+    public void execute(Player player) {
+        System.out.println("A sair do jogo. Até à próxima!");
+        System.exit(0);
+    }
     
 }

@@ -85,4 +85,5 @@ public abstract class Sala {
         return this.directionE = E;
     }
     
+    //public abstract Inventory roomInventory();
 }

@@ -24,7 +24,7 @@ public class Library extends Sala{
             directionE, 
             directionW, 
             new Inventory(), 
-            new ArrayList<Npc>());    
+            new ArrayList<Npc>());  
     }
     
 }

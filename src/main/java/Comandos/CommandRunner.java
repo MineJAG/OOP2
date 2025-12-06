@@ -23,6 +23,7 @@ public class CommandRunner {
     UsableItemsCommand usableItemsCommand = new UsableItemsCommand();
     LookCommand lookCommand = new LookCommand();
     GoCommand goCommand = new GoCommand();
+    ExitCommand exitcommand = new ExitCommand();
     
     private void separate(String userInput) {
         String x = "";
@@ -71,7 +72,8 @@ public class CommandRunner {
                 verifyCommand(InspectCommand.COMMAND_NAMES) ||
                 verifyCommand(CluesCommand.COMMAND_NAMES) ||
                 verifyCommand(UsableItemsCommand.COMMAND_NAMES) ||
-                verifyCommand(GoCommand.COMMAND_NAMES);
+                verifyCommand(GoCommand.COMMAND_NAMES) ||
+                verifyCommand(ExitCommand.COMMAND_NAMES);
     }
 
 
@@ -99,6 +101,8 @@ public class CommandRunner {
                 } else if (goCommand.canGo(player)) {
                     goCommand.execute(player);
                 }
+            } else if (verifyCommand(ExitCommand.COMMAND_NAMES)) {
+                    exitcommand.execute(player);
             } else if (verifyCommand(LookCommand.COMMAND_NAMES)) {
                 lookCommand.execute(player);
             } else if (verifyCommand(CluesCommand.COMMAND_NAMES)) {

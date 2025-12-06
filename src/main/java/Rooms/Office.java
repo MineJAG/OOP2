@@ -12,8 +12,7 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class Office extends Sala{
-    boolean locked;
-    public Office(Sala directionN, Sala directionS, Sala directionE, Sala directionW, boolean locked) {
+    public Office(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
         super("Escritório", 
             "O escritório do Lorde...\r\n" +
             "Possui uma secretária com documentos e livros de contabilidade por toda a parte.\r\n" +
@@ -27,15 +26,5 @@ public class Office extends Sala{
             directionW, 
             new Inventory(), 
             new ArrayList<Npc>());
-        this.locked = locked;
     }
-
-    public boolean isLocked() {
-        return locked;
-    }
-
-    public void setUnlocked() {
-        this.locked = false;
-    }
-    
 }
