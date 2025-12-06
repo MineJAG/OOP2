@@ -27,7 +27,6 @@ public class OOP2 {
         Storage storage = new Storage(null, null, null, null);
         VIP_room vipRoom = new VIP_room(null, null, null, null);
         
-        
         //Ligação das salas
         bar.setDirectionE(storage);
         bar.setDirectionN(library);
@@ -36,6 +35,7 @@ public class OOP2 {
         balcony.setDirectionS(room);
         library.setDirectionW(room);
         library.setDirectionE(office);
+        library.setDirectionS(bar); 
         hall.setDirectionN(bar);
         hall.setDirectionE(bathroom);
         hall.setDirectionW(vipRoom);
@@ -54,7 +54,7 @@ public class OOP2 {
         Scanner scanner = new Scanner(System.in);
         bar.getInventory().addItem(new UsableItem("Cervja", "Cerveja1"));
         bar.getInventory().addItem(new Clues("bananas", "banana1"));
-        bar.getInventory().addItem(new ImmovabelItem("Pilhar", "nAO pode nover"));
+        bar.getInventory().addItem(new ImmovabelItem("Pilar", "nAO pode nover"));
         bar.getInventory().addItem(new UsableItem("Cereja", "Ceredas"));
         Inventory chis = new Inventory();
         chis.addItem(new Clues("documentos", "documentos1"));
