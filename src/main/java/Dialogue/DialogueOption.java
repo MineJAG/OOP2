@@ -9,6 +9,6 @@ package Dialogue;
  *
  * @author ajone
  */
-public class DialogueOptions {
+public class DialogueOption {
 
     }
