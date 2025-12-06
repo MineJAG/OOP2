@@ -74,9 +74,6 @@ public class GoCommand implements Commands {
 
         if (direction.equalsIgnoreCase("north")) {
             nextRoom = currentRoom.getDirectionN();
-            if (currentRoom instanceof Bar && !((Bar) currentRoom).canGoNorth()) {
-                return;
-            }
         } else if (direction.equalsIgnoreCase("south")) {
             nextRoom = currentRoom.getDirectionS();
         } else if (direction.equalsIgnoreCase("east")) {

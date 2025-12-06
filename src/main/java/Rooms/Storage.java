@@ -12,6 +12,7 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class Storage extends Sala{
+    private boolean isLightOn = false;
     public Storage(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
         super("Depósito", 
             "O quarto está numa escuridão total, não vejo nada...\r\n"+
@@ -23,5 +24,11 @@ public class Storage extends Sala{
             directionW, 
             new Inventory(), 
             new ArrayList<Npc>());
+    }
+
+    public void lightUp() {
+        if (!isLightOn) {
+            isLightOn = true;
+        }
     }
 }
