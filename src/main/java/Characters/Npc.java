@@ -31,6 +31,11 @@ public class Npc extends Character {
     public void setQuestItem(String questItem) {
         QuestItem = questItem;
     }
+    //public String talk(){
+    public void talk(){
+        DialogueManager.Conversation(this);
+    }   
+    //}
 
     public Map<String, DialogueLine> getDialogueLines() {
         return dialogueLines;
