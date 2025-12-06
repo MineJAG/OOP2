@@ -23,5 +23,15 @@ public class DialogueLoader {
             }
             System.out.println(line);
         }
+        bR.close();
+    }
+
+    public static void main(String[] args) {
+        DialogueLoader dl = new DialogueLoader();
+        try {
+            dl.loadText("Dialogo.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
