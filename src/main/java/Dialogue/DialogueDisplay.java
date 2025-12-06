@@ -10,4 +10,10 @@ package Dialogue;
  */
 public class DialogueDisplay {
     
+    public void showLine(DialogueLine line){ {
+        System.out.println(DialogueLine.getLine());
+    }
+    
+
+
 }
