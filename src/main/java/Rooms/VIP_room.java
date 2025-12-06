@@ -12,8 +12,15 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class VIP_room extends Sala{
-    public VIP_room(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
-        super(name, description, directionN, directionS, directionE, directionW, roomInventory, npcs);    
+    public VIP_room(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+        super("Sala VIP", 
+        "", 
+        directionN, 
+        directionS, 
+        directionE, 
+        directionW, 
+        new Inventory(), 
+        new ArrayList<Npc>());    
     }
     
 }

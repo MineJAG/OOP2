@@ -13,8 +13,18 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class Library extends Sala{
-    public Library(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
-        super(name, description, directionN, directionS, directionE, directionW, roomInventory, npcs);    
+    public Library(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+        super("Biblioteca",
+            "A sala tem estantes com livros amarelados empilhados em ordem rigorosa, janelas entreabertas filtram a luz fria.\r\n" +
+            "Chão de madeira rangente sob os pés.\r\n" +
+            "Um lugar onde cada detalhe poderia revelar algo importante...\r\n" +
+            "Talvez encontre algo útil aqui.", 
+            directionN, 
+            directionS, 
+            directionE, 
+            directionW, 
+            new Inventory(), 
+            new ArrayList<Npc>());    
     }
     
 }

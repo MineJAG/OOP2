@@ -13,8 +13,20 @@ import Items_Inventario.Inventory;
  */
 public class Office extends Sala{
     boolean locked;
-    public Office(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs, boolean locked) {
-        super(name, description, directionN, directionS, directionE, directionW, roomInventory, npcs);
+    public Office(Sala directionN, Sala directionS, Sala directionE, Sala directionW, boolean locked) {
+        super("Escritório", 
+            "O escritório do Lorde...\r\n" +
+            "Possui uma secretária com documentos e livros de contabilidade por toda a parte.\r\n" +
+            "Uma cadeira de couro gasta está por trás da secretária.\r\n" +
+            "E na parede, um quadro de um homem de aparência severa.\r\n" +
+            "Há também uma estante com vários livros antigos e um cofre embutido na parede.\r\n" +
+            "Talvez exista algo importante aqui...", 
+            directionN, 
+            directionS, 
+            directionE, 
+            directionW, 
+            new Inventory(), 
+            new ArrayList<Npc>());
         this.locked = locked;
     }
 

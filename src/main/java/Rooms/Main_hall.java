@@ -13,8 +13,18 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class Main_hall extends Sala{
-    public Main_hall(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
-        super(name, description, directionN, directionS, directionE, directionW, roomInventory, npcs);    
+    public Main_hall(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+        super("Sala Principal", 
+            "Uma sala num estilo barroco e estravagante, tem uns pilhadores artisticos, mesas decoradas, e janelas com artes\r\n" + 
+            "o piso de mármore está molhado e a chuva ecoa lá fora.\r\n" +
+            "Os convidados parecem assustados.\r\n" +
+            "Um rastro de água leva até à porta norte, está entreaberta...hum?", 
+            directionN, 
+            directionS, 
+            directionE, 
+            directionW, 
+            new Inventory(), 
+            new ArrayList<Npc>());    
     }
     
 }

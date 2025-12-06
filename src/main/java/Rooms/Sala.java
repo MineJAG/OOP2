@@ -13,10 +13,10 @@ import java.util.List;
  * @author ajone
  */
 public abstract class Sala {
-    private String name, description;
-    private Sala directionN, directionS, directionE, directionW;
-    private Inventory roomInventory = new Inventory();
-    private List<Npc> npcs = new ArrayList<Npc>();
+    protected String name, description;
+    protected Sala directionN, directionS, directionE, directionW;
+    protected Inventory roomInventory = new Inventory();
+    protected List<Npc> npcs = new ArrayList<Npc>();
 
     public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
         this.name = name;
@@ -83,11 +83,6 @@ public abstract class Sala {
     
     public Sala setDirectionE(Sala E){
         return this.directionE = E;
-    }
-    
-    @Override
-    public String toString(){
-        return "Sala:" + name +"\n Descricao: " + description +"\n Direcoes: " + directionN +"\n" + directionW + "\n" + directionE +"\n" + directionS;
     }
     
 }

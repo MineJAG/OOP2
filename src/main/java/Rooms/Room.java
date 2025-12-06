@@ -14,7 +14,14 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class Room extends Sala{
-    public Room(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
-        super(name, description, directionN, directionS, directionE, directionW, roomInventory, npcs);    
+    public Room(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+        super("Quarto", 
+        "", 
+        directionN, 
+        directionS, 
+        directionE, 
+        directionW, 
+        new Inventory(), 
+        new ArrayList<Npc>());    
     }
 }
