@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
+import Items_Inventario.Clues;
+import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
+import Items_Inventario.UsableItem;
+
 import java.util.ArrayList;
 import Characters.Npc;
 
@@ -26,6 +30,7 @@ public class Bar extends Sala {
             new Inventory(), 
             new ArrayList<Npc>());
             this.lockedN = lockedN;
+            initializeInventory();
     }
     public boolean isLocked() {
         return lockedN;
@@ -52,5 +57,14 @@ public class Bar extends Sala {
     // Getter para saber se pode ir para norte
     public boolean canGoNorth() {
         return !lockedN;
+    }
+
+    @Override
+    public void initializeInventory(){
+        Inventory in = new Inventory();
+        in.addItem(new Clues("Pedaço de Cortina Vermelha", ""));
+        in.addItem(new UsableItem("Chave dourada", "", "Bar"));
+        in.addItem(new ImmovabelItem("Pilar", "nAO pode nover"));
+        super.getInventory().addInventory(in);
     }
 }

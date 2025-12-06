@@ -20,7 +20,7 @@ public class LookCommand implements Commands {
         Inventory inventory = room.getInventory();
         System.out.println("O Sherlock observa a/o " + room.getName());
         System.out.println(room.getDescription());
-        if (room instanceof Storage) {
+        if(room instanceof Storage) {
             if (!((Storage) room).isLightOn()) {
                 return;
             }
