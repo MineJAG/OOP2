@@ -5,7 +5,9 @@
 package Rooms;
 import java.util.ArrayList;
 import Characters.Npc;
+import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
+import Items_Inventario.UsableItem;
 
 
 /**
@@ -24,7 +26,15 @@ public class Main_hall extends Sala{
             directionE, 
             directionW, 
             new Inventory(), 
-            new ArrayList<Npc>());    
+            new ArrayList<Npc>()); 
+            initializeInventory();   
     }
     
+    @Override
+    public void initializeInventory(){
+        Inventory in = new Inventory();
+        in.addItem(new Clues("Pegadas Húmidas", ""));
+        in.addItem(new UsableItem("Livro", "", getName()));
+        super.getInventory().addInventory(in);
+    }
 }

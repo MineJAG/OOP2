@@ -7,7 +7,10 @@ package Rooms;
 import java.util.ArrayList;
 
 import Characters.Npc;
+import Items_Inventario.Clues;
+import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
+import Items_Inventario.UsableItem;
 
 /**
  *
@@ -26,5 +29,16 @@ public class Room extends Sala{
         directionW, 
         new Inventory(), 
         new ArrayList<Npc>());    
+        initializeInventory();
+    }
+
+    @Override
+    public void initializeInventory(){
+        Inventory in = new Inventory();
+        in.addItem(new Clues("Sangue", ""));
+        in.addItem(new Clues("Cortina vermelha", ""));
+        in.addItem(new UsableItem("Caixa de medicamentos", "", getName()));
+        in.addItem(new ImmovabelItem("Gaveta", "é uma gaveta", in,"tem merda"));
+        super.getInventory().addInventory(in);
     }
 }

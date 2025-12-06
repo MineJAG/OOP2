@@ -5,7 +5,11 @@
 package Rooms;
 import java.util.ArrayList;
 import Characters.Npc;
+import Items_Inventario.Clues;
+import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
+import Items_Inventario.UsableItem;
+
 
 /**
  *
@@ -26,5 +30,16 @@ public class Office extends Sala{
             directionW, 
             new Inventory(), 
             new ArrayList<Npc>());
+            initializeInventory();
+    }
+
+    @Override
+    public void initializeInventory(){
+        Inventory in = new Inventory();
+        in.addItem(new Clues("Cópia de um livro", ""));
+        in.addItem(new Clues("Testamento Alterado", ""));
+        in.addItem(new UsableItem("Carta", "", getName()));
+        in.addItem(new ImmovabelItem("Cofre", "merda", in, "piça", "aberto", "vazio"));
+        super.getInventory().addInventory(in);
     }
 }

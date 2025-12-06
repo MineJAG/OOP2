@@ -5,6 +5,7 @@
 package Rooms;
 import java.util.ArrayList;
 import Characters.Npc;
+import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
 
 /**
@@ -24,15 +25,27 @@ public class Storage extends Sala{
             directionW, 
             new Inventory(), 
             new ArrayList<Npc>());
+            initializeInventory();
     }
 
     public void lightUp() {
         if (!isLightOn) {
             isLightOn = true;
+            setDescription("Fez-se luz caralho puta fodasse");
+            System.out.println(getDescription());
         }
     }
 
     public boolean isLightOn() {
         return isLightOn;
+    }
+
+    @Override
+    public void initializeInventory(){
+        Inventory in = new Inventory();
+        in.addItem(new Clues("Faca", ""));
+        in.addItem(new Clues("Tecido Rasgado", ""));
+        
+        super.getInventory().addInventory(in);
     }
 }

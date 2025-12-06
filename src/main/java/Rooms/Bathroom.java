@@ -7,6 +7,7 @@ package Rooms;
 import java.util.ArrayList;
 
 import Characters.Npc;
+import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
 
 /**
@@ -24,6 +25,14 @@ public class Bathroom extends Sala{
             directionE, 
             directionW, 
             new Inventory(), 
-            new ArrayList<Npc>());    
+            new ArrayList<Npc>()); 
+            initializeInventory();   
+    }
+
+    @Override
+    public void initializeInventory(){
+        Inventory in = new Inventory();
+        in.addItem(new Clues("Luvas", ""));
+        super.getInventory().addInventory(in);
     }
 }

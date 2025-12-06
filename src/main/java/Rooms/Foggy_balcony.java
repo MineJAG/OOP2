@@ -22,7 +22,13 @@ public class Foggy_balcony extends Sala{
             directionE, 
             directionW, 
             new Inventory(), 
-            new ArrayList<Npc>());    
+            new ArrayList<Npc>());   
+            initializeInventory(); 
     }
     
+    @Override
+    public void initializeInventory(){
+        Inventory in = new Inventory();
+        super.getInventory().addInventory(in);
+    }
 }
