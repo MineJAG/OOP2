@@ -4,10 +4,21 @@
  */
 package Dialogue;
 
+import java.util.List;
+
 /**
  *
  * @author ajone
  */
 public class DialogueDisplay {
     
+    public void showLine(DialogueLine line){
+        System.out.println(line.getLine());
+    }
+
+    public void showOptions(List<DialogueOption> options){
+        for(int i = 0; i < options.size(); i++){
+            System.out.println((i + 1) + ". " + options.get(i).getOption());
+        }
+    }
 }

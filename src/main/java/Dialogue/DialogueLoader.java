@@ -10,5 +10,10 @@ package Dialogue;
  * @author ajone
  */
 public class DialogueLoader {
+
+    public void loadText(String filePath) {
+        
+    }
+
     
 }
