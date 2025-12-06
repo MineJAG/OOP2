@@ -5,7 +5,7 @@
 package Comandos;
 
 import Items_Inventario.Inventory;
-import Rooms.Sala;
+import Rooms.*;
 import Characters.Player;
 
 /**
@@ -14,12 +14,17 @@ import Characters.Player;
  */
 public class LookCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"look", "olhar", "olha", "vision", "visualizar", "visualize", "visionar", "ver", "ve"};
-
+    
     public void execute(Player player) {
         Sala room = player.getPresentRoom();
         Inventory inventory = room.getInventory();
         System.out.println("O Sherlock observa a/o " + room.getName());
         System.out.println(room.getDescription());
+        if (room instanceof Storage) {
+            if (!((Storage) room).isLightOn()) {
+                return;
+            }
+        }
         System.out.println(inventory.toString());
     }
 }

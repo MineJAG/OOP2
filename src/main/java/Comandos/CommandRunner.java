@@ -5,6 +5,8 @@
 package Comandos;
 
 import java.util.*;
+
+
 import Characters.*;
 
 /**
@@ -24,6 +26,7 @@ public class CommandRunner {
     LookCommand lookCommand = new LookCommand();
     GoCommand goCommand = new GoCommand();
     ExitCommand exitcommand = new ExitCommand();
+    UseCommand useCommand = new UseCommand();
     
     private void separate(String userInput) {
         String x = "";
@@ -73,7 +76,8 @@ public class CommandRunner {
                 verifyCommand(CluesCommand.COMMAND_NAMES) ||
                 verifyCommand(UsableItemsCommand.COMMAND_NAMES) ||
                 verifyCommand(GoCommand.COMMAND_NAMES) ||
-                verifyCommand(ExitCommand.COMMAND_NAMES);
+                verifyCommand(ExitCommand.COMMAND_NAMES) ||
+                verifyCommand(UseCommand.COMMAND_NAMES);
     }
 
 
@@ -109,6 +113,9 @@ public class CommandRunner {
                 cluesCommand.execute(player);
             } else if (verifyCommand(UsableItemsCommand.COMMAND_NAMES)) {
                 usableItemsCommand.execute(player);
+            } else if (verifyCommand(UseCommand.COMMAND_NAMES)) {
+                useCommand.hasObject(player, words);
+                useCommand.execute(player);
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());

@@ -31,4 +31,8 @@ public class Storage extends Sala{
             isLightOn = true;
         }
     }
+
+    public boolean isLightOn() {
+        return isLightOn;
+    }
 }

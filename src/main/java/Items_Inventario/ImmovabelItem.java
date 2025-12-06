@@ -123,8 +123,6 @@ public class ImmovabelItem extends Item {
         return items;
     }
 
-    // --- lock ---
-
     /**
      * No teu código original, unlock() não recebia código.
      * Assumo que validas o código fora, e só chamas unlock() se estiver correto.

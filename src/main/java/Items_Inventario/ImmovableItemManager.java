@@ -4,8 +4,6 @@
  */
 package Items_Inventario;
 
-import java.util.ArrayList;
-
 import com.mycompany.oop2.UserInputReader;
 
 /**
@@ -16,7 +14,7 @@ public class ImmovableItemManager {
     private UserInputReader reader = new UserInputReader();
 
     public Inventory immovableState(ImmovabelItem item) {
-        if (item.isLocked()) {
+        if (item.isLocked() && item.getCODE() != null) {
             System.out.println(item.getDescription() + "\nInsira o código para abrir o item: ");
             String code = reader.readInputLine();
             if (code.equals(item.getCODE())) {
@@ -38,5 +36,4 @@ public class ImmovableItemManager {
             return new Inventory();  // nada dentro
         }
     }
-
 }

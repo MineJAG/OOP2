@@ -9,18 +9,14 @@ package Items_Inventario;
  * @author ajone
  */
 public class UsableItem extends Item{
-    private boolean used;
+    private String toBeUsed;
 
-    public UsableItem(String name, String description) {
+    public UsableItem(String name, String description, String toBeUsed) {
         super(name, description);
-        used = false;
+        this.toBeUsed = toBeUsed;
     }
 
-    public boolean getUsed() {
-        return used;
-    }
-
-    public void setUsed(boolean used) {
-        this.used = used;
+    public String getToBeUsed() {
+        return toBeUsed;
     }
 }

@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Characters;
-import Dialogue.DialogueManager;
 import java.util.Map;
 import Rooms.Sala;
 import Dialogue.DialogueLine;
@@ -32,11 +31,6 @@ public class Npc extends Character {
     public void setQuestItem(String questItem) {
         QuestItem = questItem;
     }
-   //public String talk(){
-    public void talk(){
-        DialogueManager.Conversation(this);
-    }   
-    //}
 
     public Map<String, DialogueLine> getDialogueLines() {
         return dialogueLines;

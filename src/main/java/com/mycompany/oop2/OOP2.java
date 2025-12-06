@@ -50,19 +50,19 @@ public class OOP2 {
         Inventory inn = player.getInventory();
         inn.addItem((Item)new Clues("elfo", "elfo1"));
         player.setInventory(inn);
-        player.getInventory().addItem(new UsableItem("LALA", "llll1"));
+        player.getInventory().addItem(new UsableItem("LALA", "llll1","Depósito"));
         player.getInventory().addItem(new Clues("Piar", "nover"));
         Scanner scanner = new Scanner(System.in);
-        bar.getInventory().addItem(new UsableItem("Cervja", "Cerveja1"));
+        bar.getInventory().addItem(new UsableItem("Cervja", "Cerveja1","Bar"));
         bar.getInventory().addItem(new Clues("bananas", "banana1"));
         bar.getInventory().addItem(new ImmovabelItem("Pilar", "nAO pode nover"));
-        bar.getInventory().addItem(new UsableItem("Cereja", "Ceredas"));
+        bar.getInventory().addItem(new UsableItem("Cereja", "Ceredas","isk"));
         Inventory chis = new Inventory();
         chis.addItem(new Clues("documentos", "documentos1"));
-        chis.addItem(new UsableItem("livro", "nao sei"));
+        chis.addItem(new UsableItem("livro", "nao sei","isk"));
         Inventory chis2 = new Inventory();
         chis2.addItem(new Clues("documentos2", "documentos12"));
-        chis2.addItem(new UsableItem("livro2", "nao sei2"));
+        chis2.addItem(new UsableItem("livro2", "nao sei2","isk"));
         bar.getInventory().addItem(new ImmovabelItem("Cofre", "Encontra-se trancado.", chis, "ola", "Encontra-se aberto.", "Está vazio."));
         bar.getInventory().addItem(new ImmovabelItem("Gaveta", "Uma gaveta que pode guardar coisas dentro.", chis2, "Está vazia."));
         
