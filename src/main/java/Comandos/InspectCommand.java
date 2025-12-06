@@ -43,6 +43,7 @@ public class InspectCommand implements Commands {
         } else {
             System.out.println(item.getDescription());
             addCommand.addOne(player, item);
+            player.getPresentRoom().getInventory().removeItem(item);
         }
         
         item = null;
