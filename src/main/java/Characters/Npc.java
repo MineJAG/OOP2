@@ -4,14 +4,16 @@
  */
 package Characters;
 import Dialogue.DialogueManager;
-import Items_Inventario.ImmovabelItem;
+import java.util.Map;
 import Rooms.Sala;
+import Dialogue.DialogueLine;
 /**
  *
  * @author ajone
  */
 public class Npc extends Character { 
-    String QuestItem;
+    private String QuestItem;
+    private Map<String, DialogueLine> dialogueLines;
 
     public Npc(String name, Sala salaN){
         super(name, salaN);
@@ -32,7 +34,16 @@ public class Npc extends Character {
     }
    //public String talk(){
     public void talk(){
-        DialogueManager.startDialogue(this);
-    }    
+        DialogueManager.Conversation(this);
+    }   
     //}
+
+    public Map<String, DialogueLine> getDialogueLines() {
+        return dialogueLines;
+    }
+
+    public void setDialogueLines(Map<String, DialogueLine> dialogueLines) {
+        this.dialogueLines = dialogueLines;
+    }
+    
 }
