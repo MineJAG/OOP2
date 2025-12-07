@@ -7,52 +7,76 @@ package Dialogue;
 import java.io.*;
 import java.util.Map;
 import java.util.ArrayList;
-
 import Characters.Npc;
 /**
  *
  * @author ajone
  */
 public class DialogueLoader {
-        private Map<String, Map <String, DialogueLine>> StoredDialogue;
+    private Map<String, Map<String, DialogueLine>> StoredDialogue;
 
     public Map<String, Map<String, DialogueLine>> getDialogue() {
-            return StoredDialogue;
-        }
-        public void setDialogue(Map<String, Map<String, DialogueLine>> dialogue) {
-            this.StoredDialogue = dialogue;
-        }
+        return StoredDialogue;
+    }
+    
+    public void setDialogue(Map<String, Map<String, DialogueLine>> dialogue) {
+        this.StoredDialogue = dialogue;
+    }
+    
     public void loadText(String fileName) throws IOException {
         FileReader fR = new FileReader(fileName);
         BufferedReader bR = new BufferedReader(fR);
         String line;
-        Map<String, Map <String, DialogueLine>> dialogue = new java.util.HashMap<>();
+        Map<String, Map<String, DialogueLine>> dialogue = new java.util.HashMap<>();
         String currentNpc = null;
+        
         while ((line = bR.readLine()) != null) {
+            // Skip comments
             if(line.charAt(0) == '#'){
                 continue;
             }
+            
             String[] part = splitLine(line, '-');
+            
+            // Character definition line
             if(part[0].toLowerCase().equals("c")){
                 currentNpc = part[1];
                 dialogue.put(currentNpc, new java.util.HashMap<>());
             }
-            if (hasChar(part[0].toLowerCase(),'o')){
+            // Option line (must come after its dialogue line)
+            else if (hasChar(part[0].toLowerCase(), 'o')){
+                if(currentNpc == null) {
+                    throw new IllegalStateException("Option found before character definition");
+                }
+                
                 String[] subPart = splitLine(part[0], 'o');
                 String DialogueId = subPart[0];
                 String OptionId = subPart[1];
                 String optionText = part[1];
+                
+                // Check if dialogue line exists before adding option
+                if(!dialogue.get(currentNpc).containsKey(DialogueId)) {
+                    throw new IllegalStateException("Option references non-existent dialogue ID: " + DialogueId);
+                }
+                
                 dialogue.get(currentNpc).get(DialogueId).addOption(new DialogueOption(optionText, OptionId));
             }
-            else{
+            // Regular dialogue line
+            else {
+                if(currentNpc == null) {
+                    throw new IllegalStateException("Dialogue line found before character definition");
+                }
+                
                 String DialogueId = part[0];
                 String dialogueText = part[1];
                 dialogue.get(currentNpc).put(DialogueId, new DialogueLine(dialogueText));
             }
-    }
+        }
+        
         setDialogue(dialogue);
         bR.close();
     }
+    
     public String[] splitLine(String line, char r){
         int i = line.indexOf(r);
         String[] parts = new String[2];
@@ -62,10 +86,11 @@ public class DialogueLoader {
     }
 
     public boolean hasChar(String line, char r){
-        return line.contains("r");
+        // FIXED: Was checking for literal "r" instead of the parameter
+        return line.indexOf(r) != -1;
     }
 
-    public static void main (String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         DialogueLoader loader = new DialogueLoader();
         loader.loadText("dialogue.txt");
         Npc npc = new Npc("Old Man");
