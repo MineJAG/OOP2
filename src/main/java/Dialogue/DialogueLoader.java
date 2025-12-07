@@ -84,40 +84,4 @@ public class DialogueLoader {
     public boolean hasChar(String line, char r){
         return line.indexOf(r) != -1;
     }
-
-    public static void main(String[] args) throws IOException {
-        DialogueLoader loader = new DialogueLoader();
-        loader.loadText("dialogue.txt");
-        Npc npc = new Npc("Old Man");
-        ArrayList<Npc> npcs = new ArrayList<>();
-        npcs.add(npc);
-        DialogueDistributor distributor = new DialogueDistributor();
-        distributor.setDialogue(loader.getDialogue());
-        distributor.DistributeDialogue(npcs);
-        
-        // Pretty print the dialogue
-        System.out.println("=== Dialogue for " + npc.getName() + " ===\n");
-        Map<String, DialogueLine> dialogueLines = npc.getDialogueLines();
-        
-        if(dialogueLines == null || dialogueLines.isEmpty()) {
-            System.out.println("No dialogue found for this NPC.");
-            return;
-        }
-        
-        for(Map.Entry<String, DialogueLine> entry : dialogueLines.entrySet()) {
-            String dialogueId = entry.getKey();
-            DialogueLine line = entry.getValue();
-            
-            System.out.println("ID: " + dialogueId);
-            System.out.println("Line: " + line.getLine());
-            
-            if(line.getOptions() != null && !line.getOptions().isEmpty()) {
-                System.out.println("Options:");
-                for(DialogueOption option : line.getOptions()) {
-                    System.out.println("  - " + option.getOption() + " (leads to: " + option.getNextLineId() + ")");
-                }
-            }
-            System.out.println();
-        }
-    }
 }
