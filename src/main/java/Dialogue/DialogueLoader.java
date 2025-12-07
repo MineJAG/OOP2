@@ -38,12 +38,10 @@ public class DialogueLoader {
             
             String[] part = splitLine(line, '-');
             
-            // Character definition line
             if(part[0].toLowerCase().equals("c")){
                 currentNpc = part[1];
                 dialogue.put(currentNpc, new java.util.HashMap<>());
             }
-            // Option line (must come after its dialogue line)
             else if (hasChar(part[0].toLowerCase(), 'o')){
                 if(currentNpc == null) {
                     throw new IllegalStateException("Option found before character definition");
@@ -54,14 +52,12 @@ public class DialogueLoader {
                 String OptionId = subPart[1];
                 String optionText = part[1];
                 
-                // Check if dialogue line exists before adding option
                 if(!dialogue.get(currentNpc).containsKey(DialogueId)) {
                     throw new IllegalStateException("Option references non-existent dialogue ID: " + DialogueId);
                 }
                 
                 dialogue.get(currentNpc).get(DialogueId).addOption(new DialogueOption(optionText, OptionId));
             }
-            // Regular dialogue line
             else {
                 if(currentNpc == null) {
                     throw new IllegalStateException("Dialogue line found before character definition");
@@ -86,7 +82,6 @@ public class DialogueLoader {
     }
 
     public boolean hasChar(String line, char r){
-        // FIXED: Was checking for literal "r" instead of the parameter
         return line.indexOf(r) != -1;
     }
 

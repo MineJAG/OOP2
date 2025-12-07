@@ -32,4 +32,6 @@ public class DialogueManager {
     public void changeLine(String line){
         setCurrentLine(getCurrentNpcMap().get(line));
     }
+
+    
 }
