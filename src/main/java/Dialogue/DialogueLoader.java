@@ -99,6 +99,30 @@ public class DialogueLoader {
         DialogueDistributor distributor = new DialogueDistributor();
         distributor.setDialogue(loader.getDialogue());
         distributor.DistributeDialogue(npcs);
-        System.out.println(npc.getDialogueLines());
+        
+        // Pretty print the dialogue
+        System.out.println("=== Dialogue for " + npc.getName() + " ===\n");
+        Map<String, DialogueLine> dialogueLines = npc.getDialogueLines();
+        
+        if(dialogueLines == null || dialogueLines.isEmpty()) {
+            System.out.println("No dialogue found for this NPC.");
+            return;
+        }
+        
+        for(Map.Entry<String, DialogueLine> entry : dialogueLines.entrySet()) {
+            String dialogueId = entry.getKey();
+            DialogueLine line = entry.getValue();
+            
+            System.out.println("ID: " + dialogueId);
+            System.out.println("Line: " + line.getLine());
+            
+            if(line.getOptions() != null && !line.getOptions().isEmpty()) {
+                System.out.println("Options:");
+                for(DialogueOption option : line.getOptions()) {
+                    System.out.println("  - " + option.getOption() + " (leads to: " + option.getNextLineId() + ")");
+                }
+            }
+            System.out.println();
+        }
     }
 }
