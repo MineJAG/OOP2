@@ -1,14 +1,15 @@
-Old_Man
-1-line1-2,3
-1o2-option2-2
-1o3-option3-3
-2-line2-4
-3-line3-!,?
-3o!f-RequiredItemNeeded-
-3o!-GiveItem-!
-3o?-GetItem-?
+c-Old_Man
+1-line1
+1o2-option2
+1o3-option3
+2-line2
+3-line3
+3o!f-RequiredItemNeeded
+3o!-GiveItem
+3o?-GetItem
 4-line4
 !-RequiredItem
 ?-GiveItem
-
-Greg
+#----Greg
+c-Greg
+1-Lets gooo

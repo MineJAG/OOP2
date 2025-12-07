@@ -14,6 +14,11 @@ public class Npc extends Character {
     private String QuestItem;
     private Map<String, DialogueLine> dialogueLines;
 
+    public Npc(String name) {
+        super(name,null);
+        QuestItem = null;
+    }
+
     public Npc(String name, Sala salaN){
         super(name, salaN);
         QuestItem = null;

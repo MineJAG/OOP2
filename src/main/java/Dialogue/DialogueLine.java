@@ -14,6 +14,11 @@ public class DialogueLine {
     private String line;
     private ArrayList<DialogueOption> options;
 
+    public DialogueLine(String line) {
+        this.line = line;
+        this.options = new ArrayList<>();
+    }
+
     public String getLine() {
         return line;
     }
@@ -28,5 +33,9 @@ public class DialogueLine {
 
     public void setOptions(ArrayList<DialogueOption> options) {
         this.options = options;
+    }
+
+    public void addOption(DialogueOption option) {
+        this.options.add(option);
     }
 }

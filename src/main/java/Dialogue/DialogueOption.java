@@ -12,6 +12,11 @@ package Dialogue;
 public class DialogueOption {
     private String option;
     private String nextLineId;
+
+    public DialogueOption(String option, String nextLineId) {
+        this.option = option;
+        this.nextLineId = nextLineId;
+    }
     public String getOption() {
         return option;
     }
