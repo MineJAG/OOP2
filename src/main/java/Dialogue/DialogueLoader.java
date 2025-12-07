@@ -65,7 +65,7 @@ public class DialogueLoader {
         return line.contains("r");
     }
 
-    public void main (String[] args) throws IOException {
+    public static void main (String[] args) throws IOException {
         DialogueLoader loader = new DialogueLoader();
         loader.loadText("dialogue.txt");
         Npc npc = new Npc("Old Man");
