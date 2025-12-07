@@ -6,6 +6,7 @@ package com.mycompany.oop2;
 import Characters.*;
 import Items_Inventario.*;
 import Rooms.*;
+import Dialogue.*;
 import Comandos.*;
 import java.util.*;
 
@@ -14,7 +15,8 @@ import java.util.*;
  * @author ajone
  */
 public class OOP2 {
-
+    
+    /*
     public static void main(String[] args) {
         // Inicializa as Salas com valores nulos para as conexões
         Bar bar = new Bar(null, null, null, null, true);
@@ -62,5 +64,23 @@ public class OOP2 {
             String linha = scanner.nextLine().trim();
             commandRunner.runCommands(player, linha);
         }
+    }*/
+    
+    public static void main(String[] args) {
+        Player player = new Player("Sherlock Holmes", new Room(null, null, null, null));
+        Npc npc = new Npc("Old Man");
+        DialogueLoader loader = new DialogueLoader();
+        try {
+            loader.loadText("dialogue.txt");
+        } catch (Exception e) {
+            System.out.println("Error loading dialogue: " + e.getMessage());
+        }
+        DialogueDistributor distributor = new DialogueDistributor();
+        List<Npc> npcs = new ArrayList<>();
+        npcs.add(npc);
+        distributor.setDialogue(loader.getDialogue());
+        distributor.DistributeDialogue(npcs);
+        DialogueManager manager = new DialogueManager();
+        manager.startConversation(npc);
     }
 }

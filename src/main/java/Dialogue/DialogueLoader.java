@@ -68,11 +68,10 @@ public class DialogueLoader {
                 dialogue.get(currentNpc).put(DialogueId, new DialogueLine(dialogueText));
             }
         }
-        
         setDialogue(dialogue);
         bR.close();
     }
-    
+
     public String[] splitLine(String line, char r){
         int i = line.indexOf(r);
         String[] parts = new String[2];

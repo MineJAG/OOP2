@@ -5,6 +5,7 @@
 package Dialogue;
 import java.util.Map;
 import Characters.Npc;
+import com.mycompany.oop2.UserInputReader;
 /**
  *
  * @author ajone
@@ -33,5 +34,26 @@ public class DialogueManager {
         setCurrentLine(getCurrentNpcMap().get(line));
     }
 
-    
+    public void startConversation (Npc npc){
+        setCurrentNpcMap(npc.getDialogueLines());
+        setCurrentLine(getCurrentNpcMap().get("1"));
+        conversation();
+    }
+
+    public void conversation(){
+        DialogueDisplay display = new DialogueDisplay();
+        display.showLine(getCurrentLine());
+        if (!getCurrentLine().getOptions().isEmpty()){
+        display.showOptions(getCurrentLine().getOptions());
+        UserInputReader input = new UserInputReader();
+        String userInput = input.readInputLine();
+        if(getCurrentNpcMap().containsKey(userInput)){
+        setCurrentLine(getCurrentNpcMap().get(userInput));
+        conversation();
+        } else {
+            System.out.println("Invalid option try again");
+            conversation();
+            }
+        }
+    }
 }
