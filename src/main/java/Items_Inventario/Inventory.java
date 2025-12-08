@@ -103,4 +103,13 @@ public class Inventory {
     public Inventory copy() {
         return new Inventory(new ArrayList<>(inventory));
     }
+
+    public boolean containsItem(String item) {
+        for(int i=0; i<inventory.size(); i++) {
+            if(inventory.get(i).getName().equals(item)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

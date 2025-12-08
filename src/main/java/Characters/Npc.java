@@ -6,12 +6,17 @@ package Characters;
 import java.util.Map;
 import Rooms.Sala;
 import Dialogue.DialogueLine;
+import Dialogue.DialogueManager;
+import Items_Inventario.*;
 /**
  *
  * @author ajone
  */
+
 public class Npc extends Character { 
-    private String QuestItem;
+    private Item QuestItem;
+    private String[] neededClues;
+
     private Map<String, DialogueLine> dialogueLines;
 
     public Npc(String name) {
@@ -24,23 +29,29 @@ public class Npc extends Character {
         QuestItem = null;
     }
 
-    public Npc(String name, Sala salaN, String questItem) {
+    public String[] getNeededClues() {
+        return neededClues;
+    }
+
+    public void setNeededClues(String[] neededClues) {
+        this.neededClues = neededClues;
+    }
+
+    public Npc(String name, Sala salaN, Item questItem, String[] neededClues) {
         super(name, salaN);
         this.QuestItem = questItem;
     }
 
-    public String getQuestItem() {
+    public Item getQuestItem() {
         return QuestItem;
     }
 
-    public void setQuestItem(String questItem) {
+    public void setQuestItem(Item questItem) {
         QuestItem = questItem;
     }
-    /*//public String talk(){
-    public void talk(){
-        DialogueManager.Conversation(this);
-    }   
-    //}*/
+    public void talk(Player player, DialogueManager manager){
+        manager.startConversation(this,player);
+    }
 
     public Map<String, DialogueLine> getDialogueLines() {
         return dialogueLines;
@@ -49,5 +60,4 @@ public class Npc extends Character {
     public void setDialogueLines(Map<String, DialogueLine> dialogueLines) {
         this.dialogueLines = dialogueLines;
     }
-    
 }

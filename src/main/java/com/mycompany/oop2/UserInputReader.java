@@ -16,4 +16,7 @@ public class UserInputReader {
     public String readInputLine() {
         return scanner.nextLine();
     }
+    public int readInt() {
+        return scanner.nextInt();
+    }
 }

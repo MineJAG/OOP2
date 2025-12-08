@@ -5,7 +5,7 @@
 package Dialogue;
 
 import java.util.List;
-
+import Characters.Player;
 /**
  *
  * @author ajone
@@ -16,9 +16,18 @@ public class DialogueDisplay {
         System.out.println(line.getLine());
     }
 
-    public void showOptions(List<DialogueOption> options){
+    public void showOptions(Player player, List<DialogueOption> options){
         for(int i = 0; i < options.size(); i++){
-            System.out.println((i + 1) + ". " + options.get(i).getOption());
+            switch (options.get(i).getNextLineId().charAt(0)) {
+                case '!':
+                    System.out.println((i) + ". " + options.get(i).getOption());
+                    break;
+                case '?':
+                    System.out.println((i) + ". " + options.get(i).getOption());
+                    break;
+                default:
+                    System.out.println((i) + ". " + options.get(i).getOption());
+            }
         }
     }
 }
