@@ -69,7 +69,7 @@ public class OOP2 {
         Player player = new Player("Sherlock Holmes", new Room(null, null, null, null));
         player.getInventory().addItem(new Clues("1","1"));
         Item item = new Clues("bread","its bread what did u expect");
-        Npc npc = new Npc(item,null,"Old Man");
+        Npc npc = new Npc(item,null,"Old_Man");
         DialogueLoader loader = new DialogueLoader();
         try {
             loader.loadText("dialogue.txt");
@@ -81,17 +81,12 @@ public class OOP2 {
         DialogueDistributor distributor = new DialogueDistributor();
         List<Npc> npcs = new ArrayList<>();
         npcs.add(npc);
-        distributor.setDialogue(loader.getDialogue());
-        distributor.DistributeDialogue(npcs);
-        DialogueManager manager = new DialogueManager();
         UserInputReader scanner = new UserInputReader();
-        for(int i=0; i <2;i++){
-        manager.startConversation(npc, player);
         CommandRunner commandRunner = new CommandRunner(npcs);
         while (true) {
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();
             commandRunner.runCommands(player, linha);
         }
-    }}
+    }
 }
