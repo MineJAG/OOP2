@@ -30,7 +30,6 @@ public class TalkCommand implements Commands{
                     if (npcs.get(i).getPresentRoom() == player.getPresentRoom()) {
                         this.setNpc(npcs.get(i));
                         this.setManager(manager);
-                        this.execute(player);
                         return;
                     } else {
                         throw new Exception("Npc not in this room");
