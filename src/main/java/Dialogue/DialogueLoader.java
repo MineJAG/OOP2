@@ -32,28 +32,22 @@ public class DialogueLoader {
             while ((rawLine = bR.readLine()) != null) {
                 String line = rawLine.trim();
 
-                // skip empty lines
                 if (line.isEmpty()) {
                     continue;
                 }
 
-                // skip comments
                 if (line.charAt(0) == '#') {
                     continue;
                 }
 
-                // every non-comment, non-empty line must have '-'
                 if (!line.contains("-")) {
-                    throw new IllegalArgumentException(
-                        "Invalid line (missing '-'): \"" + rawLine + "\""
-                    );
+                    throw new IllegalArgumentException("Invalid line (missing '-'): " + rawLine);
                 }
 
                 String[] part = splitLine(line, '-');
                 String header = part[0].trim();
                 String body   = part[1].trim();
 
-                // character line: c-Old Man
                 if (header.equalsIgnoreCase("c")) {
                     currentNpc = body;
                     dialogue.putIfAbsent(currentNpc, new HashMap<>());
@@ -66,17 +60,14 @@ public class DialogueLoader {
                     );
                 }
 
-                // option line: 1o2-option2, 1o!1-GiveItem1, etc
                 if (hasChar(header.toLowerCase(), 'o')) {
                     int oIndex = header.indexOf('o');
                     if (oIndex <= 0 || oIndex == header.length() - 1) {
-                        throw new IllegalArgumentException(
-                            "Invalid option header: \"" + header + "\" in line: " + rawLine
-                        );
+                        throw new IllegalArgumentException("Invalid option header: \"" + header + "\" in line: " + rawLine);
                     }
 
-                    String dialogueId = header.substring(0, oIndex);     // e.g. "1"
-                    String optionId   = header.substring(oIndex + 1);    // e.g. "2" or "!1"
+                    String dialogueId = header.substring(0, oIndex);
+                    String optionId   = header.substring(oIndex + 1);
 
                     Map<String, DialogueLine> npcDialogue = dialogue.get(currentNpc);
                     DialogueLine dl = npcDialogue.get(dialogueId);
@@ -87,13 +78,11 @@ public class DialogueLoader {
                             " in line: " + rawLine
                         );
                     }
-
                     String optionText = body;
                     dl.addOption(new DialogueOption(optionText, optionId));
                 }
-                // normal dialogue (includes things like "!1-Item1" or "?-GiveItem")
                 else {
-                    String dialogueId   = header;   // "1", "2", "!1", "?", ...
+                    String dialogueId   = header;
                     String dialogueText = body;
 
                     dialogue.get(currentNpc)
@@ -101,16 +90,13 @@ public class DialogueLoader {
                 }
             }
         }
-
         setDialogue(dialogue);
     }
 
     private String[] splitLine(String line, char r) {
         int i = line.indexOf(r);
         if (i < 0) {
-            throw new IllegalArgumentException(
-                "Expected '" + r + "' in line: \"" + line + "\""
-            );
+            throw new IllegalArgumentException("Expected '" + r + "' in line: " + line);
         }
         String[] parts = new String[2];
         parts[0] = line.substring(0, i);
