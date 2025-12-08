@@ -83,7 +83,10 @@ public class CommandRunner {
                 verifyCommand(UsableItemsCommand.COMMAND_NAMES) ||
                 verifyCommand(GoCommand.COMMAND_NAMES) ||
                 verifyCommand(ExitCommand.COMMAND_NAMES) ||
-                verifyCommand(UseCommand.COMMAND_NAMES);
+                verifyCommand(UseCommand.COMMAND_NAMES) ||
+                verifyCommand(HelpCommand.COMMAND_NAMES) ||
+                verifyCommand(DialogueLoaderCommand.COMMAND_NAMES) ||
+                verifyCommand(TalkCommand.COMMAND_NAMES);
     }
 
 
