@@ -83,43 +83,43 @@ public class HelpCommand implements Commands {
     public void execute(Player player) {
         System.out.println("Comandos: \n clues ");
         for(int i = 0; i<CluesCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(CluesCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+CluesCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" dialogueLoader ");
         for(int i = 0; i<DialogueLoaderCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(DialogueLoaderCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+DialogueLoaderCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" exit ");
         for(int i = 0; i<ExitCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(ExitCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+ExitCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" help ");
         for(int i = 0; i<HelpCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(HelpCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+HelpCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" go ");
         for(int i = 0; i<GoCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(GoCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+GoCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" inspect ");
         for(int i = 0; i<InspectCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(InspectCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+InspectCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" look ");
         for(int i = 0; i<LookCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(LookCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+LookCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" talk ");
         for(int i = 0; i<TalkCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(TalkCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+TalkCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" use ");
         for(int i = 0; i<UseCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(UseCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+UseCommand.getCOMMAND_NAMES()[i]);
         }
         System.out.println(" usableItems ");
         for(int i = 0; i<UsableItemsCommand.getCOMMAND_NAMES().length;i++){
-            System.out.println(UsableItemsCommand.getCOMMAND_NAMES()[i]);
+            System.out.println(" -"+UsableItemsCommand.getCOMMAND_NAMES()[i]);
         }
     }
 
