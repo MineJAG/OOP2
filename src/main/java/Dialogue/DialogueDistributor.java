@@ -21,10 +21,14 @@ public class DialogueDistributor {
         this.dialogue = dialogue;
     }
     
-    public void DistributeDialogue(List<Npc> npcs){
+    public void DistributeDialogue(List<Npc> npcs) throws  IllegalStateException{
+        if(this.dialogue == null) {
+            throw new IllegalStateException("No dialogue loaded");
+        }
+        else {
         for(Npc npc : npcs){
             npc.setDialogueLines(this.dialogue.get(npc.getName()));
+            }
         }
     }
-
 }
