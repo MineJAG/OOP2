@@ -13,6 +13,10 @@ import Items_Inventario.*;
  */
 public class UsableItemsCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"item", "itens", "itens", "usable", "usables", "usaveis"};
+
+    public static String[] getCOMMAND_NAMES() {
+        return COMMAND_NAMES;
+    }
     
     public void execute(Player player) {
         System.out.println("Itens usáveis: \n" + player.getInventory().getUsables().toString());        

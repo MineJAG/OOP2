@@ -6,6 +6,7 @@ package com.mycompany.oop2;
 import Characters.*;
 import Items_Inventario.*;
 import Rooms.*;
+import jdk.nashorn.internal.objects.Global;
 import Dialogue.*;
 import Comandos.*;
 import java.util.*;
@@ -15,7 +16,6 @@ import java.util.*;
  * @author ajone
  */
 public class OOP2 {
-    
     /*
     public static void main(String[] args) {
         // Inicializa as Salas com valores nulos para as conexões

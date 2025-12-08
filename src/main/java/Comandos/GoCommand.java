@@ -18,6 +18,26 @@ public class GoCommand implements Commands {
     private static final String[] DIRECTIONSS = {"south", "sul", "baixo","down"}; 
     private static final String[] DIRECTIONSE = {"east", "este", "direita","right"}; 
     private static final String[] DIRECTIONSW = {"west", "oeste", "esquerda","left"};
+
+    public static String[] getCOMMAND_NAMES() {
+        return COMMAND_NAMES;
+    }
+
+    public static String[] getDIRECTIONSN() {
+        return DIRECTIONSN;
+    }
+
+    public static String[] getDIRECTIONSS() {
+        return DIRECTIONSS;
+    }
+
+    public static String[] getDIRECTIONSE() {
+        return DIRECTIONSE;
+    }
+
+    public static String[] getDIRECTIONSW() {
+        return DIRECTIONSW;
+    }
     private String direction;
 
     public boolean coorrectDirection(Player player, List<String> words) {
