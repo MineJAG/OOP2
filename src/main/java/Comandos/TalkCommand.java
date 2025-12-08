@@ -32,13 +32,15 @@ public class TalkCommand implements Commands{
                         this.setManager(manager);
                         this.execute(player);
                         return;
+                    } else {
+                        throw new Exception("Npc not in this room");
                     }
                 }
             }
         }
         throw new Exception("Npc nao encontrado");
     }
-    
+
     public Npc getNpc() {
         return npc;
     }
