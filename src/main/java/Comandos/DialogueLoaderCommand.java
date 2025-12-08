@@ -16,8 +16,40 @@ import java.util.List;
 public class DialogueLoaderCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"load","carregar"};    
     private final List<Npc> npcs;
+    private String filepath; 
 
     public DialogueLoaderCommand(List<Npc> npcs) {
         this.npcs = npcs;
     }
+
+    public static String[] getCOMMAND_NAMES() {
+        return COMMAND_NAMES;
+    }
+
+    public List<Npc> getNpcs() {
+        return npcs;
+    }
+
+    @Override
+    public void execute(Player player){
+        DialogueLoader loader = new DialogueLoader();
+        try {
+            loader.loadText(filepath);
+            System.out.println("Dialogue loaded.");
+        } catch (IOException e) {
+            System.out.println("Error loading dialogue: " + e.getMessage());
+        }
+        DialogueDistributor distributor = new DialogueDistributor();
+        distributor.setDialogue(loader.getDialogue());
+        distributor.DistributeDialogue(npcs);
+    }
+
+    public String getFilepath() {
+        return filepath;
+    }
+
+    public void setFilepath(String filepath) {
+        this.filepath = filepath;
+    }
+    
 }

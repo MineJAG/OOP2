@@ -15,12 +15,13 @@ import Characters.*;
  */
 public class CommandRunner {
     List<String> words = new ArrayList<>();
-            
+    List<Npc> npcs;
+
     TalkCommand talkCommand = new TalkCommand();
     InspectCommand inspectCommand = new InspectCommand();
     ExitCommand exitCommand = new ExitCommand();
     HelpCommand helpCommand = new HelpCommand();
-    DialogueLoaderCommand dialogueLoaderCommand = new DialogueLoaderCommand();
+    DialogueLoaderCommand dialogueLoaderCommand;
     CluesCommand cluesCommand = new CluesCommand();
     UsableItemsCommand usableItemsCommand = new UsableItemsCommand();
     LookCommand lookCommand = new LookCommand();
@@ -28,6 +29,11 @@ public class CommandRunner {
     ExitCommand exitcommand = new ExitCommand();
     UseCommand useCommand = new UseCommand();
     
+    public CommandRunner(List<Npc> npcs) {
+        this.npcs = npcs;
+        this.dialogueLoaderCommand = new DialogueLoaderCommand(npcs);
+    }
+
     private void separate(String userInput) {
         String x = "";
 
