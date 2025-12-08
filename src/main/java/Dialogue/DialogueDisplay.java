@@ -13,7 +13,9 @@ import Characters.Player;
 public class DialogueDisplay {
     
     public void showLine(DialogueLine line){
+        if(line != null){
         System.out.println(line.getLine());
+        }
     }
 
     public void showOptions(Player player, List<DialogueOption> options){

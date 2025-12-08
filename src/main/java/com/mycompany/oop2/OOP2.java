@@ -72,8 +72,10 @@ public class OOP2 {
         DialogueLoader loader = new DialogueLoader();
         try {
             loader.loadText("dialogue.txt");
+            System.out.println("Dialogue loaded.");
         } catch (Exception e) {
             System.out.println("Error loading dialogue: " + e.getMessage());
+            System.out.println("Using default dialogue.");
         }
         DialogueDistributor distributor = new DialogueDistributor();
         List<Npc> npcs = new ArrayList<>();
