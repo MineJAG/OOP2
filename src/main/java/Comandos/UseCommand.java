@@ -16,6 +16,10 @@ import java.util.*;
  */
 public class UseCommand implements Commands{
     public static final String[] COMMAND_NAMES = {"use", "usar", "utilizar","usa", "utilize","uses","utilizes","utilize"};
+
+    public static String[] getCOMMAND_NAMES() {
+        return COMMAND_NAMES;
+    }
     UsableItem item;
 
     public void hasObject(Player player, List<String> object) throws Exception {
@@ -51,5 +55,9 @@ public class UseCommand implements Commands{
                 ((Storage) player.getPresentRoom()).lightUp();
             }
         }
+    }
+
+    public UsableItem getItem() {
+        return item;
     }
 }

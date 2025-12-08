@@ -85,4 +85,32 @@ public class GoCommand implements Commands {
         System.out.println("O Sherlock move-se para a sala: " + nextRoom.getName() + ".");
         direction = null;
     }
+
+    public static String[] getCommandNames() {
+        return COMMAND_NAMES;
+    }
+
+    public static String[] getDirectionsn() {
+        return DIRECTIONSN;
+    }
+
+    public static String[] getDirectionss() {
+        return DIRECTIONSS;
+    }
+
+    public static String[] getDirectionse() {
+        return DIRECTIONSE;
+    }
+
+    public static String[] getDirectionsw() {
+        return DIRECTIONSW;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
 }

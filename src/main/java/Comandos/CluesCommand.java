@@ -12,9 +12,13 @@ import Characters.Player;
  */
 public class CluesCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"pistas", "clues", "pista", "clue"};
+
+    public static String[] getCOMMAND_NAMES() {
+        return COMMAND_NAMES;
+    }
     
     public void execute(Player player) {
         System.out.println("Pistas: \n" + player.getInventory().getClues().toString());        
-    }
+    } 
 }
 

@@ -14,6 +14,10 @@ import java.util.*;
  */
 public class InspectCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
+
+    public static String[] getCOMMAND_NAMES() {
+        return COMMAND_NAMES;
+    }
     private AddCommand addCommand = new AddCommand();
     private Item item;
 
@@ -47,5 +51,21 @@ public class InspectCommand implements Commands {
         }
         
         item = null;
+    }
+
+    public AddCommand getAddCommand() {
+        return addCommand;
+    }
+
+    public void setAddCommand(AddCommand addCommand) {
+        this.addCommand = addCommand;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

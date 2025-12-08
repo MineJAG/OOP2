@@ -16,5 +16,8 @@ public class ExitCommand implements Commands {
         System.out.println("A sair do jogo. Até à próxima!");
         System.exit(0);
     }
+    public static String[] getCommandNames() {
+        return COMMAND_NAMES;
+    }
     
 }

@@ -14,6 +14,10 @@ import Characters.Player;
  */
 public class LookCommand implements Commands {
     public static final String[] COMMAND_NAMES = {"look", "olhar", "olha", "vision", "visualizar", "visualize", "visionar", "ver", "ve"};
+
+    public static String[] getCOMMAND_NAMES() {
+        return COMMAND_NAMES;
+    }
     
     public void execute(Player player) {
         Sala room = player.getPresentRoom();

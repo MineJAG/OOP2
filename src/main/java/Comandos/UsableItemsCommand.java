@@ -17,5 +17,9 @@ public class UsableItemsCommand implements Commands {
     public void execute(Player player) {
         System.out.println("Itens usáveis: \n" + player.getInventory().getUsables().toString());        
     }
+
+    public static String[] getCommandNames() {
+        return COMMAND_NAMES;
+    }
 }
 
