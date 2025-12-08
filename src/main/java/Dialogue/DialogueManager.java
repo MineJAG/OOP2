@@ -58,10 +58,6 @@ public class DialogueManager {
                 player.getInventory().addItem(currentNpc.getQuestItem());
             }
         }
-        else {
-            setCurrentLine(null);
-            setCurrentNpc(null);
-        }
     }
 
     public void itemGiven(Player player,Npc npc,Item item){
