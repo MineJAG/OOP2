@@ -81,6 +81,6 @@ public class OOP2 {
         distributor.setDialogue(loader.getDialogue());
         distributor.DistributeDialogue(npcs);
         DialogueManager manager = new DialogueManager();
-        manager.startConversation(npc);
+        manager.startConversation(npc, player);
     }
 }
