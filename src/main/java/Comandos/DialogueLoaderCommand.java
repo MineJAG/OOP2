@@ -34,7 +34,7 @@ public class DialogueLoaderCommand implements Commands {
     public void execute(Player player){
         DialogueLoader loader = new DialogueLoader();
         try {
-            loader.loadText(filepath);
+            loader.loadText(filepath + ".txt");
             System.out.println("Dialogue loaded.");
         } catch (IOException e) {
             System.out.println("Error loading dialogue: " + e.getMessage());
