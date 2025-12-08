@@ -84,7 +84,14 @@ public class OOP2 {
         distributor.setDialogue(loader.getDialogue());
         distributor.DistributeDialogue(npcs);
         DialogueManager manager = new DialogueManager();
+        UserInputReader scanner = new UserInputReader();
         for(int i=0; i <2;i++){
         manager.startConversation(npc, player);
+        CommandRunner commandRunner = new CommandRunner(npcs);
+        while (true) {
+            System.out.print("Escreva um comando: ");
+            String linha = scanner.readInputLine();
+            commandRunner.runCommands(player, linha);
+        }
     }}
 }
