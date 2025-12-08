@@ -6,7 +6,6 @@ package com.mycompany.oop2;
 import Characters.*;
 import Items_Inventario.*;
 import Rooms.*;
-import jdk.nashorn.internal.objects.Global;
 import Dialogue.*;
 import Comandos.*;
 import java.util.*;
