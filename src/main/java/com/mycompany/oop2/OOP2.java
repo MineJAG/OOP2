@@ -66,7 +66,7 @@ public class OOP2 {
     }*/
     
     public static void main(String[] args) {
-        Player player = new Player("Sherlock Holmes", new Room(null, null, null, null));
+        Player player = new Player("Sherlock Holmes", null);
         player.getInventory().addItem(new Clues("1","1"));
         Item item = new Clues("bread","its bread what did u expect");
         Npc npc = new Npc(item,null,"Old_Man");
