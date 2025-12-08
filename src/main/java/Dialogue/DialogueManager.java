@@ -46,11 +46,21 @@ public class DialogueManager {
         display.showOptions(player ,getCurrentLine().getOptions());
         UserInputReader input = new UserInputReader();
         int userInput = input.readInt();
-        if(currentLine.getOptions().size() >= userInput){
+        if(currentLine.getOptions().size() >= userInput && userInput > 0){
+            if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
             if (player.getInventory().containsItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1))){
             setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
             conversation(player);
             }
+        } else if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '%'){
+            player.getInventory().addItem(currentNpc.getQuestItem());
+            setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
+            conversation(player);
+        }
+            {
+            setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get(userInput - 1).getNextLineId()));
+            conversation(player);
+        }
             System.out.println("Invalid option try again");
             conversation(player);
             }
