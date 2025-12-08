@@ -15,7 +15,6 @@ import Items_Inventario.*;
 
 public class Npc extends Character { 
     private Item QuestItem;
-    private String[] neededClues;
 
     private Map<String, DialogueLine> dialogueLines;
 
@@ -27,14 +26,6 @@ public class Npc extends Character {
     public Npc(String name, Sala salaN){
         super(name, salaN);
         QuestItem = null;
-    }
-
-    public String[] getNeededClues() {
-        return neededClues;
-    }
-
-    public void setNeededClues(String[] neededClues) {
-        this.neededClues = neededClues;
     }
 
     public Npc(String name, Sala salaN, Item questItem, String[] neededClues) {
@@ -58,6 +49,12 @@ public class Npc extends Character {
     }
 
     public void setDialogueLines(Map<String, DialogueLine> dialogueLines) {
+        this.dialogueLines = dialogueLines;
+    }
+
+    public Npc(Item QuestItem, Map<String, DialogueLine> dialogueLines, String name) {
+        super(name,null);
+        this.QuestItem = QuestItem;
         this.dialogueLines = dialogueLines;
     }
 }

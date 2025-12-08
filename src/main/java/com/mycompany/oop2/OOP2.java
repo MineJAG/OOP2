@@ -68,7 +68,9 @@ public class OOP2 {
     
     public static void main(String[] args) {
         Player player = new Player("Sherlock Holmes", new Room(null, null, null, null));
-        Npc npc = new Npc("Old Man");
+        player.getInventory().addItem(new Clues("1","1"));
+        Item item = new Clues("bread","its bread what did u expect");
+        Npc npc = new Npc(item,null,"Old Man");
         DialogueLoader loader = new DialogueLoader();
         try {
             loader.loadText("dialogue.txt");
@@ -83,6 +85,7 @@ public class OOP2 {
         distributor.setDialogue(loader.getDialogue());
         distributor.DistributeDialogue(npcs);
         DialogueManager manager = new DialogueManager();
+        for(int i=0; i <2;i++){
         manager.startConversation(npc, player);
-    }
+    }}
 }

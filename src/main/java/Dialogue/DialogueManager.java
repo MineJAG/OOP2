@@ -56,16 +56,13 @@ public class DialogueManager {
             player.getInventory().addItem(currentNpc.getQuestItem());
             setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
             conversation(player);
-        }
-            {
+        }else {
             setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get(userInput - 1).getNextLineId()));
             conversation(player);
         }
+        } else {
             System.out.println("Invalid option try again");
             conversation(player);
-            }
-            if(currentNpc.getDialogueLines().get(currentLine.getOptions().get(userInput - 1).getNextLineId()) == null){
-                player.getInventory().addItem(currentNpc.getQuestItem());
             }
         }
     }
