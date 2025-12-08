@@ -23,22 +23,22 @@ public class TalkCommand implements Commands{
     public void execute(Player player) {
         npc.talk(player, manager);
     }
-    public void talkToNpc(List<Npc> npcs,String[] words,Player player,DialogueManager manager) throws Exception{
-        for(int i= 0; i<npcs.size();i++){
-            for(int o=0; o<words.length;o++){
-                if(npcs.get(i).getName().equals(words[o]))
-                    if (npcs.get(i).getPresentRoom() == player.getPresentRoom()){
-                    this.setNpc(npcs.get(i));
-                    this.setManager(manager);
-                    this.execute(player);
-                    return;
-                } else {
-                    throw new Exception("Npc nao esta na sala.");
+    public void talkToNpc(List<Npc> npcs, List<String> words, Player player, DialogueManager manager) throws Exception {
+        for (int i = 0; i < npcs.size(); i++) {
+            for (int o = 0; o < words.size(); o++) {
+                if (npcs.get(i).getName().equals(words.get(o))) {
+                    if (npcs.get(i).getPresentRoom() == player.getPresentRoom()) {
+                        this.setNpc(npcs.get(i));
+                        this.setManager(manager);
+                        this.execute(player);
+                        return;
+                    }
                 }
             }
         }
         throw new Exception("Npc nao encontrado");
     }
+    
     public Npc getNpc() {
         return npc;
     }

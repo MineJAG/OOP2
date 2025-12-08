@@ -5,8 +5,7 @@
 package Comandos;
 
 import java.util.*;
-
-
+import Dialogue.*;
 import Characters.*;
 
 /**
@@ -28,6 +27,7 @@ public class CommandRunner {
     GoCommand goCommand = new GoCommand();
     ExitCommand exitcommand = new ExitCommand();
     UseCommand useCommand = new UseCommand();
+    DialogueManager manager = new DialogueManager();
     
     public CommandRunner(List<Npc> npcs) {
         this.npcs = npcs;
@@ -122,6 +122,19 @@ public class CommandRunner {
             } else if (verifyCommand(UseCommand.COMMAND_NAMES)) {
                 useCommand.hasObject(player, words);
                 useCommand.execute(player);
+            } else if (verifyCommand(TalkCommand.COMMAND_NAMES)) {
+                talkCommand.talkToNpc(npcs, words, player, manager);
+                talkCommand.execute(player);
+            } else if (verifyCommand(DialogueLoaderCommand.COMMAND_NAMES)){
+                dialogueLoaderCommand.setFilepath(words);
+                dialogueLoaderCommand.execute(player);
+            } else if (verifyCommand(HelpCommand.COMMAND_NAMES)) {
+                helpCommand.execute(player);
+            } else if (verifyCommand(ExitCommand.COMMAND_NAMES)) {
+                exitcommand.execute(player);
+            }
+            else {
+                throw new Exception("Comando inválido.");
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());

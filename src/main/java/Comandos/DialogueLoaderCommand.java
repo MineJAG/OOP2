@@ -48,8 +48,8 @@ public class DialogueLoaderCommand implements Commands {
         return filepath;
     }
 
-    public void setFilepath(String filepath) {
-        this.filepath = filepath;
+    public void setFilepath(List<String> filepath) {
+        this.filepath = filepath.get(1);
     }
     
 }
