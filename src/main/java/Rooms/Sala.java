@@ -18,7 +18,7 @@ public abstract class Sala {
     protected Inventory roomInventory = new Inventory();
     protected List<Npc> npcs = new ArrayList<Npc>();
 
-    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory, ArrayList<Npc> npcs) {
+    public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory) {
         this.name = name;
         this.description = description;
         this.directionN = directionN;
@@ -26,7 +26,6 @@ public abstract class Sala {
         this.directionE = directionE;
         this.directionW = directionW;
         this.roomInventory = roomInventory;
-        this.npcs = npcs;
     }   
     
     public List<Npc> getNpcs() {
@@ -86,4 +85,6 @@ public abstract class Sala {
     }
     
     public abstract void initializeInventory();
+
+    public abstract void NpcSpawner();
 }

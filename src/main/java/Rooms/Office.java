@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import java.util.ArrayList;
 import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
@@ -28,9 +27,9 @@ public class Office extends Sala{
             directionS, 
             directionE, 
             directionW, 
-            new Inventory(), 
-            new ArrayList<Npc>());
+            new Inventory());
             initializeInventory();
+            NpcSpawner();
     }
 
     @Override
@@ -41,5 +40,10 @@ public class Office extends Sala{
         in.addItem(new UsableItem("Carta", "", getName()));
         in.addItem(new ImmovabelItem("Cofre", "merda", in, "piça", "aberto", "vazio"));
         super.getInventory().addInventory(in);
+    }
+
+    @Override
+    public void NpcSpawner(){
+        npcs.add(new Npc("pedro5",this));
     }
 }

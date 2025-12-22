@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import java.util.ArrayList;
 import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
@@ -23,16 +22,15 @@ public class Storage extends Sala{
             directionS, 
             directionE, 
             directionW, 
-            new Inventory(), 
-            new ArrayList<Npc>());
+            new Inventory());
             initializeInventory();
+            NpcSpawner();
     }
 
     public void lightUp() {
         if (!isLightOn) {
             isLightOn = true;
             setDescription("Fez-se luz caralho puta fodasse");
-            System.out.println(getDescription());
         }
     }
 
@@ -45,7 +43,11 @@ public class Storage extends Sala{
         Inventory in = new Inventory();
         in.addItem(new Clues("Faca", ""));
         in.addItem(new Clues("Tecido Rasgado", ""));
-        
         super.getInventory().addInventory(in);
+    }
+
+    @Override
+    public void NpcSpawner(){
+        npcs.add(new Npc("pedro7",this));
     }
 }

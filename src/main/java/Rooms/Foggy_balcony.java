@@ -4,7 +4,6 @@
  */
 package Rooms;
 import Items_Inventario.Inventory;
-import java.util.ArrayList;
 import Characters.Npc;
 
 /**
@@ -21,14 +20,19 @@ public class Foggy_balcony extends Sala{
             directionS, 
             directionE, 
             directionW, 
-            new Inventory(), 
-            new ArrayList<Npc>());   
+            new Inventory());   
             initializeInventory(); 
+            NpcSpawner();
     }
     
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
         super.getInventory().addInventory(in);
+    }
+
+    @Override
+    public void NpcSpawner(){
+        npcs.add(new Npc("pedro2",this));
     }
 }

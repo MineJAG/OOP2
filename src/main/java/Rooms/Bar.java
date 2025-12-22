@@ -7,8 +7,6 @@ import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
 import Items_Inventario.UsableItem;
-
-import java.util.ArrayList;
 import Characters.Npc;
 
 /**
@@ -27,10 +25,10 @@ public class Bar extends Sala {
             directionS, 
             directionE, 
             directionW, 
-            new Inventory(), 
-            new ArrayList<Npc>());
+            new Inventory());
             this.lockedN = lockedN;
             initializeInventory();
+            NpcSpawner();
     }
     public boolean isLocked() {
         return lockedN;
@@ -40,18 +38,9 @@ public class Bar extends Sala {
         this.lockedN = lockedN;
     }
 
-    public void checkLocked() {
-        if (lockedN) {
-            System.out.println("A biblioteca está trancada. Precisa de encontrar uma forma de a abrir.");
-        } else {
-            System.out.println("A biblioteca está agora desbloqueada. Pode entrar e explorar os seus segredos.");
-        }
-    }
-
     // Método para destrancar
     public void unlockNorth() {
         lockedN = false;
-        System.out.println("A biblioteca Norte está agora desbloqueada!");
     }
     
     // Getter para saber se pode ir para norte
@@ -66,5 +55,10 @@ public class Bar extends Sala {
         in.addItem(new UsableItem("Chave dourada", "", "Bar"));
         in.addItem(new ImmovabelItem("Pilar", "nAO pode nover"));
         super.getInventory().addInventory(in);
+    }
+
+    @Override
+    public void NpcSpawner(){
+        npcs.add(new Npc("pedro",this));
     }
 }

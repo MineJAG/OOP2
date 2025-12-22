@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import java.util.ArrayList;
 import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
@@ -27,9 +26,9 @@ public class VIP_room extends Sala{
         directionS, 
         directionE, 
         directionW, 
-        new Inventory(), 
-        new ArrayList<Npc>()); 
+        new Inventory()); 
         initializeInventory();   
+        NpcSpawner();
     }
 
     @Override
@@ -37,5 +36,10 @@ public class VIP_room extends Sala{
         Inventory in = new Inventory();
         in.addItem(new Clues("Relógio de Bolso Parado", ""));
         super.getInventory().addInventory(in);
+    }
+
+    @Override
+    public void NpcSpawner(){
+        npcs.add(new Npc("pedro9",this));
     }
 }

@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import java.util.ArrayList;
 import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
@@ -25,9 +24,9 @@ public class Main_hall extends Sala{
             directionS, 
             directionE, 
             directionW, 
-            new Inventory(), 
-            new ArrayList<Npc>()); 
+            new Inventory()); 
             initializeInventory();   
+            NpcSpawner();
     }
     
     @Override
@@ -36,5 +35,10 @@ public class Main_hall extends Sala{
         in.addItem(new Clues("Pegadas Húmidas", ""));
         in.addItem(new UsableItem("Livro", "", getName()));
         super.getInventory().addInventory(in);
+    }
+
+    @Override
+    public void NpcSpawner(){
+        npcs.add(new Npc("pedro4",this));
     }
 }

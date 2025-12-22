@@ -4,8 +4,6 @@
  */
 package Rooms;
 
-import java.util.ArrayList;
-
 import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
@@ -27,9 +25,9 @@ public class Room extends Sala{
         directionS, 
         directionE, 
         directionW, 
-        new Inventory(), 
-        new ArrayList<Npc>());    
+        new Inventory());    
         initializeInventory();
+        NpcSpawner();
     }
 
     @Override
@@ -40,5 +38,10 @@ public class Room extends Sala{
         in.addItem(new UsableItem("Caixa de medicamentos", "", getName()));
         in.addItem(new ImmovabelItem("Gaveta", "é uma gaveta", in,"tem merda"));
         super.getInventory().addInventory(in);
+    }
+
+    @Override
+    public void NpcSpawner(){
+        npcs.add(new Npc("pedro6",this));
     }
 }
