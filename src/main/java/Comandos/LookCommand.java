@@ -7,6 +7,7 @@ package Comandos;
 import Items_Inventario.Inventory;
 import Rooms.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Characters.Player;
@@ -18,18 +19,11 @@ import Characters.Player;
 public class LookCommand implements Command {
     public static final String[] COMMAND_NAMES = {"look", "olhar", "olha", "vision", "visualizar", "visualize", "visionar", "ver", "ve"};
 
-    public boolean matches(List<String> words) {
-        for (String c : COMMAND_NAMES) {
-            for (String w : words) {
-                if (w.equalsIgnoreCase(c)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+    public String[] names() {
+        return COMMAND_NAMES;
     }
     
-    public void execute(Player player, List<String> words) throws Exception{
+    public void execute(Player player, ArrayList<String> words) throws Exception{
         Sala room = player.getPresentRoom();
         if (room == null) {
             throw new Exception("O Sherlock não se encontra numa sala.");

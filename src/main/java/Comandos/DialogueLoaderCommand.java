@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Comandos;
-import Comandos.Commands;
+import Comandos.Command;
 import Dialogue.DialogueDistributor;
 import Dialogue.DialogueLoader;
 import Characters.*;
@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author ajone
  */
-public class DialogueLoaderCommand implements Commands {
+public class DialogueLoaderCommand{
     public static final String[] COMMAND_NAMES = {"load","carregar"};    
     private final List<Npc> npcs;
     private String filepath; 
@@ -30,7 +30,6 @@ public class DialogueLoaderCommand implements Commands {
         return npcs;
     }
 
-    @Override
     public void execute(Player player){
         DialogueLoader loader = new DialogueLoader();
         try {

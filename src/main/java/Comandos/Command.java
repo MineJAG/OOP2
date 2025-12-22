@@ -4,6 +4,7 @@
  */
 package Comandos;
 
+import java.util.ArrayList;
 import java.util.List;
 import Characters.Player;
 
@@ -12,7 +13,20 @@ import Characters.Player;
  * @author ajone
  */
 public interface Command {
-    boolean matches(List<String> words);
-    void execute(Player player, List<String> words) throws Exception;
+    public String[] names();
+
+    default boolean matches(List<String> words) {
+        for (String c : names()) {
+            for (String w : words) {
+                if (w.equalsIgnoreCase(c)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    void execute(Player player, ArrayList<String> words) throws Exception;
 }
+
 

@@ -6,24 +6,24 @@ package Comandos;
 
 import Characters.Player;
 import Items_Inventario.*;
+import java.util.*;
 
 /**
  *
  * @author Bibby
  */
-public class UsableItemsCommand implements Commands {
+public class UsableItemsCommand implements Command {
     public static final String[] COMMAND_NAMES = {"item", "itens", "itens", "usable", "usables", "usaveis"};
 
-    public static String[] getCOMMAND_NAMES() {
+    public String[] names() {
         return COMMAND_NAMES;
     }
     
-    public void execute(Player player) {
+    public void execute(Player player, ArrayList<String> words) throws Exception {
+        if (player.getInventory().getUsables().isEmpty()) {
+            throw new Exception("O inventário não contém nenhum item usável.");
+        }
         System.out.println("Itens usáveis: \n" + player.getInventory().getUsables().toString());        
-    }
-
-    public static String[] getCommandNames() {
-        return COMMAND_NAMES;
     }
 }
 

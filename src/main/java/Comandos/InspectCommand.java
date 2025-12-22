@@ -12,60 +12,47 @@ import java.util.*;
  *
  * @author ajone
  */
-public class InspectCommand implements Commands {
+public class InspectCommand implements Command {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
+    private AddCommand addCommand;
 
-    public static String[] getCOMMAND_NAMES() {
+    public String[] names() {
         return COMMAND_NAMES;
     }
-    private AddCommand addCommand = new AddCommand();
-    private Item item;
 
-    public boolean hasObject(Player player, List<String> object) {
-        Sala room = player.getPresentRoom();
-        Inventory pInventory = player.getInventory();
-        Inventory rInventory = room.getInventory();
-        for (String o : object) {
-            if (pInventory.getItem(o) != null) {
-                item = pInventory.getItem(o);
-                return true;
-            } else if (rInventory.getItem(o) != null) {
-                item = rInventory.getItem(o);
-                return true;
-            }
-        }
-        return false;
+    public InspectCommand(AddCommand addCommand) {
+        this.addCommand = addCommand;
     }
 
-    public void execute(Player player) {
-        ImmovableItemManager immovableState = new ImmovableItemManager();
+    public void execute(Player player, ArrayList<String> words) throws Exception {
+        Sala room = player.getPresentRoom();
+        if (room == null) {
+            throw new Exception("O Sherlock nao se encontra numa sala.");
+        }
+        Inventory pInventory = player.getInventory();
+        Inventory rInventory = room.getInventory();
+        Item item = null;
+        for (String o : words) {
+            if (pInventory.getItem(o) != null) {
+                item = pInventory.getItem(o);
+            } else if (rInventory.getItem(o) != null) {
+                item = rInventory.getItem(o);
+            }
+        }
+
+        if (item == null) {
+            throw new Exception("Nao existe nenhum item com esse nome no inventario.");
+        }
 
         System.out.println("O Sherlock inspeciona o objeto: " + item.getName() + ".");
 
         if (item instanceof ImmovabelItem) {
+                ImmovableItemManager immovableState = new ImmovableItemManager();
                 addCommand.addMany(player, immovableState.immovableState((ImmovabelItem) item)); 
         } else {
             System.out.println(item.getDescription());
             addCommand.addOne(player, item);
             player.getPresentRoom().getInventory().removeItem(item);
         }
-        
-        item = null;
-    }
-
-    public AddCommand getAddCommand() {
-        return addCommand;
-    }
-
-    public void setAddCommand(AddCommand addCommand) {
-        this.addCommand = addCommand;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
     }
 }

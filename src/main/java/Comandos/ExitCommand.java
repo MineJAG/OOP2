@@ -5,23 +5,21 @@
 package Comandos;
 
 import Characters.Player;
+import java.util.ArrayList;
 
 /**
  *
  * @author ajone
  */
-public class ExitCommand implements Commands {
+public class ExitCommand implements Command {
     public static final String[] COMMAND_NAMES = {"exit", "sair", "quit", "fechar", "close", "terminar", "end", "finalizar"};    
 
-    public static String[] getCOMMAND_NAMES() {
+    public String[] names() {
         return COMMAND_NAMES;
     }
-    public void execute(Player player) {
+    public void execute(Player player, ArrayList<String> words) throws Exception {
         System.out.println("A sair do jogo. Até à próxima!");
         System.exit(0);
-    }
-    public static String[] getCommandNames() {
-        return COMMAND_NAMES;
     }
     
 }

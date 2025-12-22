@@ -4,6 +4,7 @@
  */
 package Comandos;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import Dialogue.*;
 import Characters.*;
@@ -13,18 +14,20 @@ import Characters.*;
  * @author Bibby
  */
 public class CommandRunner {
-    List<String> words = new ArrayList<>();
+    ArrayList<Command> commands;
     List<Npc> npcs;
 
 
     
-    public CommandRunner(List<Npc> npcs) {
+    public CommandRunner(List<Npc> npcs, ArrayList<Command> commands) {
         this.npcs = npcs;
-        this.dialogueLoaderCommand = new DialogueLoaderCommand(npcs);
+        this.commands = commands;
+        //this.dialogueLoaderCommand = new DialogueLoaderCommand(npcs);
     }
 
-    private void separate(String userInput) {
+    private ArrayList<String> separate(String userInput) {
         String x = "";
+        ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < userInput.length(); i++) {
             char c = userInput.charAt(i);
@@ -40,55 +43,27 @@ public class CommandRunner {
         if (!x.isEmpty()) {
             words.add(x);
         }
-}
-
-    private boolean verifyCommand(String[] commandNames) {
-        for (String word : words) {
-            for (String commandName : commandNames) {
-                if (commandName.equals(word)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return words;
     }
-
-    /* so usar quando todos os comandos tiverem acabados
-    private boolean verifyAllCommands() {
-        return verifyCommand(LookCommand.COMMAND_NAMES) ||
-                verifyCommand(InspectCommand.COMMAND_NAMES) ||
-                verifyCommand(TalkCommand.COMMAND_NAMES) ||
-                verifyCommand(ExitCommand.COMMAND_NAMES) ||
-                verifyCommand(HelpCommand.COMMAND_NAMES) ||
-                verifyCommand(DialogueLoaderCommand.COMMAND_NAMES) ||
-                verifyCommand(CluesCommand.COMMAND_NAMES) ||
-                verifyCommand(UsableItemsCommand.COMMAND_NAMES);
-    }
-                */
-    private boolean verifyAllCommands() {
-        return verifyCommand(LookCommand.COMMAND_NAMES) ||
-                verifyCommand(InspectCommand.COMMAND_NAMES) ||
-                verifyCommand(CluesCommand.COMMAND_NAMES) ||
-                verifyCommand(UsableItemsCommand.COMMAND_NAMES) ||
-                verifyCommand(GoCommand.COMMAND_NAMES) ||
-                verifyCommand(ExitCommand.COMMAND_NAMES) ||
-                verifyCommand(UseCommand.COMMAND_NAMES) ||
-                verifyCommand(HelpCommand.COMMAND_NAMES) ||
-                verifyCommand(DialogueLoaderCommand.COMMAND_NAMES) ||
-                verifyCommand(TalkCommand.COMMAND_NAMES);
-    }
-
 
     public void runCommands(Player player, String userInput) {
-        separate(userInput);
+        ArrayList<String> words = separate(userInput);
 
         try {
             if (words.isEmpty()) {
                 throw new Exception("Tem de escrever um comando.");
             }
-            if (!verifyAllCommands()) {
-                throw new Exception("Comando inválido.");
+
+            for (Command c : commands) {
+                if (c.matches(words)) {
+                    c.execute(player, words);
+                    return;
+                }
             }
+
+            throw new Exception("Comando desconhecido.");
+            
+            /*
             if (verifyCommand(InspectCommand.COMMAND_NAMES)) {
                 if (inspectCommand.hasObject(player, words)) {
                     inspectCommand.execute(player);
@@ -128,6 +103,7 @@ public class CommandRunner {
             else {
                 throw new Exception("Comando inválido.");
             }
+                */
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -15,7 +15,7 @@ import java.util.*;
  * @author ajone
  */
 public class OOP2 {
-    /*
+
     public static void main(String[] args) {
         // Inicializa as Salas com valores nulos para as conexões
         Bar bar = new Bar(null, null, null, null, true);
@@ -47,34 +47,31 @@ public class OOP2 {
         vipRoom.setDirectionE(hall);
 
         
-        Player player = new Player("Sherlock Holmes", hall);
-        Scanner scanner = new Scanner(System.in);
-        
         //Introdução do jogo (NÃO APAGAR)
         System.out.println("==== INTRODUÇÃO AO JOGO ====");
         System.out.println("Na luxuosa Mansão Blackwood decorre o baile anual.\r\n" + "O Lorde Alistair Blackwood foi encontrado morto no seu quarto.\r\n" +
                             "A mansão ficou imediatamente trancada devido à tempestade e à névoa densa no exterior.\r\n" + "Sherlock está preso dentro da mansão com convidados e possíveis assassinos.\r\n" + 
                             "Cabe a si resolver o mistério e encontrar o assassino antes que ele ataque novamente.\r\n" + "Boa sorte, detetive!\r\n" +"");
 
+                            /*
         //Ciclo infinito de jogo
-        CommandRunner commandRunner = new CommandRunner();
         while (true) {
             System.out.print("Escreva um comando: ");
             String linha = scanner.nextLine().trim();
             commandRunner.runCommands(player, linha);
         }
-    }*/
-    
-    public static void main(String[] args) {
+            */
+
+        //Criação dos comandos
+        AddCommand addCommand = new AddCommand();
         ArrayList<Command> commands = new ArrayList<>();
         commands.add(new LookCommand());
+        commands.add(new InspectCommand(addCommand));
+        commands.add(new CluesCommand());
+        commands.add(new UsableItemsCommand());
+        commands.add(new ExitCommand());
 
-        
-
-
-
-
-        Player player = new Player("Sherlock Holmes", null);
+        Player player = new Player("Sherlock Holmes", hall);
         player.getInventory().addItem(new Clues("1","1"));
         Item item = new Clues("bread","its bread what did u expect");
         Npc npc = new Npc(item,null,"Old_Man");
@@ -90,7 +87,8 @@ public class OOP2 {
         List<Npc> npcs = new ArrayList<>();
         npcs.add(npc);
         UserInputReader scanner = new UserInputReader();
-        CommandRunner commandRunner = new CommandRunner(npcs);
+        CommandRunner commandRunner = new CommandRunner(npcs, commands);
+
         while (true) {
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();

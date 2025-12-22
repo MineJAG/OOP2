@@ -6,13 +6,14 @@ package Comandos;
 
 import Characters.Player;
 import Dialogue.DialogueLoader;
-import jdk.jshell.Diag;
+//import jdk.jshell.Diag;
 
 /**
  *
  * @author ajone
  */
-public class HelpCommand implements Commands {
+public class HelpCommand {
+    /*
     CluesCommand cluesCommand;
     DialogueLoaderCommand dialogueLoaderCommand;
     ExitCommand exitCommand;
@@ -80,6 +81,7 @@ public class HelpCommand implements Commands {
         this.talkCommand = talkCommand;
     }
 
+    
     public void execute(Player player) {
         System.out.println("Comandos: \n clues ");
         for(int i = 0; i<CluesCommand.getCOMMAND_NAMES().length;i++){
@@ -122,6 +124,7 @@ public class HelpCommand implements Commands {
             System.out.println(" -"+UsableItemsCommand.getCOMMAND_NAMES()[i]);
         }
     }
+        
 
     public static String[] getCOMMAND_NAMES() {
         return COMMAND_NAMES;
@@ -154,4 +157,5 @@ public class HelpCommand implements Commands {
     public void setUseCommand(UseCommand useCommand) {
         this.useCommand = useCommand;
     }
+        */
 }

@@ -5,19 +5,23 @@
 package Comandos;
 
 import Characters.Player;
+import java.util.*;
 
 /**
  *
  * @author Bibby
  */
-public class CluesCommand implements Commands {
+public class CluesCommand implements Command {
     public static final String[] COMMAND_NAMES = {"pistas", "clues", "pista", "clue"};
 
-    public static String[] getCOMMAND_NAMES() {
+    public String[] names() {
         return COMMAND_NAMES;
     }
-    
-    public void execute(Player player) {
+
+    public void execute(Player player, ArrayList<String> words) throws Exception {
+        if (player.getInventory().getClues().isEmpty()) {
+            throw new Exception("O inventário não contém nenhuma pista.");
+        }
         System.out.println("Pistas: \n" + player.getInventory().getClues().toString());        
     } 
 }

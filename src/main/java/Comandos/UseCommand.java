@@ -14,23 +14,22 @@ import java.util.*;
  *
  * @author Bibby
  */
-public class UseCommand implements Commands{
+public class UseCommand implements Command {
     public static final String[] COMMAND_NAMES = {"use", "usar", "utilizar","usa", "utilize","uses","utilizes","utilize"};
 
-    public static String[] getCOMMAND_NAMES() {
+    public String[] names() {
         return COMMAND_NAMES;
     }
-    UsableItem item;
 
-    public void hasObject(Player player, List<String> object) throws Exception {
-        item = null;
-        for (String o : object) {
+    public void execute(Player player, ArrayList<String> words) throws Exception {
+        UsableItem item = null;
+
+        //verifica se o item existe
+        for (String o : words) {
             if (player.getInventory().getUsables().getItem(o) != null) {
                 item = (UsableItem) player.getInventory().getUsables().getItem(o);
             }
-        }
-
-        if (item == null) {
+        } if (item == null) {
             throw new Exception("Não existe nenhum item com esse nome no inventário.");
         } 
 
@@ -38,26 +37,20 @@ public class UseCommand implements Commands{
             if (npc.getName().equalsIgnoreCase(item.getToBeUsed())) {
                 return;
             }
-        }
-        if (!(player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed()))) {
-            throw new Exception("Nao posso usar esse item aqui.");
-        }
-    }
-
-
-    public void execute(Player player) {
-        System.out.println("O Sherlock usa o item: " + item.getName() + ".");
-        if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
-            if (player.getPresentRoom() instanceof Bar) {
-                ((Bar) player.getPresentRoom()).unlockNorth();
+        } if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
+            System.out.println("O Sherlock usa o item " + item.getName() + " na sala " + player.getPresentRoom().getName() + ".");
+            if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
+                if (player.getPresentRoom() instanceof Bar) {
+                    ((Bar) player.getPresentRoom()).unlockNorth();
+                }
+                if (player.getPresentRoom() instanceof Storage) {
+                    ((Storage) player.getPresentRoom()).lightUp();
+                }
             }
-            if (player.getPresentRoom() instanceof Storage) {
-                ((Storage) player.getPresentRoom()).lightUp();
-            }
+            return;
         }
-    }
+        throw new Exception("Não há onde usar este item.");
 
-    public UsableItem getItem() {
-        return item;
+        
     }
 }

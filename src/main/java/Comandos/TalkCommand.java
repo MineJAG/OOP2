@@ -11,7 +11,7 @@ import Dialogue.DialogueManager;
  *
  * @author ajone
  */
-public class TalkCommand implements Commands{
+public class TalkCommand{
 
     public static String[] getCOMMAND_NAMES() {
         return COMMAND_NAMES;
@@ -19,7 +19,7 @@ public class TalkCommand implements Commands{
     DialogueManager manager = new DialogueManager();
     Npc npc;
     public static final String[] COMMAND_NAMES = {"falar","conversar","talk","fala","conversa","comunicar","comunica","dialogar","dialoga","speak","say","chat","comunicate"};
-    @Override
+
     public void execute(Player player) {
         npc.talk(player, manager);
     }

@@ -12,7 +12,7 @@ import java.util.*;
  *
  * @author tiago
  */
-public class GoCommand implements Commands {
+public class GoCommand{
     public static final String[] COMMAND_NAMES = {"go", "ir", "move", "mover", "walk", "andar", "seguir", "proceed", "avançar", "avancar", "continue", "continuar", "head", "dirigir", "dirige", "partir"};
     private static final String[] DIRECTIONSN = {"north", "norte","cima","up"};
     private static final String[] DIRECTIONSS = {"south", "sul", "baixo","down"}; 
