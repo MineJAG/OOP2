@@ -4,7 +4,6 @@
  */
 package Comandos;
 import Characters.Player;
-import Rooms.Bar;
 import Rooms.Sala;
 import java.util.*;
 
@@ -12,125 +11,78 @@ import java.util.*;
  *
  * @author tiago
  */
-public class GoCommand{
+public class GoCommand implements Command{
     public static final String[] COMMAND_NAMES = {"go", "ir", "move", "mover", "walk", "andar", "seguir", "proceed", "avançar", "avancar", "continue", "continuar", "head", "dirigir", "dirige", "partir"};
     private static final String[] DIRECTIONSN = {"north", "norte","cima","up"};
     private static final String[] DIRECTIONSS = {"south", "sul", "baixo","down"}; 
     private static final String[] DIRECTIONSE = {"east", "este", "direita","right"}; 
     private static final String[] DIRECTIONSW = {"west", "oeste", "esquerda","left"};
 
-    public static String[] getCOMMAND_NAMES() {
+    public String[] names() {
         return COMMAND_NAMES;
     }
+    
+    public void execute(Player player, ArrayList<String> words) throws Exception {
+        if (player.getPresentRoom() == null){
+            throw new Exception("O Sherlock não se encontra numa sala.");
+        }
 
-    public static String[] getDIRECTIONSN() {
-        return DIRECTIONSN;
-    }
-
-    public static String[] getDIRECTIONSS() {
-        return DIRECTIONSS;
-    }
-
-    public static String[] getDIRECTIONSE() {
-        return DIRECTIONSE;
-    }
-
-    public static String[] getDIRECTIONSW() {
-        return DIRECTIONSW;
-    }
-    private String direction;
-
-    public boolean coorrectDirection(Player player, List<String> words) {
-        for (String S : words) {
-            for (String dn : DIRECTIONSN) {
-                if (S.equalsIgnoreCase(dn)){
+        String direction = null;
+        //Verifica se o input do player = direçao equivalente
+        for (String word : words){
+            for (String d : DIRECTIONSN){
+                if (word.equalsIgnoreCase(d)){
                     direction = "north";
-                    return true;
                 }
             }
-            for (String ds : DIRECTIONSS) {
-                if (S.equalsIgnoreCase(ds)){
+
+            for (String d : DIRECTIONSS){
+                if (word.equalsIgnoreCase(d)){
                     direction = "south";
-                    return true;
                 }
             }
-            for (String de : DIRECTIONSE) {
-                if (S.equalsIgnoreCase(de)){
+
+            for (String d : DIRECTIONSE){
+                if (word.equalsIgnoreCase(d)){
                     direction = "east";
-                    return true;
                 }
             }
-            for (String dw : DIRECTIONSW) {
-                if (S.equalsIgnoreCase(dw)){
+
+            for (String d : DIRECTIONSW){
+                if (word.equalsIgnoreCase(d)){
                     direction = "west";
-                    return true;
                 }
             }
         }
-        return false;
-    }
 
-    public boolean canGo(Player player) {
-        if (player.getPresentRoom().getDirectionN() != null && direction.equalsIgnoreCase("north")) {
-            return true;
+        if (direction == null){
+            throw new Exception("Direção inválida");
         }
-        if(player.getPresentRoom().getDirectionS() != null &&  direction.equalsIgnoreCase("south")) { 
-            return true;
-        }
-        if (player.getPresentRoom().getDirectionE() != null && direction.equalsIgnoreCase("east")) {
-            return true;
-        }
-        if (player.getPresentRoom().getDirectionW() != null && direction.equalsIgnoreCase("west")) {
-            return true;
-        }   
-        direction = null;
-        return false;
-    }
 
-
-    public void execute(Player player) {
         Sala currentRoom = player.getPresentRoom();
         Sala nextRoom = null;
 
-        if (direction.equalsIgnoreCase("north")) {
-            nextRoom = currentRoom.getDirectionN();
-        } else if (direction.equalsIgnoreCase("south")) {
-            nextRoom = currentRoom.getDirectionS();
-        } else if (direction.equalsIgnoreCase("east")) {
-            nextRoom = currentRoom.getDirectionE();
-        } else if (direction.equalsIgnoreCase("west")) {
-            nextRoom = currentRoom.getDirectionW();
+        switch (direction) {
+            case "north":
+                nextRoom = currentRoom.getDirectionN();
+                break;
+            case "south":
+                nextRoom = currentRoom.getDirectionS();
+                break;
+            case "east":
+                nextRoom = currentRoom.getDirectionE();
+                break;
+            case "west":
+                nextRoom = currentRoom.getDirectionW();
+                break;
         }
+
+        if(nextRoom == null){
+            throw new Exception("Não há nada aqui.");
+        }
+
         player.setPresentRoom(nextRoom);
-        System.out.println("O Sherlock move-se para a sala: " + nextRoom.getName() + ".");
-        direction = null;
+        System.out.println("O Sherlock move-se para a sala: " + nextRoom.getName() + ".");   
     }
-
-    public static String[] getCommandNames() {
-        return COMMAND_NAMES;
-    }
-
-    public static String[] getDirectionsn() {
-        return DIRECTIONSN;
-    }
-
-    public static String[] getDirectionss() {
-        return DIRECTIONSS;
-    }
-
-    public static String[] getDirectionse() {
-        return DIRECTIONSE;
-    }
-
-    public static String[] getDirectionsw() {
-        return DIRECTIONSW;
-    }
-
-    public String getDirection() {
-        return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
+    
 }

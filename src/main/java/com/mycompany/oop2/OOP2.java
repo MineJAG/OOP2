@@ -18,17 +18,17 @@ public class OOP2 {
 
     public static void main(String[] args) {
         // Inicializa as Salas com valores nulos para as conexões
-        Bar bar = new Bar(null, null, null, null, true);
-        Bathroom bathroom = new Bathroom(null, null, null, null);
-        Foggy_balcony balcony = new Foggy_balcony(null, null, null, null);
-        Library library = new Library(null, null, null, null);
-        Main_hall hall = new Main_hall(null, null, null, null);
-        Office office = new Office(null, null, null, null);
-        Room room = new Room(null, null, null, null);
-        Storage storage = new Storage(null, null, null, null);
-        VIP_room vipRoom = new VIP_room(null, null, null, null);
+        Sala bar = new Bar(null, null, null, null, true);
+        Sala bathroom = new Bathroom(null, null, null, null);
+        Sala balcony = new Foggy_balcony(null, null, null, null);
+        Sala library = new Library(null, null, null, null);
+        Sala hall = new Main_hall(null, null, null, null);
+        Sala office = new Office(null, null, null, null);
+        Sala room = new Room(null, null, null, null);
+        Sala storage = new Storage(null, null, null, null);
+        Sala vipRoom = new VIP_room(null, null, null, null);
         
-        //Ligação das salas
+        // Ligação das salas
         bar.setDirectionE(storage);
         bar.setDirectionN(library);
         bar.setDirectionS(hall);
@@ -47,22 +47,14 @@ public class OOP2 {
         vipRoom.setDirectionE(hall);
 
         
-        //Introdução do jogo (NÃO APAGAR)
+        // Introdução do jogo (NÃO APAGAR)
         System.out.println("==== INTRODUÇÃO AO JOGO ====");
         System.out.println("Na luxuosa Mansão Blackwood decorre o baile anual.\r\n" + "O Lorde Alistair Blackwood foi encontrado morto no seu quarto.\r\n" +
                             "A mansão ficou imediatamente trancada devido à tempestade e à névoa densa no exterior.\r\n" + "Sherlock está preso dentro da mansão com convidados e possíveis assassinos.\r\n" + 
-                            "Cabe a si resolver o mistério e encontrar o assassino antes que ele ataque novamente.\r\n" + "Boa sorte, detetive!\r\n" +"");
+                            "Cabe a si resolver o mistério e encontrar o assassino antes que ele ataque novamente.\r\n" + "Boa sorte, detetive!\r\n" +"");        
+        
 
-                            /*
-        //Ciclo infinito de jogo
-        while (true) {
-            System.out.print("Escreva um comando: ");
-            String linha = scanner.nextLine().trim();
-            commandRunner.runCommands(player, linha);
-        }
-            */
-
-        //Criação dos comandos
+        // Criação dos comandos
         AddCommand addCommand = new AddCommand();
         ArrayList<Command> commands = new ArrayList<>();
         commands.add(new LookCommand());
@@ -70,8 +62,12 @@ public class OOP2 {
         commands.add(new CluesCommand());
         commands.add(new UsableItemsCommand());
         commands.add(new ExitCommand());
-
+        commands.add(new GoCommand());
+        
+        // Spawn do player
         Player player = new Player("Sherlock Holmes", hall);
+        
+        // VER MELHOR ESTA MERDA
         player.getInventory().addItem(new Clues("1","1"));
         Item item = new Clues("bread","its bread what did u expect");
         Npc npc = new Npc(item,null,"Old_Man");
@@ -89,6 +85,9 @@ public class OOP2 {
         UserInputReader scanner = new UserInputReader();
         CommandRunner commandRunner = new CommandRunner(npcs, commands);
 
+
+
+        // Ciclo infinito de jogo
         while (true) {
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();

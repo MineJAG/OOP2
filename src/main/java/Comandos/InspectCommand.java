@@ -10,7 +10,7 @@ import java.lang.String;
 import java.util.*;
 /**
  *
- * @author ajone
+ * @author lara
  */
 public class InspectCommand implements Command {
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
