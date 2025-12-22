@@ -66,6 +66,14 @@ public class OOP2 {
     }*/
     
     public static void main(String[] args) {
+        ArrayList<Command> commands = new ArrayList<>();
+        commands.add(new LookCommand());
+
+        
+
+
+
+
         Player player = new Player("Sherlock Holmes", null);
         player.getInventory().addItem(new Clues("1","1"));
         Item item = new Clues("bread","its bread what did u expect");

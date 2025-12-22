@@ -16,18 +16,7 @@ public class CommandRunner {
     List<String> words = new ArrayList<>();
     List<Npc> npcs;
 
-    TalkCommand talkCommand = new TalkCommand();
-    InspectCommand inspectCommand = new InspectCommand();
-    ExitCommand exitCommand = new ExitCommand();
-    HelpCommand helpCommand = new HelpCommand();
-    DialogueLoaderCommand dialogueLoaderCommand;
-    CluesCommand cluesCommand = new CluesCommand();
-    UsableItemsCommand usableItemsCommand = new UsableItemsCommand();
-    LookCommand lookCommand = new LookCommand();
-    GoCommand goCommand = new GoCommand();
-    ExitCommand exitcommand = new ExitCommand();
-    UseCommand useCommand = new UseCommand();
-    DialogueManager manager = new DialogueManager();
+
     
     public CommandRunner(List<Npc> npcs) {
         this.npcs = npcs;

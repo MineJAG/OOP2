@@ -4,13 +4,15 @@
  */
 package Comandos;
 
+import java.util.List;
 import Characters.Player;
 
 /**
  *
  * @author ajone
  */
-public interface Commands {
-    public void execute(Player player);
-    
+public interface Command {
+    boolean matches(List<String> words);
+    void execute(Player player, List<String> words) throws Exception;
 }
+
