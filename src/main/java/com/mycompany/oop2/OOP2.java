@@ -67,7 +67,7 @@ public class OOP2 {
         // Spawn do player
         Player player = new Player("Sherlock Holmes", hall);
         
-        // VER MELHOR ESTA MERDA
+        // VER MELHOR
         player.getInventory().addItem(new Clues("1","1"));
         Item item = new Clues("bread","its bread what did u expect");
         Npc npc = new Npc(item,null,"Old_Man");
@@ -92,11 +92,14 @@ public class OOP2 {
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();
             commandRunner.runCommands(player, linha);
+        }
+        /*
             if (player.getPresentRoom().getClass().toString().equals(balcony.getClass().toString())) {
                 if (player.getInventory().containsItem("Tecido") && player.getInventory().containsItem("Faca")) {
                 System.out.println("A sair do jogo. Até à próxima!");
                 commandRunner.runCommands(player, "sair");
             }
-        }
+
+                */
     }
 }
