@@ -29,6 +29,7 @@ public class CluesCommand implements Command {
     public String getName() {
         return name;
     }
+    
     @Override
     public String toString() {
         String result = getName() + "\n Command names: \n\t-";
