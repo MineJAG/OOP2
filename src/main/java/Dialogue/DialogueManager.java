@@ -4,15 +4,16 @@
  */
 package Dialogue;
 
-import Characters.Npc;
 import com.mycompany.oop2.UserInputReader;
-import Items_Inventario.Item;
+
+import Characters.Npc;
 import Characters.Player;
+import Items_Inventario.Item;
 /**
  *
  * @author ajone
  */
-public class DialogueManager {
+public class DialogueManager{
     private DialogueLine currentLine;
     private Npc currentNpc;
     public DialogueLine getCurrentLine() {
