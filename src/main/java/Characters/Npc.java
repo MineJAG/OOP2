@@ -4,10 +4,11 @@
  */
 package Characters;
 import java.util.Map;
-import Rooms.Sala;
+
 import Dialogue.DialogueLine;
 import Dialogue.DialogueManager;
-import Items_Inventario.*;
+import Items_Inventario.Item;
+import Rooms.Sala;
 /**
  *
  * @author ajone
@@ -28,9 +29,10 @@ public class Npc extends Character {
         QuestItem = null;
     }
 
-    public Npc(String name, Sala salaN, Item questItem, String[] neededClues) {
+    public Npc(String name, Sala salaN, Item questItem) {
         super(name, salaN);
         this.QuestItem = questItem;
+        dialogueLines = null;
     }
 
     public Item getQuestItem() {
@@ -57,8 +59,8 @@ public class Npc extends Character {
         this.QuestItem = QuestItem;
         this.dialogueLines = dialogueLines;
     }
-    public void itemGiven(Player player,String item){
-        if (dialogueLines.containsKey("?"+ item))
-            Npc.manager.itemGiven(player,this);
+    public void itemGiven(Player player,Item item) throws Exception{
+        if (dialogueLines.containsKey("?"+ item.getName()))
+            Npc.manager.itemGiven(player,this,item);
     }
 }
