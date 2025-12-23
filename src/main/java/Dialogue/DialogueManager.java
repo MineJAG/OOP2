@@ -23,7 +23,7 @@ public class DialogueManager{
         this.currentLine = currentLine;
     }
 
-        public Npc getCurrentNpc() {
+    public Npc getCurrentNpc() {
         return currentNpc;
     }
     public void setCurrentNpc(Npc currentNpc) {
@@ -68,10 +68,14 @@ public class DialogueManager{
         }
     }
 
-    public void itemGiven(Player player,Npc npc,Item item){
+    public void itemGiven(Player player,Npc npc,Item item) throws Exception{
         player.getInventory().removeItem(item);
-        currentLine = npc.getDialogueLines().get("?");
+        if(npc.getDialogueLines().containsKey("? " + item.getName())){
+        currentLine = npc.getDialogueLines().get("? " + item.getName());
         currentNpc = npc;
         conversation(player);
+        } else {
+            throw new Exception("Linhe refering to" + item.getName() + " not found");
+        }
     }
 }

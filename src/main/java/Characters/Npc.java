@@ -57,8 +57,8 @@ public class Npc extends Character {
         this.QuestItem = QuestItem;
         this.dialogueLines = dialogueLines;
     }
-    public void itemGiven(Player player){
-        if (dialogueLines.containsKey("?"))
-            Npc.manager.itemGiven(player,this,QuestItem);
+    public void itemGiven(Player player,String item){
+        if (dialogueLines.containsKey("?"+ item))
+            Npc.manager.itemGiven(player,this);
     }
 }
