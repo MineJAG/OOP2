@@ -83,6 +83,10 @@ public abstract class Sala {
     public Sala setDirectionE(Sala E){
         return this.directionE = E;
     }
+
+    public boolean canGo(String direction){
+        return true;
+    }
     
     public abstract void initializeInventory();
 

@@ -29,7 +29,7 @@ public class Bathroom extends Sala{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Luvas", ""));
+        in.addItem(new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…"));
         super.getInventory().addInventory(in);
     }
 

@@ -33,10 +33,12 @@ public class Room extends Sala{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Sangue", ""));
-        in.addItem(new Clues("Cortina vermelha", ""));
-        in.addItem(new UsableItem("Caixa de medicamentos", "", getName()));
-        in.addItem(new ImmovabelItem("Gaveta", "é uma gaveta", in,"tem merda"));
+        Inventory gaveta = new Inventory();
+        in.addItem(new Clues("Sangue", "A cama e o chão estão completamente sujos de sangue, parece sangue do Lorde. Uma pena..."));
+        in.addItem(new Clues("Cortina_vermelha", "A cortina aparenta estar rasgada..humm... Onde é que vi algo parecido?"));
+        gaveta.addItem(new UsableItem("Medicamentos", "Uma caixa de medicamentos para dormir...", getName()));
+        in.addItem(new ImmovabelItem("Gaveta", "Uma gaveta", gaveta ,"Está vazia"));
+        in.addItem(new ImmovabelItem("Cama", "A cama onde o lorde se encontra morto."));
         super.getInventory().addInventory(in);
     }
 

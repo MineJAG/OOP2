@@ -5,7 +5,9 @@
 package Rooms;
 import Characters.Npc;
 import Items_Inventario.Clues;
+import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
+
 
 /**
  *
@@ -30,7 +32,7 @@ public class Storage extends Sala{
     public void lightUp() {
         if (!isLightOn) {
             isLightOn = true;
-            setDescription("Fez-se luz caralho puta fodasse");
+            setDescription("O depósito... Está cheio de caixas de bebidas e condimentos. Talvez encontre algo importante.");
         }
     }
 
@@ -43,6 +45,7 @@ public class Storage extends Sala{
         Inventory in = new Inventory();
         in.addItem(new Clues("Faca", "Faca ainda marcada com sangue seco, provavelmente a arma do crime."));
         in.addItem(new Clues("Tecido", "Parece ser um pedaço de cortina, é vermelho."));
+        in.addItem(new ImmovabelItem("Caixa_de_bebida","Uma caixa com bebidas... nada de interessante"));
         super.getInventory().addInventory(in);
     }
 

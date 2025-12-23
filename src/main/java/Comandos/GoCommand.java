@@ -14,10 +14,10 @@ import java.util.*;
 public class GoCommand implements Command{
     private String name = "Go Command - choose where to go syntax go then direction";
     public static final String[] COMMAND_NAMES = {"go", "ir", "move", "mover", "walk", "andar", "seguir", "proceed", "avançar", "avancar", "continue", "continuar", "head", "dirigir", "dirige", "partir"};
-    private static final String[] DIRECTIONSN = {"north", "norte","cima","up"};
-    private static final String[] DIRECTIONSS = {"south", "sul", "baixo","down"}; 
-    private static final String[] DIRECTIONSE = {"east", "este", "direita","right"}; 
-    private static final String[] DIRECTIONSW = {"west", "oeste", "esquerda","left"};
+    private static final String[] DIRECTIONSN = {"north", "norte","cima","up","frente","forward","n"};
+    private static final String[] DIRECTIONSS = {"south", "sul", "baixo","down","atras","back","s"}; 
+    private static final String[] DIRECTIONSE = {"east", "este", "direita","right","e"}; 
+    private static final String[] DIRECTIONSW = {"west", "oeste", "esquerda","left","w"};
 
     public String[] names() {
         return COMMAND_NAMES;
@@ -27,7 +27,7 @@ public class GoCommand implements Command{
         if (player.getPresentRoom() == null){
             throw new Exception("O Sherlock não se encontra numa sala.");
         }
-
+        
         String direction = null;
         //Verifica se o input do player = direçao equivalente
         for (String word : words){
@@ -62,6 +62,10 @@ public class GoCommand implements Command{
 
         Sala currentRoom = player.getPresentRoom();
         Sala nextRoom = null;
+
+        if (!currentRoom.canGo(direction)){
+            throw new Exception("A porta está fechada");
+        }
 
         switch (direction) {
             case "north":

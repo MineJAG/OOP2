@@ -5,6 +5,7 @@
 package Rooms;
 import Characters.Npc;
 import Items_Inventario.Clues;
+import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
 import Items_Inventario.UsableItem;
 
@@ -32,8 +33,9 @@ public class Library extends Sala{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Verdade sobre o livro", ""));
-        in.addItem(new UsableItem("Fósforos","","Depósito"));
+        in.addItem(new Clues("Documento_perdido", "No documento diz: Este livro é uma maravilha tenciono publica-lo em meu nome. Mas... Victor não pode descobrir sobre isto.\r\n" + "Assinado: Alistair Blackwood"));
+        in.addItem(new UsableItem("Fosforos","Uma fonte de luz fraca mas, capaz de iluminar algo.","Depósito"));//apanhado por npc
+        in.addItem(new ImmovabelItem("Estante", "Uma estante com livros. \r\n"+"O Lorde realmente adorava ler."));
         super.getInventory().addInventory(in);
     }
     
