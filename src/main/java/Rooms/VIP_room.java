@@ -15,17 +15,17 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class VIP_room extends Sala{
-    public VIP_room(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+    public VIP_room() {
         super("Sala VIP", 
         "Sala privada para convidados importantes do Lorde.\r\n" + 
         "É pequena, mas luxuosa e confortável\r\n" +
         "tem sofás confortáveis e elegantes como decoração requintada.\r\n" +
         "Há uma lareira acesa que emite um calor acolhedor...\r\n" +
         "hum.", 
-        directionN, 
-        directionS, 
-        directionE, 
-        directionW, 
+        null, 
+        null, 
+        null, 
+        null, 
         new Inventory()); 
         initializeInventory();   
         NpcSpawner();

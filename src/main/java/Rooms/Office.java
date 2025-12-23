@@ -15,7 +15,7 @@ import Items_Inventario.UsableItem;
  * @author tiago
  */
 public class Office extends Sala{
-    public Office(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+    public Office() {
         super("Escritório", 
             "O escritório do Lorde...\r\n" +
             "Possui uma secretária com documentos e livros de contabilidade por toda a parte.\r\n" +
@@ -23,10 +23,10 @@ public class Office extends Sala{
             "E na parede, um quadro de um homem de aparência severa.\r\n" +
             "Há também uma estante com vários livros antigos e um cofre embutido na parede.\r\n" +
             "Talvez exista algo importante aqui...", 
-            directionN, 
-            directionS, 
-            directionE, 
-            directionW, 
+            null, 
+            null, 
+            null, 
+            null, 
             new Inventory());
             initializeInventory();
             NpcSpawner();

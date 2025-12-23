@@ -14,16 +14,16 @@ import Items_Inventario.UsableItem;
  * @author tiago
  */
 public class Main_hall extends Sala{
-    public Main_hall(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+    public Main_hall() {
         super("Sala Principal", 
             "Uma sala num estilo barroco e estravagante, tem uns pilhadores artisticos, mesas decoradas, e janelas com artes\r\n" + 
             "o piso de mármore está molhado e a chuva ecoa lá fora.\r\n" +
             "Os convidados parecem assustados.\r\n" +
             "Um rastro de água leva até à porta norte, está entreaberta...hum?", 
-            directionN, 
-            directionS, 
-            directionE, 
-            directionW, 
+            null, 
+            null, 
+            null, 
+            null, 
             new Inventory()); 
             initializeInventory();   
             NpcSpawner();
