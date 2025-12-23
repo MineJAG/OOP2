@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * @author tiago
  */
 public class ExitCommand implements Command {
+    private String name = "Exit Command - Exit the game";
     public static final String[] COMMAND_NAMES = {"exit", "sair", "quit", "fechar", "close", "terminar", "end", "finalizar"};    
 
     public String[] names() {

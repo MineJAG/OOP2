@@ -15,6 +15,7 @@ import java.util.*;
  * @author Bibby
  */
 public class UseCommand implements Command {
+    private String name = "Use command - choose an item to use ";
     public static final String[] COMMAND_NAMES = {"use", "usar", "utilizar","usa", "utilize","uses","utilizes","utilize"};
 
     public String[] names() {

@@ -12,6 +12,7 @@ import java.util.*;
  * @author Bibby
  */
 public class CluesCommand implements Command {
+    private String name = "clues command -- Opens the collected clues";
     public static final String[] COMMAND_NAMES = {"pistas", "clues", "pista", "clue"};
 
     public String[] names() {
@@ -23,6 +24,10 @@ public class CluesCommand implements Command {
             throw new Exception("O inventário não contém nenhuma pista.");
         }
         System.out.println("Pistas: \n" + player.getInventory().getClues().toString());        
-    } 
+    }
+
+    public String getName() {
+        return name;
+    }
 }
 

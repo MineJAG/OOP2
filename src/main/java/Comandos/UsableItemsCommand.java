@@ -13,6 +13,7 @@ import java.util.*;
  * @author Bibby
  */
 public class UsableItemsCommand implements Command {
+    private String name = "Usable Items Command(inventory) - show the usable items in the inventory";
     public static final String[] COMMAND_NAMES = {"item", "itens", "itens", "usable", "usables", "usaveis"};
 
     public String[] names() {
