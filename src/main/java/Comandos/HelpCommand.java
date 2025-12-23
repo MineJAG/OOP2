@@ -12,7 +12,7 @@ import Dialogue.DialogueLoader;
  *
  * @author ajone
  */
-public class HelpCommand implements Command{
+public class HelpCommand{
     /*
     CluesCommand cluesCommand;
     DialogueLoaderCommand dialogueLoaderCommand;

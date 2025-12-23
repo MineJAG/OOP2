@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author ajone
  */
-public class DialogueLoaderCommand implements Command {
+public class DialogueLoaderCommand {
     public static final String[] COMMAND_NAMES = {"load","carregar"};    
     private final List<Npc> npcs;
     private String filepath; 

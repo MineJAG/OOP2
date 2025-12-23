@@ -92,6 +92,11 @@ public class OOP2 {
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();
             commandRunner.runCommands(player, linha);
+            if (player.getPresentRoom().getClass().toString().equals(balcony.getClass().toString())) {
+                if (player.getInventory().containsItem("Tecido") && player.getInventory().containsItem("Faca")) {
+                System.out.println("A sair do jogo. Até à próxima!");
+                commandRunner.runCommands(player, "sair");
+            }
         }
     }
 }

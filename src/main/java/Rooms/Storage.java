@@ -41,8 +41,8 @@ public class Storage extends Sala{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Faca", ""));
-        in.addItem(new Clues("Tecido Rasgado", ""));
+        in.addItem(new Clues("Faca", "Faca ainda marcada com sangue seco, provavelmente a arma do crime."));
+        in.addItem(new Clues("Tecido", "Parece ser um pedaço de cortina, é vermelho."));
         super.getInventory().addInventory(in);
     }
 

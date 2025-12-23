@@ -18,7 +18,6 @@ public class ExitCommand implements Command {
     }
     
     public void execute(Player player, ArrayList<String> words) throws Exception {
-        System.out.println("A sair do jogo. Até à próxima!");
         System.exit(0);
     }
     
