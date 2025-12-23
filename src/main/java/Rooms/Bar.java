@@ -51,7 +51,7 @@ public class Bar extends Sala {
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Pedaço de Cortina Vermelha", ""));
+        in.addItem(new Clues("Cortina Vermelha", ""));
         in.addItem(new UsableItem("Chave dourada", "", "Bar"));
         in.addItem(new ImmovabelItem("Pilar", "nAO pode nover"));
         super.getInventory().addInventory(in);
