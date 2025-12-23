@@ -10,23 +10,14 @@ import java.util.*;
  * @author ajone
  */
 public class Inventory {
-    private List<Item> inventory;
+    private ArrayList<Item> inventory;
 
     public Inventory() {
         inventory = new ArrayList<>();
     }
 
-    public Inventory(List<Item> inventory) {
+    public Inventory(ArrayList<Item> inventory) {
         this.inventory = inventory;
-    }
-
-    //conseguir o item pelo indice
-    public Item getItemIndex(int index) {
-        return inventory.get(index);
-    }
-
-    public int getSize() {
-        return inventory.size();
     }
 
     public void addItem(Item item) {
@@ -49,10 +40,6 @@ public class Inventory {
             }
         }
         return null;
-    }
-
-    public boolean itemInInventory(Item item) {
-        return inventory.contains(item);
     }
 
     @Override
@@ -86,10 +73,6 @@ public class Inventory {
             }
         }
         return usables;
-    }
-
-    public int size() {
-        return inventory.size();
     }
 
     public boolean isEmpty() {
