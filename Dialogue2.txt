@@ -1,0 +1,119 @@
+#----LADY_ELEANOR
+c-LADY_ELEANOR
+1-Sherlock… o meu marido… ele está morto.\n Por favor, descubra o que aconteceu. Ninguém pode sair enquanto isto não acabar.\n O inspetor disse-me que o corpo está no quarto mas não tive coragem de lá entrar.
+1$2-O que sabe sobre o crime?
+1$3-Havia alguém que tivesse motivos para matar o seu marido?
+1$?livro-Isto diz-lhe alguma coisa por acaso?
+1$!carta_rasgada-Poderia me dizer o porquê de todas as poupanças restantes de Alistair terem passado para seu nome ontem mesmo?
+1$!cortina_rasgada-Encontrei isto por acaso sabe onde se encaixa?
+1$?medicamentos_quarto-Isto estava no seu quarto, reconhece?
+1$!relogio-Diga-me o que esteve a fazer a noite toda?
+2-Eu não sei ao certo, só lembro de ouvir gritos vindos do quarto
+2$4-Antes dos gritos o seu quarto foi mexido?
+3-Alistair fez muitos inimigos com os seus negócios… mas aqui dentro?\n Eu… eu não faço ideia. Talvez o mordomo saiba mais, ele tratava de tudo.
+4-Desde que a festa começou que mal lá vou. Se alguém entrou, não fui eu.\n Se encontrar algo estranho lá, por favor diga-me.
+?livro-Esse livro… O lorde Blackwood pediu-me para analisar este livro, para verificar se era digno de ser publicado… ele pediu-me para dizer a Lorde Victor que o livro estava péssimo porém era uma obra prima.
+?livro$5-Porque é que ele faria tal coisa?
+5-Não sei bem… eles sempre se apoiaram nas ideias de negócio.
+!carta_rasgada-Também fiquei surpreendida ao ver as poupanças no meu nome… juro-lhe que não pedi tal coisa, embora perceba perfeitamente como isso pode parecer.
+!cortina_rasgada-Sim sim sei… isso são… das cortinas do meu quarto?\n Onde foi que encontrou?
+?medicamentos_quarto-Se me não me falha a memória, são os medicamentos que o meu marido usava contra as insónias.
+?medicamentos_quarto$9-Diga-me mais sobre?
+9-Não sei mais nada. Fale com o doutor, talvez saiba mais, afinal foi ele quem lhe receitou.
+!relogio-Como já lhe tinha dito estive sempre aqui com os convidados, se bem que sai para ir à casa de banho.
+!relogio$11-Saiu hum… poderia me dizer mais ao menos a que horas foi?
+11-hum.. acho que eram umas 21:45.
+
+#----OLIVER_BARMAN
+c-OLIVER_BARMAN
+1-AH! Senhor Holmes… eu… ee… eu ouvi alguém a correr antes do grito.\n Vieram da Biblioteca… parecia alguém com pressa.
+1$2-Conte-me o que ouviu ao certo?
+1$3-Encontrou mais alguma coisa estranha por aqui?
+1$!mordomo-Viu o mordomo esta noite?
+1$?copo_remedios-Barman. Pode me dizer o que tem este copo?
+1$!relogio-Por acaso saiu alguma vez do bar esta noite?
+2-Ouvi passos apressados a sair da Biblioteca e a passar pelo corredor.\n Parecia alguém a correr, desesperado. Quando fui lá ver, encontrei isto.
+3-Sim… encontrei um pedaço de tecido vermelho atrás do balcão.\n Não pertence a nenhum dos cortinados daqui. Parecia arrancado à força.\n Se quiser pode levá-lo, talvez ajude.
+!mordomo-Vi o sim, entrou e saiu do Bar algumas vezes.\n Disse que vinha buscar garrafas para o salão principal… mas parecia nervoso.
+?copo_remedios-Se não me engano o senhor Alistair ia tomar isso antes de dormir, não sei ao certo pergunte ao Doutor aí ao lado.
+!relogio-Não senhor não. Estive aqui a noite toda a tomar conta do bar.
+
+#----MARGARET_PROFESSORA
+c-MARGARET_PROFESSORA
+1-Sr. Holmes, finalmente alguém com cérebro nesta casa.\n Enquanto os outros gritavam, eu prestava atenção.\n Vi o senhor Alistair entrar no quarto e momentos depois alguém a sair a correr.\n Pareceu-me não ser um convidado.
+1$2-O que viu exatamente?
+1$3-Consegue descrever melhor essa pessoa?
+1$4-Reparou em algo fora do lugar na Biblioteca?
+1$!relogio-Sabe me dizer que horas eram quando tudo aconteceu?
+2-Vi um vulto parecia um criado, não um convidado.\n Pouco após o grito, ouvi a porta do escritório bater.
+3-Bem… era Alto, o cabelo parecia escuro, e com movimentos contidos.\n Eu diria… alguém habituado a ser discreto. O mordomo, talvez?
+4-Agora que fala nisso, quando cheguei reparei que tinha livros fora do lugar quando fui arrumar encontrei isto.
+!relogio-hum.. Pelo que me lembro era por volta das 22:00.
+
+#----INSPECTOR_GRAHAM
+c-INSPECTOR_GRAHAM
+1-Holmes! Ainda bem que apareceu, eu… estava a examinar o corpo.\n Bem, a tentar, pelo menos. Não é tão simples como nos livros.
+1$2-Qual é a causa provável da morte?
+1$3-Há quanto tempo acha que ele morreu?
+1$4-Encontrou algo nas mãos da vítima?
+2-Há marcas à volta do pescoço, como se tivesse sido estrangulado.\n Também vejo sinais de facadas. veja aqui no abdómen.
+3-Pela temperatura do corpo, diria que há menos de uma hora.\n Se o seu relógio de bolso estiver certo, isso pode nos dar uma pista mais exata, penso que o deixei na sala de VIPS ainda há pouco.
+4-Sim, alguns fios de cabelo escuro presos nos dedos.\n Deve ter tentado agarrar o atacante durante a luta.
+
+#----VICTOR_MORDOMO
+c-VICTOR_MORDOMO
+1-Senhor Holmes a tragédia do Lorde foi… inesperada.\n Em nome da família Blackwood, lamento o incómodo.\n Farei o possível para o ajudar na investigação.
+1$2-Onde estava quando o Lorde foi morto?
+1$3-Conhecia bem o Lorde Alistair?
+1$!carta_rasgada-Alguns dizem que o Lorde tinha problemas financeiros. Sabe de alguma coisa?
+1$!testamento-Porque há documentos no escritório que o mencionam num novo testamento?
+1$!luvas-Estas luvas com sangue são suas?
+1$!relogio-Onde estava exatamente à hora em que o relógio do Lorde parou?
+1$!relogio_barman-Estranho o Barman mencionou que o viu no Bar a repor bebidas.
+1$!relogio_professora-Estranho a senhora Margaret pensou tê-lo visto sair apressadamente da biblioteca por volta da mesma hora do relógio.
+2-Passei o dia inteiro na VIP Room a preparar documentos e, no meio de tanto trabalho, perdi completamente a noção do exterior.
+3-Servi esta família durante muitos anos.\n O Lorde podia ser duro… mas era o meu empregador. Não tinha motivo para lhe fazer mal.
+!carta_rasgada-Não sei nada sobre isso. Os negócios eram assunto dele, não meu.\n Eu limpo a prata, não os livros de contas.
+!testamento-Deve ser algum mal-entendido. Eu… eu não sabia de nada disso.\n Os advogados tratam desses papéis, não eu.
+!luvas-Deve ser um engano. Qualquer criado pode ter luvas iguais.\n Não faço ideia de como foram parar à casa de banho.
+!luvas$4-Mas elas possuem um V nos pulsos e também não mencionei onde as encontrei.
+4-O… o V pode significar várias coisas, não apenas o meu nome. E se não disse onde as encontrou, presumo que alguém as tenha colocado lá para me incriminar.
+!relogio-Já lhe disse que estive a noite toda cá trancado.. A trabalhar.
+!relogio_barman-Aah… é.. é verdade esqueci me completamente disso fui lá pois a senhora Eleanor, pediu-me para trazer bebidas aos convidados
+!relogio_professora-A senhora Margaret… viu-me?\n Bem, devo dizer, isso não faz sentido. Eu não saí da Sala de VIPs esta noite, senhor Holmes. Tudo o que fiz foi atender aos pedidos dos convidados aqui dentro. Sempre permaneci nesta sala.\n Talvez tenha confundido outra pessoa com uniforme parecido… há tantos empregados a circular pela mansão durante o baile.\n A memória das pessoas prega partidas quando estão assustadas não se deve confiar cegamente em testemunhos apressados.\n Se a senhora Margaret jura ter-me visto… é só uma coincidência infeliz.
+
+#----RICK_DOUTOR
+c-RICK_DOUTOR
+1-Ah, Holmes… que maravilha, outro detetive a meter o nariz onde não é chamado.\n Olha, não me peças simpatia nem respostas diretas, está bem?\n Eu trato de remédios, analiso sintomas e tento não enlouquecer com este baile ridículo.\n Se quiseres conversar, ótimo… se esperas cortesia, azar o teu.
+1$2-O que sabe sobre o que aconteceu?
+1$!relogio-Gostaria de lhe perguntar onde estava a esta hora?
+1$?copo_remedio-Sabe de alguma coisa acerca disto?
+1$?remedio_quarto-Pode me dizer mais sobre isto?
+2-Burp!... Não sei de nada.
+2$3-Pode aprofundar?
+3-Olha… Estive aqui a noite toda..Burp!.. A beber. Pronto, contente.\n Não me chateies mais.
+!relogio-….Já te disse estive sempre aqui…Buurrrpp!...Pergunta ali ao barman. Ponto final….. Não me chateies.
+?copo_remedio-Olha, o Lorde Alistair? Ele tinha problemas noturnos… não me perguntes…Burp!.. por isso preparei-lhe isso. Se ele morreu ou não, não é culpa minha. Ele é que decide beber ou não. Simples. Se queres pistas, olha para o copo.
+?remedio_quarto-Buurrrp!... Isso é uma caixa de Doxepin..Burp!.. uu..umm medicamento para ajudar com insónias, prescrevi isso ao Lorde. Uma semana atrás….ZZZZZzzz
+
+#----EMPREGADA
+c-EMPREGADA
+1-Ai, senhor… não me assuste assim! Que susto pensei que fosse a dona Eleanor!!!\n Que alívio…
+1$2-Com licença…? Porque está a casa de banho neste estado?
+2-Eu… eu já estava a tentar pôr isto direito, mas olhe para isto! Quem é que suja o chão, parte o espelho ,deixa toalhas ensopadas de água por todo o lado e ainda por cima suja a pia de sangue?
+2$3-Parece bastante perturbada. Encontrou isto assim quando entrou?
+3-Sim, sim! Eu vim cá só para ver se faltava sabonete… e de repente parecia que um furacão tinha passado por aqui. E… e encontrei estas luvas no balde do lixo.
+3$4-Viu alguém sair?
+4-Só ouvi passos… rápidos, muito rápidos. Mas quando virei a esquina, já não vi ninguém.\n Olhe, senhor Sherlock… eu limpo muita porcaria nesta casa, mas isto?\n Isto foi alguém a esconder qualquer coisa. E eu cá não quero meter-me em sarilhos… mas se descobrir quem foi, diga-lhe que a esfregona não lhe perdoa.
+
+#----CRIANCA
+c-CRIANCA
+1-…Oo…Ooll..Olá senhor….
+1$2-Viste alguma coisa estranha?
+1$3-Podes me dizer como te chamas?
+1$4-…
+1$?doces-Toma um presente.
+2-…
+3-…
+4-…
+?doces-…Obrigada…Tome para ajudar na investigação…te…tem uma coisa estranha escrita
