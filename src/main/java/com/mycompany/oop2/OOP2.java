@@ -18,15 +18,15 @@ public class OOP2 {
 
     public static void main(String[] args) {
         // Inicializa as Salas com valores nulos para as conexões
-        Sala bar = new Bar(null, null, null, null, true);
-        Sala bathroom = new Bathroom(null, null, null, null);
-        Sala balcony = new Foggy_balcony(null, null, null, null);
-        Sala library = new Library(null, null, null, null);
-        Sala hall = new Main_hall(null, null, null, null);
-        Sala office = new Office(null, null, null, null);
-        Sala room = new Room(null, null, null, null);
-        Sala storage = new Storage(null, null, null, null);
-        Sala vipRoom = new VIP_room(null, null, null, null);
+        Sala bar = new Bar(true);
+        Sala bathroom = new Bathroom();
+        Sala balcony = new Foggy_balcony();
+        Sala library = new Library();
+        Sala hall = new Main_hall();
+        Sala office = new Office();
+        Sala room = new Room();
+        Sala storage = new Storage();
+        Sala vipRoom = new VIP_room();
         
         // Ligação das salas
         bar.setDirectionE(storage);
@@ -96,6 +96,7 @@ public class OOP2 {
                 if (player.getInventory().containsItem("Tecido") && player.getInventory().containsItem("Faca")) {
                 System.out.println("A sair do jogo. Até à próxima!");
                 commandRunner.runCommands(player, "sair");
+                }
             }
         }
     }

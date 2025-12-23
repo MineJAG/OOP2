@@ -14,16 +14,16 @@ import Items_Inventario.UsableItem;
  * @author tiago
  */
 public class Library extends Sala{
-    public Library(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+    public Library() {
         super("Biblioteca",
             "A sala tem estantes com livros amarelados empilhados em ordem rigorosa, janelas entreabertas filtram a luz fria.\r\n" +
             "Chão de madeira rangente sob os pés.\r\n" +
             "Um lugar onde cada detalhe poderia revelar algo importante...\r\n" +
             "Talvez encontre algo útil aqui.", 
-            directionN, 
-            directionS, 
-            directionE, 
-            directionW, 
+            null, 
+            null, 
+            null, 
+            null, 
             new Inventory());            
             initializeInventory();
             NpcSpawner();

@@ -15,16 +15,16 @@ import Items_Inventario.UsableItem;
  * @author tiago
  */
 public class Room extends Sala{
-    public Room(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+    public Room() {
         super("Quarto", 
         "O Quarto pessoal de Lady Eleanor e do Lord Blackwood.\r\n" +
         "Percebo uma cama grande ensanguentada, um armário antigo e uma secretária com alguns papéis espalhados.\r\n" +
         "O corpo do lorde permanece jogado na cama, com uma expressão de choque no rosto...Uma pena de facto.\r\n" +
         "Mas quem seria capaz de tal ato hediondo?...hum.",
-        directionN, 
-        directionS, 
-        directionE, 
-        directionW, 
+        null, 
+        null, 
+        null, 
+        null, 
         new Inventory());    
         initializeInventory();
         NpcSpawner();

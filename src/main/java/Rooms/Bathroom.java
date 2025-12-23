@@ -12,15 +12,15 @@ import Items_Inventario.Inventory;
  * @author tiago
  */
 public class Bathroom extends Sala{
-    public Bathroom(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+    public Bathroom() {
         super("Casa de Banho", 
             "Tem espelhos embaciados e partidos, toalhas largadas no chão e sangue espalhado pela pia.\r\n"+
             "Como se alguém tivesse fugido num ímpeto desesperado...\r\n"+
             "Estranho...", 
-            directionN, 
-            directionS, 
-            directionE, 
-            directionW, 
+            null, 
+            null, 
+            null, 
+            null, 
             new Inventory()); 
             initializeInventory(); 
             NpcSpawner();  

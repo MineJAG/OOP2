@@ -15,16 +15,16 @@ import Characters.Npc;
  */
 public class Bar extends Sala {
     private boolean lockedN;
-    public Bar(Sala directionN, Sala directionS, Sala directionE, Sala directionW, boolean lockedN) {
+    public Bar(boolean lockedN) {
         super("bar", 
             "Vejo um Balcão de madeira rústico, as luzes estão baixas, tem copos pelo balcão,\r\n" +
             "e um insuportável cheiro a álcool...\r\n" +
             "Acolhedor...\r\n" +
             "hum.", 
-            directionN, 
-            directionS, 
-            directionE, 
-            directionW, 
+            null, 
+            null, 
+            null, 
+            null, 
             new Inventory());
             this.lockedN = lockedN;
             initializeInventory();

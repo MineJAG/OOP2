@@ -13,15 +13,15 @@ import Items_Inventario.Inventory;
  */
 public class Storage extends Sala{
     private boolean isLightOn = false;
-    public Storage(Sala directionN, Sala directionS, Sala directionE, Sala directionW) {
+    public Storage() {
         super("Depósito", 
             "O quarto está numa escuridão total, não vejo nada...\r\n"+
             "Sinto um cheiro a mofo e pó.\r\n" +
             "Se ao menos tivesse algo...", 
-            directionN, 
-            directionS, 
-            directionE, 
-            directionW, 
+            null, 
+            null, 
+            null, 
+            null, 
             new Inventory());
             initializeInventory();
             NpcSpawner();
