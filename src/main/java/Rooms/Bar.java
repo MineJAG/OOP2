@@ -28,7 +28,6 @@ public class Bar extends Sala {
             new Inventory());
             this.lockedN = lockedN;
             initializeInventory();
-            NpcSpawner();
     }
     
     // Método para destrancar
@@ -56,8 +55,4 @@ public class Bar extends Sala {
         super.getInventory().addInventory(in);
     }
 
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro",this));
-    }
 }

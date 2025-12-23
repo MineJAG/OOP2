@@ -23,7 +23,6 @@ public class Bathroom extends Sala{
             null, 
             new Inventory()); 
             initializeInventory(); 
-            NpcSpawner();  
     }
 
     @Override
@@ -33,8 +32,5 @@ public class Bathroom extends Sala{
         super.getInventory().addInventory(in);
     }
 
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro1",this));
-    }
+    
 }

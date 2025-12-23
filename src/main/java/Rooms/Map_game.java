@@ -4,6 +4,9 @@
  */
 package Rooms;
 
+import java.util.ArrayList;
+import Characters.*;
+
 /**
  *
  * @author tiago
@@ -11,10 +14,17 @@ package Rooms;
 public class Map_game {
     private Sala spawn;
     private Sala bar, bathroom, balcony, library, hall, office, room, storage, vipRoom;
+    private ArrayList<Npc> npcs = new ArrayList<>();
     
     public Map_game(){
         createRooms();
         connectRooms();
+        spawnNpcs(new Npc("pedro", bar));
+        spawnNpcs();
+        spawnNpcs();
+        spawnNpcs();
+        spawnNpcs();
+
     }
     
     // Inicializa as Salas
@@ -49,6 +59,10 @@ public class Map_game {
         storage.setDirectionW(bar);
         vipRoom.setDirectionE(hall);
         spawn = hall;
+    }
+
+    public void spawnNpcs(Npc npc){
+        npcs.add(npc);
     }
 
     public Sala getSpawn() {
