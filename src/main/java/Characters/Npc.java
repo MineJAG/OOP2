@@ -15,7 +15,7 @@ import Items_Inventario.*;
 
 public class Npc extends Character { 
     private Item QuestItem;
-
+    private static DialogueManager manager = new DialogueManager();
     private Map<String, DialogueLine> dialogueLines;
 
     public Npc(String name) {
@@ -41,7 +41,7 @@ public class Npc extends Character {
         QuestItem = questItem;
     }
     public void talk(Player player, DialogueManager manager){
-        manager.startConversation(this,player);
+        Npc.manager.startConversation(this,player);
     }
 
     public Map<String, DialogueLine> getDialogueLines() {
@@ -56,5 +56,9 @@ public class Npc extends Character {
         super(name,null);
         this.QuestItem = QuestItem;
         this.dialogueLines = dialogueLines;
+    }
+    public void itemGiven(Player player){
+        if (dialogueLines.containsKey("?"))
+            Npc.manager.itemGiven(player,this,QuestItem);
     }
 }

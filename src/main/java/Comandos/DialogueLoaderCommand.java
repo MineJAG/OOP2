@@ -3,17 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Comandos;
-import Comandos.Command;
 import Dialogue.DialogueDistributor;
 import Dialogue.DialogueLoader;
 import Characters.*;
 import java.io.IOException;
 import java.util.List;
+import java.util.ArrayList;
 /**
  *
  * @author ajone
  */
-public class DialogueLoaderCommand {
+public class DialogueLoaderCommand implements Command{
     private String name = "Dialogue command - Loads dialogue with the syntax load Filename (the .txt is silently added)";
     public static final String[] COMMAND_NAMES = {"load","carregar"};    
     private final List<Npc> npcs;
@@ -23,7 +23,7 @@ public class DialogueLoaderCommand {
         this.npcs = npcs;
     }
 
-    public static String[] getCOMMAND_NAMES() {
+    public String[] names() {
         return COMMAND_NAMES;
     }
 
@@ -31,8 +31,10 @@ public class DialogueLoaderCommand {
         return npcs;
     }
 
-    public void execute(Player player){
+    public void execute(Player player, ArrayList<String> words) throws Exception {
         DialogueLoader loader = new DialogueLoader();
+        setFilepath(words);
+        String filepath = getFilepath();
         try {
             loader.loadText(filepath + ".txt");
             System.out.println("Dialogue loaded.");
@@ -48,7 +50,7 @@ public class DialogueLoaderCommand {
         return filepath;
     }
 
-    public void setFilepath(List<String> filepath) {
+    public void setFilepath(ArrayList<String> filepath) {
         this.filepath = filepath.get(1);
     }
     
