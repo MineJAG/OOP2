@@ -48,10 +48,10 @@ public class Bar extends Sala {
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Cortina Vermelha", "Um retalho de uma cortina vermelha... De onde será? Talvez alguém o reconheça."));
+        in.addItem(new Clues("Cortina_Vermelha", "Um retalho de uma cortina vermelha... De onde será? Talvez alguém o reconheça."));
         in.addItem(new UsableItem("Chave", "Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.", getName()));
         in.addItem(new UsableItem("Copo", "Um copo com algum tipo de pó dentro.", null));//Npc
-        in.addItem(new ImmovabelItem( "Copos sujos", "copos com restos de bebida, não é hora de festejar"));
+        in.addItem(new ImmovabelItem( "Copos_sujos", "copos com restos de bebida, não é hora de festejar"));
         super.getInventory().addInventory(in);
     }
 

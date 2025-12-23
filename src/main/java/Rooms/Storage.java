@@ -45,7 +45,7 @@ public class Storage extends Sala{
         Inventory in = new Inventory();
         in.addItem(new Clues("Faca", "Faca ainda marcada com sangue seco, provavelmente a arma do crime."));
         in.addItem(new Clues("Tecido", "Parece ser um pedaço de cortina, é vermelho."));
-        in.addItem(new ImmovabelItem("Caixa de bebida","Uma caixa com bebidas... nada de interessante"));
+        in.addItem(new ImmovabelItem("Caixa_de_bebida","Uma caixa com bebidas... nada de interessante"));
         super.getInventory().addInventory(in);
     }
 

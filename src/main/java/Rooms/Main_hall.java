@@ -33,10 +33,11 @@ public class Main_hall extends Sala{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Pegadas", "São pegadas úmidas, levam até ao Depósito. humm..."));
+        in.addItem(new Clues("Pegadas_úmidas", "São pegadas úmidas, levam até ao Depósito. humm..."));
         in.addItem(new UsableItem("Livro", "Um livro em mau estado, talvez haja alguém que saiba de alguma coisa acerca dele...", getName()));
         in.addItem(new ImmovabelItem("Pilar", "É um pilar não me ajuda muito"));
         in.addItem(new ImmovabelItem("Mesa", "Uma mesa bem decorada, uma pena que não está na hora de comer."));
+        in.addItem(new Clues("Ursinho","Hum...estranho...Contém os números 2026"));
         super.getInventory().addInventory(in);
     }
 
