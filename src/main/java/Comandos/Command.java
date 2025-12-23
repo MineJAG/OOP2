@@ -26,7 +26,9 @@ public interface Command {
         return false;
     }
 
-    void execute(Player player, ArrayList<String> words) throws Exception;
+    public void execute(Player player, ArrayList<String> words) throws Exception;
+    public String getName();
+    public String toString();
 }
 
 

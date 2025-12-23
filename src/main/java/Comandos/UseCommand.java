@@ -57,4 +57,15 @@ public class UseCommand implements Command {
 
         
     }
+    public String getName() {
+        return name;
+    }
+    @Override
+    public String toString() {
+        String result = getName() + "\n Command names: \n\t";
+        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+            result += ", " + COMMAND_NAMES[i];
+        }
+        return result;
+    }
 }

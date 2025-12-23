@@ -15,6 +15,12 @@ import java.util.ArrayList;
 public class HelpCommand{
     private String name = "Help Command - shows all commands";
     public static final String[] COMMAND_NAMES = {"ajuda", "help"};
+    private ArrayList<Command> commands;
+
+    public HelpCommand(ArrayList<Command> commands) {
+        this.commands = commands;
+    }
+
     public String[] names(){
         return COMMAND_NAMES;
     }
@@ -22,8 +28,18 @@ public class HelpCommand{
     public String getName(){
         return name;
     }
+    
+    public void execute(Player player, ArrayList<String> words){
+        for(Command command : commands){
+            System.out.println(command.toString());
+        }
+    }
 
-    public void execute(Player player, ArrayList<String> words) throws Exception{
-
+    public String toString() {
+        String result = getName() + "\n Command names: \n\t-";
+        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+            result += ", " + COMMAND_NAMES[i];
+        }
+        return result;
     }
 }

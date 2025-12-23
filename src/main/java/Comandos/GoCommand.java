@@ -85,4 +85,31 @@ public class GoCommand implements Command{
         player.setPresentRoom(nextRoom);
         System.out.println("O Sherlock move-se para a sala: " + nextRoom.getName() + ".");   
     }
+    public String getName() {
+        return name;
+    }
+    @Override
+    public String toString() {
+        String result = getName() + "\n Command names: \n\t-";
+        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+            result += ", " + COMMAND_NAMES[i];
+        }
+        result += "\n Directions: \n\t-North \n\t-";
+        for(int i = 0; i < DIRECTIONSN.length; i++) {
+            result += ", " + DIRECTIONSN[i];
+        }
+        result += "\n\t-South \n\t-";
+        for(int i = 0; i < DIRECTIONSS.length; i++) {
+            result += ", " + DIRECTIONSS[i];
+        }
+        result += "\n\t-East \n\t-";
+        for(int i = 0; i < DIRECTIONSE.length; i++) {
+            result += ", " + DIRECTIONSE[i];
+        }
+        result += "\n\t-West \n\t-";
+        for(int i = 0; i < DIRECTIONSW.length; i++) {
+            result += ", " + DIRECTIONSW[i];
+        }
+        return result;
+    }
 }
