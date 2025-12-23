@@ -12,7 +12,7 @@ import Dialogue.DialogueManager;
  * @author ajone
  */
 public class TalkCommand{
-
+    private String name = "Talk command - talk to an Npc syntax talk then the name of the npc";
     public static String[] getCOMMAND_NAMES() {
         return COMMAND_NAMES;
     }

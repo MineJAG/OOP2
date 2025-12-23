@@ -14,6 +14,7 @@ import java.util.List;
  * @author ajone
  */
 public class DialogueLoaderCommand {
+    private String name = "Dialogue command - Loads dialogue with the syntax load Filename (the .txt is silently added)";
     public static final String[] COMMAND_NAMES = {"load","carregar"};    
     private final List<Npc> npcs;
     private String filepath; 

@@ -17,6 +17,7 @@ import Characters.Player;
  * @author ajone
  */
 public class LookCommand implements Command {
+    private String name = "Look Command - see what is arround syntax Look";
     public static final String[] COMMAND_NAMES = {"look", "olhar", "olha", "vision", "visualizar", "visualize", "visionar", "ver", "ve"};
 
     public String[] names() {

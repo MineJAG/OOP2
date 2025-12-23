@@ -13,6 +13,7 @@ import java.util.*;
  * @author lara
  */
 public class InspectCommand implements Command {
+    private String name = "Inspect Command - chose what to inspect syntax inpet then what to inspect";
     public static final String[] COMMAND_NAMES = {"inspect", "inspeciona", "inspecionar","investigar", "investiga", "search", "investigate", "procurar", "procura", "procure", "analisar", "analyse", "analisa", "analise", "examinar", "examine", "examina", "examine"};
     private AddCommand addCommand;
 

@@ -12,6 +12,7 @@ import java.util.*;
  * @author tiago
  */
 public class GoCommand implements Command{
+    private String name = "Go Command - choose where to go syntax go then direction";
     public static final String[] COMMAND_NAMES = {"go", "ir", "move", "mover", "walk", "andar", "seguir", "proceed", "avançar", "avancar", "continue", "continuar", "head", "dirigir", "dirige", "partir"};
     private static final String[] DIRECTIONSN = {"north", "norte","cima","up","frente","forward","n"};
     private static final String[] DIRECTIONSS = {"south", "sul", "baixo","down","atras","back","s"}; 
@@ -88,5 +89,4 @@ public class GoCommand implements Command{
         player.setPresentRoom(nextRoom);
         System.out.println("O Sherlock move-se para a sala: " + nextRoom.getName() + ".");   
     }
-    
 }
