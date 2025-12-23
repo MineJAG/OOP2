@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Comandos;
-import Characters.Player;
 import java.util.ArrayList;
+
+import Characters.Player;
 
 /**
  *
@@ -28,7 +29,8 @@ public class ExitCommand implements Command {
     @Override
     public String toString() {
         String result = getName() + "\n Command names: \n\t-";
-        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+        result += COMMAND_NAMES[0];
+        for(int i = 1; i < COMMAND_NAMES.length; i++) {
             result += ", " + COMMAND_NAMES[i];
         }
         return result;

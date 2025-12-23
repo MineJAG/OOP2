@@ -3,12 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Comandos;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import Characters.Npc;
+import Characters.Player;
 import Dialogue.DialogueDistributor;
 import Dialogue.DialogueLoader;
-import Characters.*;
-import java.io.IOException;
-import java.util.List;
-import java.util.ArrayList;
 /**
  *
  * @author ajone
@@ -60,7 +62,8 @@ public class DialogueLoaderCommand implements Command{
     @Override
     public String toString() {
         String result = getName() + "\n Command names: \n\t-";
-        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+        result += COMMAND_NAMES[0];
+        for(int i = 1; i < COMMAND_NAMES.length; i++) {
             result += ", " + COMMAND_NAMES[i];
         }
         return result;

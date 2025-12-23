@@ -4,11 +4,13 @@
  */
 package Comandos;
 
-import Characters.*;
-import Items_Inventario.*;
-import Rooms.*;
+import java.util.ArrayList;
 
-import java.util.*;
+import Characters.Npc;
+import Characters.Player;
+import Items_Inventario.UsableItem;
+import Rooms.Bar;
+import Rooms.Storage;
 
 /**
  *
@@ -36,7 +38,7 @@ public class UseCommand implements Command {
 
         for (Npc npc: player.getPresentRoom().getNpcs()) {
             if (npc.getName().equalsIgnoreCase(item.getToBeUsed())) {
-                npc.itemGiven(player);
+                npc.itemGiven(player, item);
                 return;
             }
         } if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
@@ -55,6 +57,7 @@ public class UseCommand implements Command {
 
         
     }
+    
     public String getName() {
         return name;
     }
@@ -62,7 +65,8 @@ public class UseCommand implements Command {
     @Override
     public String toString() {
         String result = getName() + "\n Command names: \n\t";
-        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+        result += COMMAND_NAMES[0];
+        for(int i = 1; i < COMMAND_NAMES.length; i++) {
             result += ", " + COMMAND_NAMES[i];
         }
         return result;

@@ -3,11 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Comandos;
-import Items_Inventario.*;
-import Characters.*;
-import Rooms.*;
-import java.lang.String;
-import java.util.*;
+import java.util.ArrayList;
+
+import Characters.Player;
+import Items_Inventario.AddCommand;
+import Items_Inventario.ImmovabelItem;
+import Items_Inventario.ImmovableItemManager;
+import Items_Inventario.Inventory;
+import Items_Inventario.Item;
+import Rooms.Sala;
 /**
  *
  * @author lara
@@ -63,7 +67,8 @@ public class InspectCommand implements Command {
     @Override
     public String toString() {
         String result = getName() + "\n Command names: \n\t";
-        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+        result += COMMAND_NAMES[0];
+        for(int i = 1; i < COMMAND_NAMES.length; i++) {
             result += ", " + COMMAND_NAMES[i];
         }
         return result;

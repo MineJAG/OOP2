@@ -42,7 +42,7 @@ public class Npc extends Character {
     public void setQuestItem(Item questItem) {
         QuestItem = questItem;
     }
-    public void talk(Player player, DialogueManager manager){
+    public void talk(Player player) throws Exception{
         Npc.manager.startConversation(this,player);
     }
 

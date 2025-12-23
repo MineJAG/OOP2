@@ -7,6 +7,7 @@ import Characters.Npc;
 import Characters.Player;
 import java.util.List;
 import Dialogue.DialogueManager;
+import java.util.ArrayList;
 /**
  *
  * @author ajone
@@ -36,12 +37,6 @@ public class TalkCommand implements Command{
         }
         throw new Exception("Npc nao encontrado");
     }
-    public Npc getNpc() {
-        return npc;
-    }
-    public void setNpc(Npc npc) {
-        this.npc = npc;
-    }
     public String getName() {
         return name;
     }
@@ -51,7 +46,8 @@ public class TalkCommand implements Command{
     @Override
     public String toString() {
         String result = getName() + "\n Command names: \n\t";
-        for(int i = 0; i < COMMAND_NAMES.length; i++) {
+        result += COMMAND_NAMES[0];
+        for(int i = 1; i < COMMAND_NAMES.length; i++) {
             result += ", " + COMMAND_NAMES[i];
         }
         return result;
