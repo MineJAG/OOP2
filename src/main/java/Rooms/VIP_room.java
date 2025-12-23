@@ -28,7 +28,6 @@ public class VIP_room extends Sala{
         null, 
         new Inventory()); 
         initializeInventory();   
-        NpcSpawner();
     }
 
     @Override
@@ -36,10 +35,5 @@ public class VIP_room extends Sala{
         Inventory in = new Inventory();
         in.addItem(new Clues("Relógio", "O relógio de bolso do Lorde. Parou exatamente às 22:14, coinside com a hora da morte."));
         super.getInventory().addInventory(in);
-    }
-
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro9",this));
     }
 }

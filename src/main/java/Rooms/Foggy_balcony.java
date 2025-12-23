@@ -22,7 +22,6 @@ public class Foggy_balcony extends Sala{
             null, 
             new Inventory());   
             initializeInventory(); 
-            NpcSpawner();
     }
     
     @Override
@@ -31,8 +30,4 @@ public class Foggy_balcony extends Sala{
         super.getInventory().addInventory(in);
     }
 
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro2",this));
-    }
 }

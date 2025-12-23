@@ -26,7 +26,6 @@ public class Storage extends Sala{
             null, 
             new Inventory());
             initializeInventory();
-            NpcSpawner();
     }
 
     public void lightUp() {
@@ -49,8 +48,4 @@ public class Storage extends Sala{
         super.getInventory().addInventory(in);
     }
 
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro7",this));
-    }
 }

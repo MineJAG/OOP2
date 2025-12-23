@@ -27,7 +27,6 @@ public class Room extends Sala{
         null, 
         new Inventory());    
         initializeInventory();
-        NpcSpawner();
     }
 
     @Override
@@ -41,10 +40,5 @@ public class Room extends Sala{
         in.addItem(new ImmovabelItem("Gaveta", "Uma gaveta", gaveta ,"Está vazia"));
         in.addItem(new ImmovabelItem("Cama", "A cama onde o lorde se encontra morto."));
         super.getInventory().addInventory(in);
-    }
-
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro6",this));
     }
 }

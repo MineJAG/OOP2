@@ -6,6 +6,8 @@ package Rooms;
 
 import java.util.ArrayList;
 import Characters.*;
+import Items_Inventario.Clues;
+import Items_Inventario.UsableItem;
 
 /**
  *
@@ -19,12 +21,14 @@ public class Map_game {
     public Map_game(){
         createRooms();
         connectRooms();
-        spawnNpcs(new Npc("pedro", bar));
-        spawnNpcs();
-        spawnNpcs();
-        spawnNpcs();
-        spawnNpcs();
-
+        spawnNpcs(new Npc("Lady_Eleanor", hall, null));
+        spawnNpcs(new Npc("Oliver_Barman", bar, new UsableItem("Chave", "Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.", "Bar")));
+        spawnNpcs(new Npc("MARGARET_PROFESSORA", library, new UsableItem("Fosforos","Uma fonte de luz fraca mas, capaz de iluminar algo.","Depósito")));
+        spawnNpcs(new Npc("INSPECTOR_GRAHAM", room, null));
+        spawnNpcs(new Npc("VICTOR_MORDOMO", vipRoom, null));
+        spawnNpcs(new Npc("RICK_DOUTOR", bar, null));
+        spawnNpcs(new Npc("EMPREGADA", bathroom, new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…")));
+        spawnNpcs(new Npc("CRIANÇA", hall, new Clues("Ursinho","Hum...estranho...Contém os números 2026")));
     }
     
     // Inicializa as Salas

@@ -37,6 +37,8 @@ public class OOP2 {
         commands.add(new ExitCommand());
         commands.add(new GoCommand());
         commands.add(new UseCommand());
+        commands.add(new HelpCommand(commands));
+        commands.add(new TalkCommand());
         
         // Spawn do player
         Player player = new Player("Sherlock Holmes", map.getSpawn());

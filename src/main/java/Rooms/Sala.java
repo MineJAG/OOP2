@@ -25,7 +25,6 @@ public abstract class Sala {
         this.roomInventory = roomInventory;
     }   
     
-
     public Inventory getInventory() {
         return roomInventory;
     }
@@ -80,5 +79,4 @@ public abstract class Sala {
     
     public abstract void initializeInventory();
 
-    public abstract void NpcSpawner();
 }

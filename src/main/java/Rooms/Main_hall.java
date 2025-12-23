@@ -27,7 +27,6 @@ public class Main_hall extends Sala{
             null, 
             new Inventory()); 
             initializeInventory();   
-            NpcSpawner();
     }
     
     @Override
@@ -41,8 +40,4 @@ public class Main_hall extends Sala{
         super.getInventory().addInventory(in);
     }
 
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro4",this));
-    }
 }

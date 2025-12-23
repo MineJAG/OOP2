@@ -29,7 +29,6 @@ public class Office extends Sala{
             null, 
             new Inventory());
             initializeInventory();
-            NpcSpawner();
     }
 
     @Override
@@ -42,10 +41,5 @@ public class Office extends Sala{
         in.addItem(new ImmovabelItem("Cofre", "Um cofre. Talvez contenha alguma coisa útil", cofre , "2026", "O cofre está aberta agora", "Está vazio"));
         in.addItem(new ImmovabelItem("Secretária", "A secretária do lorde está uma confusão"));
         super.getInventory().addInventory(in);
-    }
-
-    @Override
-    public void NpcSpawner(){
-        npcs.add(new Npc("pedro5",this));
     }
 }
