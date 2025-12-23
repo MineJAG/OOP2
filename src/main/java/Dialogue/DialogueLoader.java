@@ -60,8 +60,8 @@ public class DialogueLoader {
                     );
                 }
 
-                if (hasChar(header.toLowerCase(), 'o')) {
-                    int oIndex = header.indexOf('o');
+                if (hasChar(header.toLowerCase(), '$')) {
+                    int oIndex = header.indexOf('$');
                     if (oIndex <= 0 || oIndex == header.length() - 1) {
                         throw new IllegalArgumentException("Invalid option header: \"" + header + "\" in line: " + rawLine);
                     }

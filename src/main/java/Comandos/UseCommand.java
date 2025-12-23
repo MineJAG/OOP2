@@ -36,9 +36,7 @@ public class UseCommand implements Command {
 
         for (Npc npc: player.getPresentRoom().getNpcs()) {
             if (npc.getName().equalsIgnoreCase(item.getToBeUsed())) {
-
-                //!!cena dos npcs
-
+                npc.itemGiven(player);
                 return;
             }
         } if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
