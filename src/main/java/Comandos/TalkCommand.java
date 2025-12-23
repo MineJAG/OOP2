@@ -11,7 +11,7 @@ import Dialogue.DialogueManager;
  *
  * @author ajone
  */
-public class TalkCommand{
+public class TalkCommand implements Command {
 
     public static String[] getCOMMAND_NAMES() {
         return COMMAND_NAMES;
