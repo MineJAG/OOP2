@@ -52,6 +52,7 @@ public class Bar extends Sala {
         in.addItem(new UsableItem("Chave", "Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.", getName()));
         in.addItem(new UsableItem("Copo", "Um copo com algum tipo de pó dentro.", null));//Npc
         in.addItem(new ImmovabelItem( "Copos_sujos", "copos com restos de bebida, não é hora de festejar"));
+        in.addItem(new UsableItem("Doces", "Uns rebuçados alguém pode gostar de os receber", null));//Npcs
         super.getInventory().addInventory(in);
     }
 
