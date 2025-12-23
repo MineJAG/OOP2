@@ -19,7 +19,7 @@ public class OOP2 {
     public static void main(String[] args) {
         Map_game map = new Map_game();
 
-        
+        //teste do git apagar
         // Introdução do jogo (NÃO APAGAR)
         System.out.println("==== INTRODUÇÃO AO JOGO ====");
         System.out.println("Na luxuosa Mansão Blackwood decorre o baile anual.\r\n" + "O Lorde Alistair Blackwood foi encontrado morto no seu quarto.\r\n" +
