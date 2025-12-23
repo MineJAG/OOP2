@@ -17,34 +17,7 @@ import java.util.*;
 public class OOP2 {
 
     public static void main(String[] args) {
-        // Inicializa as Salas
-        Sala bar = new Bar(true);
-        Sala bathroom = new Bathroom();
-        Sala balcony = new Foggy_balcony();
-        Sala library = new Library();
-        Sala hall = new Main_hall();
-        Sala office = new Office();
-        Sala room = new Room();
-        Sala storage = new Storage();
-        Sala vipRoom = new VIP_room();
-        
-        // Ligação das salas
-        bar.setDirectionE(storage);
-        bar.setDirectionN(library);
-        bar.setDirectionS(hall);
-        bathroom.setDirectionW(hall);
-        balcony.setDirectionS(room);
-        library.setDirectionW(room);
-        library.setDirectionE(office);
-        library.setDirectionS(bar); 
-        hall.setDirectionN(bar);
-        hall.setDirectionE(bathroom);
-        hall.setDirectionW(vipRoom);
-        office.setDirectionW(library); 
-        room.setDirectionN(balcony);
-        room.setDirectionE(library);
-        storage.setDirectionW(bar);
-        vipRoom.setDirectionE(hall);
+        Map_game map = new Map_game();
 
         
         // Introdução do jogo (NÃO APAGAR)
@@ -66,7 +39,7 @@ public class OOP2 {
         commands.add(new UseCommand());
         
         // Spawn do player
-        Player player = new Player("Sherlock Holmes", hall);
+        Player player = new Player("Sherlock Holmes", map.getSpawn());
         
         // VER MELHOR
         player.getInventory().addItem(new Clues("1","1"));
