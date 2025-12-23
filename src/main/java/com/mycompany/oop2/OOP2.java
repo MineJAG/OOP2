@@ -17,7 +17,7 @@ import java.util.*;
 public class OOP2 {
 
     public static void main(String[] args) {
-        // Inicializa as Salas com valores nulos para as conexões
+        // Inicializa as Salas
         Sala bar = new Bar(true);
         Sala bathroom = new Bathroom();
         Sala balcony = new Foggy_balcony();
@@ -63,6 +63,7 @@ public class OOP2 {
         commands.add(new UsableItemsCommand());
         commands.add(new ExitCommand());
         commands.add(new GoCommand());
+        commands.add(new UseCommand());
         
         // Spawn do player
         Player player = new Player("Sherlock Holmes", hall);

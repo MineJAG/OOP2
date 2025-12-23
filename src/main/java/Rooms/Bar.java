@@ -30,30 +30,28 @@ public class Bar extends Sala {
             initializeInventory();
             NpcSpawner();
     }
-    public boolean isLocked() {
-        return lockedN;
-    }
-
-    public void setLocked(boolean lockedN) {
-        this.lockedN = lockedN;
-    }
-
+    
     // Método para destrancar
     public void unlockNorth() {
         lockedN = false;
     }
     
     // Getter para saber se pode ir para norte
-    public boolean canGoNorth() {
-        return !lockedN;
+    @Override
+    public boolean canGo(String direction) {
+        if (direction.equalsIgnoreCase("north")){
+            return !lockedN;
+        }
+        return true;
     }
 
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Cortina Vermelha", ""));
-        in.addItem(new UsableItem("Chave dourada", "", "Bar"));
-        in.addItem(new ImmovabelItem("Pilar", "nAO pode nover"));
+        in.addItem(new Clues("Cortina Vermelha", "Um retalho de uma cortina vermelha... De onde será? Talvez alguém o reconheça."));
+        in.addItem(new UsableItem("Chave", "Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.", getName()));
+        in.addItem(new UsableItem("Copo", "Um copo com algum tipo de pó dentro.", null));//Npc
+        in.addItem(new ImmovabelItem( "Copos sujos", "copos com restos de bebida, não é hora de festejar"));
         super.getInventory().addInventory(in);
     }
 

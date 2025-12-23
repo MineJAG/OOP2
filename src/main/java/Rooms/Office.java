@@ -35,10 +35,12 @@ public class Office extends Sala{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Cópia de um livro", ""));
-        in.addItem(new Clues("Testamento Alterado", ""));
-        in.addItem(new UsableItem("Carta", "", getName()));
-        in.addItem(new ImmovabelItem("Cofre", "merda", in, "piça", "aberto", "vazio"));
+        Inventory cofre = new Inventory();
+        in.addItem(new Clues("Cópia de um livro", "É uma cópia de um livro. O autor do mesmo consta ser o Lorde BlackWood. A capa deste é parecida a algo."));
+        cofre.addItem(new Clues("Testamento Alterado", "Segundo o documento, Victor deverá receber uma boa parte das economias do lorde. Humm... Estranho parece forjado."));
+        cofre.addItem(new UsableItem("Carta", "Está escrito na carta o quanto o Lorde Blackwood se arrepende de ter roubado os créditos do livro do Victor, também contém um cheque com uma grande quantia de dinheiro.", getName()));
+        in.addItem(new ImmovabelItem("Cofre", "Um cofre. Talvez contenha alguma coisa útil", cofre , "2026", "O cofre está aberta agora", "Está vazio"));
+        in.addItem(new ImmovabelItem("Secretária", "A secretária do lorde está uma confusão"));
         super.getInventory().addInventory(in);
     }
 
