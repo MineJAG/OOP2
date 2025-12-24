@@ -49,6 +49,7 @@ public class UseCommand implements Command {
         } if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
             if (player.getPresentRoom() instanceof ItemUsedRoom) {
                 System.out.println("O Sherlock usa o item " + item.getName() + " na sala " + player.getPresentRoom().getName() + ".");
+                ((ItemUsedRoom) player.getPresentRoom()).useItem();
                 return;
             }
         }
