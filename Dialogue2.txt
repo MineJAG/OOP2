@@ -103,7 +103,7 @@ c-EMPREGADA
 2-Eu… eu já estava a tentar pôr isto direito, mas olhe para isto! Quem é que suja o chão, parte o espelho ,deixa toalhas ensopadas de água por todo o lado e ainda por cima suja a pia de sangue?
 2$%-Parece bastante perturbada. Encontrou isto assim quando entrou?
 %-Sim, sim! Eu vim cá só para ver se faltava sabonete… e de repente parecia que um furacão tinha passado por aqui. E… e encontrei estas luvas no balde do lixo.
-3$4-Viu alguém sair?
+%$4-Viu alguém sair?
 4-Só ouvi passos… rápidos, muito rápidos. Mas quando virei a esquina, já não vi ninguém.\n Olhe, senhor Sherlock… eu limpo muita porcaria nesta casa, mas isto?\n Isto foi alguém a esconder qualquer coisa. E eu cá não quero meter-me em sarilhos… mas se descobrir quem foi, diga-lhe que a esfregona não lhe perdoa.
 
 #----CRIANCA

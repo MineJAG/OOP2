@@ -5,7 +5,8 @@
 package Rooms;
 
 import java.util.ArrayList;
-import Characters.*;
+
+import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.UsableItem;
 
@@ -66,11 +67,16 @@ public class Map_game {
     }
 
     public void spawnNpcs(Npc npc){
-        npcs.add(npc);
+    npc.getPresentRoom().addNpc(npc);
+    npcs.add(npc);
     }
 
     public Sala getSpawn() {
         return spawn;
+    }
+
+    public ArrayList<Npc> getNpcs() {
+        return npcs;
     }
     
 }

@@ -8,18 +8,22 @@ import java.util.ArrayList;
 
 import Characters.Npc;
 import Characters.Player;
+import Dialogue.DialogueManager;
 import Items_Inventario.UsableItem;
 import Rooms.Bar;
 import Rooms.Storage;
-
 /**
  *
  * @author Bibby
  */
 public class UseCommand implements Command {
     private String name = "Use command - choose an item to use ";
+    private DialogueManager manager;
     public static final String[] COMMAND_NAMES = {"use", "usar", "utilizar","usa", "utilize","uses","utilizes","utilize"};
 
+    public UseCommand(DialogueManager manager) {
+        this.manager = manager;
+    }
     public String[] names() {
         return COMMAND_NAMES;
     }
@@ -37,8 +41,8 @@ public class UseCommand implements Command {
         } 
 
         for (Npc npc: player.getPresentRoom().getNpcs()) {
-            if (npc.getName().equalsIgnoreCase(item.getToBeUsed())) {
-                npc.itemGiven(player, item);
+            if (npc.getName().toLowerCase().equals(item.getToBeUsed().toLowerCase())) {
+                npc.itemGiven(player, item, manager);
                 return;
             }
         } if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {

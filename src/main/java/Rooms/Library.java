@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;

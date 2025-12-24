@@ -3,12 +3,30 @@
  */
 
 package com.mycompany.oop2;
-import Characters.*;
-import Items_Inventario.*;
-import Rooms.*;
-import Dialogue.*;
-import Comandos.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import Characters.Npc;
+import Characters.Player;
+import Comandos.CluesCommand;
+import Comandos.Command;
+import Comandos.CommandRunner;
+import Comandos.DialogueLoaderCommand;
+import Comandos.ExitCommand;
+import Comandos.GoCommand;
+import Comandos.HelpCommand;
+import Comandos.InspectCommand;
+import Comandos.LookCommand;
+import Comandos.TalkCommand;
+import Comandos.UsableItemsCommand;
+import Comandos.UseCommand;
+import Dialogue.DialogueDistributor;
+import Dialogue.DialogueLoader;
+import Dialogue.DialogueManager;
+import Items_Inventario.AddCommand;
+import Items_Inventario.Clues;
+import Items_Inventario.Item;
+import Rooms.Map_game;
 
 /**
  *
@@ -29,6 +47,7 @@ public class OOP2 {
 
         // Criação dos comandos
         AddCommand addCommand = new AddCommand();
+        DialogueManager manager = new DialogueManager();
         ArrayList<Command> commands = new ArrayList<>();
         commands.add(new LookCommand());
         commands.add(new InspectCommand(addCommand));
@@ -36,9 +55,9 @@ public class OOP2 {
         commands.add(new UsableItemsCommand());
         commands.add(new ExitCommand());
         commands.add(new GoCommand());
-        commands.add(new UseCommand());
+        commands.add(new UseCommand(manager));
         commands.add(new HelpCommand(commands));
-        commands.add(new TalkCommand());
+        commands.add(new TalkCommand(manager));
         
         // Spawn do player
         Player player = new Player("Sherlock Holmes", map.getSpawn());
@@ -46,7 +65,8 @@ public class OOP2 {
         // VER MELHOR
         player.getInventory().addItem(new Clues("1","1"));
         Item item = new Clues("bread","its bread what did u expect");
-        Npc npc = new Npc(item,null,"Old_Man");
+        Npc npc = new Npc("Old_Man",map.getSpawn(),item);
+        map.getSpawn().getNpcs().add(npc);
         DialogueLoader loader = new DialogueLoader();
         try {
             loader.loadText("dialogue.txt");
@@ -60,7 +80,8 @@ public class OOP2 {
         npcs.add(npc);
         UserInputReader scanner = new UserInputReader();
         CommandRunner commandRunner = new CommandRunner(npcs, commands);
-
+        commands.add(new DialogueLoaderCommand(map.getNpcs()));
+        
 
 
         // Ciclo infinito de jogo

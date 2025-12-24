@@ -30,7 +30,7 @@ public class DialogueDistributor {
         }
         else {
         for(Npc npc : npcs){
-            npc.setDialogueLines(this.dialogue.get(npc.getName()));
+            npc.setDialogueLines(this.dialogue.get(npc.getName().toLowerCase()));
             }
         }
     }

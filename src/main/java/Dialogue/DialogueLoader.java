@@ -4,9 +4,11 @@ package Dialogue;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-import java.io.*;
-import java.util.Map;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 /**
  *
  * @author ajone
@@ -49,7 +51,7 @@ public class DialogueLoader {
                 String body   = part[1].trim();
 
                 if (header.equalsIgnoreCase("c")) {
-                    currentNpc = body;
+                    currentNpc = body.toLowerCase();
                     dialogue.putIfAbsent(currentNpc, new HashMap<>());
                     continue;
                 }

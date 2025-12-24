@@ -4,7 +4,6 @@
  */
 package Characters;
 import java.util.Map;
-
 import Dialogue.DialogueLine;
 import Dialogue.DialogueManager;
 import Items_Inventario.Item;
@@ -14,9 +13,8 @@ import Rooms.Sala;
  * @author ajone
  */
 
-public class Npc extends Character { 
+public class Npc extends Character{ 
     private Item QuestItem;
-    private static DialogueManager manager = new DialogueManager();
     private Map<String, DialogueLine> dialogueLines;
 
     public Npc(String name) {
@@ -42,8 +40,8 @@ public class Npc extends Character {
     public void setQuestItem(Item questItem) {
         QuestItem = questItem;
     }
-    public void talk(Player player) throws Exception{
-        Npc.manager.startConversation(this,player);
+    public void talk(Player player,DialogueManager manager) throws Exception{
+        manager.startConversation(this,player);
     }
 
     public Map<String, DialogueLine> getDialogueLines() {
@@ -59,8 +57,8 @@ public class Npc extends Character {
         this.QuestItem = QuestItem;
         this.dialogueLines = dialogueLines;
     }
-    public void itemGiven(Player player,Item item) throws Exception{
+    public void itemGiven(Player player,Item item,DialogueManager manager) throws Exception{
         if (dialogueLines.containsKey("?"+ item.getName()))
-            Npc.manager.itemGiven(player,this,item);
+            manager.itemGiven(player,this,item);
     }
 }

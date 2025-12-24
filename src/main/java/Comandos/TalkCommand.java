@@ -3,11 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Comandos;
+import java.util.ArrayList;
+import java.util.List;
+
 import Characters.Npc;
 import Characters.Player;
-import java.util.List;
 import Dialogue.DialogueManager;
-import java.util.ArrayList;
 /**
  *
  * @author ajone
@@ -17,18 +18,22 @@ public class TalkCommand implements Command{
     public static String[] getCOMMAND_NAMES() {
         return COMMAND_NAMES;
     }
+    DialogueManager manager;
 
     public static final String[] COMMAND_NAMES = {"falar","conversar","talk","fala","conversa","comunicar","comunica","dialogar","dialoga","speak","say","chat","comunicate"};
-
+    public TalkCommand(DialogueManager manager) {
+        this.manager = manager;
+    }
     public void execute(Player player, ArrayList<String> words) throws Exception {
         talkToNpc(player.getPresentRoom().getNpcs(), words, player);
     }
     public void talkToNpc(List<Npc> npcs, List<String> words, Player player) throws Exception {
         for (int i = 0; i < npcs.size(); i++) {
             for (int o = 0; o < words.size(); o++) {
-                if (npcs.get(i).getName().equals(words.get(o))) {
+                if (npcs.get(i).getName().toLowerCase().equals(words.get(o).toLowerCase())) {
                     if (npcs.get(i).getPresentRoom() == player.getPresentRoom()) {
-                        npcs.get(i).talk(player);
+                        npcs.get(i).talk(player, manager);
+                        return;
                     } else {
                         throw new Exception("Npc not in this room");
                     }
