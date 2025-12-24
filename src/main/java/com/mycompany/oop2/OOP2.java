@@ -3,10 +3,11 @@
  */
 
 package com.mycompany.oop2;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
-
-import Characters.Npc;
 import Characters.Player;
 import Comandos.CluesCommand;
 import Comandos.Command;
@@ -20,12 +21,8 @@ import Comandos.LookCommand;
 import Comandos.TalkCommand;
 import Comandos.UsableItemsCommand;
 import Comandos.UseCommand;
-import Dialogue.DialogueDistributor;
-import Dialogue.DialogueLoader;
 import Dialogue.DialogueManager;
 import Items_Inventario.AddCommand;
-import Items_Inventario.Clues;
-import Items_Inventario.Item;
 import Rooms.Map_game;
 
 /**
@@ -35,6 +32,12 @@ import Rooms.Map_game;
 public class OOP2 {
 
     public static void main(String[] args) {
+        try {
+            System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out), true, StandardCharsets.UTF_8));
+            System.setErr(new FileOutputStream.err), true, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
         Map_game map = new Map_game();
 
         //teste do git apagar
