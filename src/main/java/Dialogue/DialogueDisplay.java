@@ -23,8 +23,9 @@ public class DialogueDisplay {
         for(int i = 0; i < options.size(); i++){
             switch (options.get(i).getNextLineId().charAt(0)) {
                 case '!':
-                    if(player.getInventory().containsItem(options.get(i).getNextLineId().substring(1)))
+                    if(player.getInventory().containsItem(options.get(i).getNextLineId().substring(1))){
                         System.out.println((i+1) + ". " + options.get(i).getOption());
+                    }
                     break;
                 case '?':
                     System.out.println((i+1) + ". " + options.get(i).getOption());
