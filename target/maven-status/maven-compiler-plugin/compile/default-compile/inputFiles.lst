@@ -23,6 +23,9 @@ C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Dialogue\DialogueManager.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Dialogue\DialogueOption.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Endings\Ending.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Endings\Ending1.java
+C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Endings\Ending2.java
+C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Endings\Ending3.java
+C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Endings\Ending4.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Items_Inventario\AddCommand.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Items_Inventario\Clues.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Items_Inventario\ImmovabelItem.java
@@ -33,6 +36,7 @@ C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Items_Inventario\UsableItem.j
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Rooms\Bar.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Rooms\Bathroom.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Rooms\Foggy_balcony.java
+C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Rooms\ItemUsedRoom.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Rooms\Library.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Rooms\Main_hall.java
 C:\Users\tiago\Documents\GitHub\OOP2\src\main\java\Rooms\Map_game.java

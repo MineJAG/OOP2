@@ -12,7 +12,7 @@ import Items_Inventario.Inventory;
  *
  * @author tiago
  */
-public class Storage extends Sala{
+public class Storage extends Sala implements ItemUsedRoom{
     private boolean isLightOn = false;
     public Storage() {
         super("Depósito", 
@@ -28,7 +28,7 @@ public class Storage extends Sala{
             initializeInventory();
     }
 
-    public void lightUp() {
+    public void useItem() {
         if (!isLightOn) {
             isLightOn = true;
             setDescription("O depósito... Está cheio de caixas de bebidas e condimentos. Talvez encontre algo importante.");

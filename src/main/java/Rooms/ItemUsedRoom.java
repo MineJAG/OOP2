@@ -4,8 +4,6 @@
  */
 package Rooms;
 
-import Characters.Player;
-import Items_Inventario.Item;
 
 /**
  *

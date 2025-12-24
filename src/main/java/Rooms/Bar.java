@@ -12,7 +12,7 @@ import Items_Inventario.UsableItem;
  *
  * @author tiago
  */
-public class Bar extends Sala {
+public class Bar extends Sala implements ItemUsedRoom{
     private boolean lockedN;
     public Bar(boolean lockedN) {
         super("bar", 
@@ -32,7 +32,7 @@ public class Bar extends Sala {
     }
     
     // Método para destrancar
-    public void unlockNorth() {
+    public void useItem() {
         lockedN = false;
     }
     
