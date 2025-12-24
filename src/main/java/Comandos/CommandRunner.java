@@ -13,12 +13,10 @@ import Characters.*;
  */
 public class CommandRunner {
     ArrayList<Command> commands;
-    List<Npc> npcs;
 
 
     
-    public CommandRunner(List<Npc> npcs, ArrayList<Command> commands) {
-        this.npcs = npcs;
+    public CommandRunner(ArrayList<Command> commands) {
         this.commands = commands;
         //this.dialogueLoaderCommand = new DialogueLoaderCommand(npcs);
     }

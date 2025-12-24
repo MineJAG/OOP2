@@ -61,34 +61,16 @@ public class OOP2 {
         
         // Spawn do player
         Player player = new Player("Sherlock Holmes", map.getSpawn());
-        
-        // VER MELHOR
-        player.getInventory().addItem(new Clues("1","1"));
-        Item item = new Clues("bread","its bread what did u expect");
-        Npc npc = new Npc("Old_Man",map.getSpawn(),item);
-        map.getSpawn().getNpcs().add(npc);
-        DialogueLoader loader = new DialogueLoader();
-        try {
-            loader.loadText("dialogue.txt");
-            System.out.println("Dialogue loaded.");
-        } catch (Exception e) {
-            System.out.println("Error loading dialogue: " + e.getMessage());
-            System.out.println("Using default dialogue.");
-        }
-        DialogueDistributor distributor = new DialogueDistributor();
-        List<Npc> npcs = new ArrayList<>();
-        npcs.add(npc);
         UserInputReader scanner = new UserInputReader();
-        CommandRunner commandRunner = new CommandRunner(npcs, commands);
+        CommandRunner commandRunner = new CommandRunner(commands);
         commands.add(new DialogueLoaderCommand(map.getNpcs()));
         
-
-
         // Ciclo infinito de jogo
         while (true) {
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();
             commandRunner.runCommands(player, linha);
+            
         }
         /*
             if (player.getPresentRoom().getClass().toString().equals(balcony.getClass().toString())) {
