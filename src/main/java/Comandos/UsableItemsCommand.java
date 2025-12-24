@@ -14,7 +14,7 @@ import Characters.Player;
  */
 public class UsableItemsCommand implements Command {
     private String name = "Usable Items Command(inventory) - show the usable items in the inventory";
-    public static final String[] COMMAND_NAMES = {"item", "itens", "itens", "usable", "usables", "usaveis"};
+    public static final String[] COMMAND_NAMES = {"item", "itens", "itens", "usable", "usables", "usaveis", "inventario", "inventory"};
 
     public String[] names() {
         return COMMAND_NAMES;
