@@ -1,0 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Endings;
+
+/**
+ *
+ * @author Bibby
+ */
+public class Ending4 {
+    // quando a gaja recebe os papeis com os problemas financeiros
+    //final mau
+}
