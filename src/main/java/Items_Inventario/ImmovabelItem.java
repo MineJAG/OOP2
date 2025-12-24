@@ -17,7 +17,7 @@ public class ImmovabelItem extends Item {
     private final String descriptionEmpty;
 
     // =========================
-    //      CONSTRUTORES
+    //       CONSTRUTORES
     // =========================
 
     // 1) Só um item, não guarda nada, não é trancável

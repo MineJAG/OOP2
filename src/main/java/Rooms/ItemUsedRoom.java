@@ -12,5 +12,5 @@ import Items_Inventario.Item;
  * @author Bibby
  */
 public interface ItemUsedRoom {
-    public void useItem(Player player, Item item);
+    public void useItem();
 }
