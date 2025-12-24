@@ -11,6 +11,7 @@ import Characters.Player;
 import Dialogue.DialogueManager;
 import Items_Inventario.UsableItem;
 import Rooms.Bar;
+import Rooms.ItemUsedRoom;
 import Rooms.Storage;
 /**
  *
@@ -46,16 +47,10 @@ public class UseCommand implements Command {
                 return;
             }
         } if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
-            System.out.println("O Sherlock usa o item " + item.getName() + " na sala " + player.getPresentRoom().getName() + ".");
-            if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
-                if (player.getPresentRoom() instanceof Bar) {
-                    ((Bar) player.getPresentRoom()).unlockNorth();
-                }
-                if (player.getPresentRoom() instanceof Storage) {
-                    ((Storage) player.getPresentRoom()).lightUp();
-                }
+            if (player.getPresentRoom() instanceof ItemUsedRoom) {
+                System.out.println("O Sherlock usa o item " + item.getName() + " na sala " + player.getPresentRoom().getName() + ".");
+                return;
             }
-            return;
         }
         throw new Exception("Não há onde usar este item.");
 
