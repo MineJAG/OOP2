@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
@@ -19,7 +18,8 @@ public class Storage extends Sala{
         super("Depósito", 
             "O quarto está numa escuridão total, não vejo nada...\r\n"+
             "Sinto um cheiro a mofo e pó.\r\n" +
-            "Se ao menos tivesse algo...", 
+            "Se ao menos tivesse algo...\r\n" +
+            "Salas: \nW - Bar\n", 
             null, 
             null, 
             null, 

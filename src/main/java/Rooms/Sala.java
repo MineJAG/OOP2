@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import java.util.ArrayList;
+import java.util.*;
 import Characters.Npc;
 import Items_Inventario.Inventory;
 
@@ -16,7 +16,7 @@ public abstract class Sala {
     private String name, description;
     private Sala directionN, directionS, directionE, directionW;
     private Inventory roomInventory = new Inventory();
-    private ArrayList<Npc> npcs = new ArrayList<Npc>();
+    private List<Npc> npcs = new ArrayList<Npc>();
 
     public Sala(String name, String description, Sala directionN, Sala directionS, Sala directionE, Sala directionW, Inventory roomInventory) {
         this.name = name;
@@ -32,7 +32,7 @@ public abstract class Sala {
         npcs.add(npc);
     }
     
-    public ArrayList<Npc> getNpcs(){
+    public List<Npc> getNpcs(){
         return npcs;
     }
     

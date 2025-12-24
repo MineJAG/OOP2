@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
@@ -20,7 +19,9 @@ public class Main_hall extends Sala{
             "Uma sala num estilo barroco e estravagante, tem uns pilhadores artisticos, mesas decoradas, e janelas com artes\r\n" + 
             "o piso de mármore está molhado e a chuva ecoa lá fora.\r\n" +
             "Os convidados parecem assustados.\r\n" +
-            "Um rastro de água leva até à porta norte, está entreaberta...hum?", 
+            "Um rastro de água leva até à porta norte, está entreaberta...hum?\n\r" + 
+            "Npcs: \n- Eleanor\n- Criança\r\n " +
+            "Salas: \nN - Bar\nW - Sala VIP\nE - Casa de Banho\n", 
             null, 
             null, 
             null, 

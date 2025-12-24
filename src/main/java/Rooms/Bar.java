@@ -7,7 +7,6 @@ import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
 import Items_Inventario.UsableItem;
-import Characters.Npc;
 
 /**
  *
@@ -20,7 +19,9 @@ public class Bar extends Sala {
             "Vejo um Balcão de madeira rústico, as luzes estão baixas, tem copos pelo balcão,\r\n" +
             "e um insuportável cheiro a álcool...\r\n" +
             "Acolhedor...\r\n" +
-            "hum.", 
+            "hum.\r\n" +
+            "Npcs: \n- Barman\n- Rick\r\n" +
+            "Salas: \nN - Biblioteca\nS - Sala Principal\nE - Depósito\n", 
             null, 
             null, 
             null, 

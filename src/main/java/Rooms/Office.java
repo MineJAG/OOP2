@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
@@ -22,7 +21,8 @@ public class Office extends Sala{
             "Uma cadeira de couro gasta está por trás da secretária.\r\n" +
             "E na parede, um quadro de um homem de aparência severa.\r\n" +
             "Há também uma estante com vários livros antigos e um cofre embutido na parede.\r\n" +
-            "Talvez exista algo importante aqui...", 
+            "Talvez exista algo importante aqui...\r\n" +
+            "Salas: \nW - Biblioteca\n", 
             null, 
             null, 
             null, 

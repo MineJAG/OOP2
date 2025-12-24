@@ -1,5 +1,5 @@
-#----LADY_ELEANOR
-c-LADY_ELEANOR
+#----Eleanor
+c-Eleanor
 1-Sherlock… o meu marido… ele está morto.\nPor favor, descubra o que aconteceu. Ninguém pode sair enquanto isto não acabar.\nO inspetor disse-me que o corpo está no quarto mas não tive coragem de lá entrar.
 1$2-O que sabe sobre o crime?
 1$3-Havia alguém que tivesse motivos para matar o seu marido?
@@ -24,8 +24,8 @@ c-LADY_ELEANOR
 !relogio$11-Saiu hum… poderia me dizer mais ao menos a que horas foi?
 11-hum.. acho que eram umas 21:45.
 
-#----OLIVER_BARMAN
-c-OLIVER_BARMAN
+#----Barman
+c-Barman
 1-AH! Senhor Holmes… eu… ee… eu ouvi alguém a correr antes do grito.\nVieram da Biblioteca… parecia alguém com pressa.
 1$%-Conte-me o que ouviu ao certo?
 1$3-Encontrou mais alguma coisa estranha por aqui?
@@ -38,8 +38,8 @@ c-OLIVER_BARMAN
 ?copo_remedios-Se não me engano o senhor Alistair ia tomar isso antes de dormir, não sei ao certo pergunte ao Doutor aí ao lado.
 !relogio-Não senhor não. Estive aqui a noite toda a tomar conta do bar.
 
-#----MARGARET_PROFESSORA
-c-MARGARET_PROFESSORA
+#----Margaret
+c-Margaret
 1-Sr. Holmes, finalmente alguém com cérebro nesta casa.\nEnquanto os outros gritavam, eu prestava atenção.\nVi o senhor Alistair entrar no quarto e momentos depois alguém a sair a correr.\nPareceu-me não ser um convidado.
 1$2-O que viu exatamente?
 1$3-Consegue descrever melhor essa pessoa?
@@ -50,8 +50,8 @@ c-MARGARET_PROFESSORA
 %-Agora que fala nisso, quando cheguei reparei que tinha livros fora do lugar quando fui arrumar encontrei isto.
 !relogio-hum.. Pelo que me lembro era por volta das 22:00.
 
-#----INSPECTOR_GRAHAM
-c-INSPECTOR_GRAHAM
+#----Inspector
+c-Inspector
 1-Holmes! Ainda bem que apareceu, eu… estava a examinar o corpo.\nBem, a tentar, pelo menos. Não é tão simples como nos livros.
 1$2-Qual é a causa provável da morte?
 1$3-Há quanto tempo acha que ele morreu?
@@ -60,8 +60,8 @@ c-INSPECTOR_GRAHAM
 3-Pela temperatura do corpo, diria que há menos de uma hora.\nSe o seu relógio de bolso estiver certo, isso pode nos dar uma pista mais exata, penso que o deixei na sala de VIPS ainda há pouco.
 4-Sim, alguns fios de cabelo escuro presos nos dedos.\nDeve ter tentado agarrar o atacante durante a luta.
 
-#----VICTOR_MORDOMO
-c-VICTOR_MORDOMO
+#----Victor
+c-Victor
 1-Senhor Holmes a tragédia do Lorde foi… inesperada.\nEm nome da família Blackwood, lamento o incómodo.\nFarei o possível para o ajudar na investigação.
 1$2-Onde estava quando o Lorde foi morto?
 1$3-Conhecia bem o Lorde Alistair?
@@ -82,8 +82,8 @@ c-VICTOR_MORDOMO
 !relogio_barman-Aah… é.. é verdade esqueci me completamente disso fui lá pois a senhora Eleanor, pediu-me para trazer bebidas aos convidados
 !relogio_professora-A senhora Margaret… viu-me?\nBem, devo dizer, isso não faz sentido. Eu não saí da Sala de VIPs esta noite, senhor Holmes. Tudo o que fiz foi atender aos pedidos dos convidados aqui dentro. Sempre permaneci nesta sala.\nTalvez tenha confundido outra pessoa com uniforme parecido… há tantos empregados a circular pela mansão durante o baile.\nA memória das pessoas prega partidas quando estão assustadas não se deve confiar cegamente em testemunhos apressados.\nSe a senhora Margaret jura ter-me visto… é só uma coincidência infeliz.
 
-#----RICK_DOUTOR
-c-RICK_DOUTOR
+#----Rick
+c-Rick
 1-Ah, Holmes… que maravilha, outro detetive a meter o nariz onde não é chamado.\nOlha, não me peças simpatia nem respostas diretas, está bem?\nEu trato de remédios, analiso sintomas e tento não enlouquecer com este baile ridículo.\nSe quiseres conversar, ótimo… se esperas cortesia, azar o teu.
 1$2-O que sabe sobre o que aconteceu?
 1$!relogio-Gostaria de lhe perguntar onde estava a esta hora?
@@ -96,8 +96,8 @@ c-RICK_DOUTOR
 ?copo_remedio-Olha, o Lorde Alistair? Ele tinha problemas noturnos… não me perguntes…Burp!.. por isso preparei-lhe isso. Se ele morreu ou não, não é culpa minha. Ele é que decide beber ou não. Simples. Se queres pistas, olha para o copo.
 ?remedio_quarto-Buurrrp!... Isso é uma caixa de Doxepin..Burp!.. uu..umm medicamento para ajudar com insónias, prescrevi isso ao Lorde. Uma semana atrás….ZZZZZzzz
 
-#----EMPREGADA
-c-EMPREGADA
+#----Empregada
+c-Empregada
 1-Ai, senhor… não me assuste assim! Que susto pensei que fosse a dona Eleanor!!!\nQue alívio…
 1$2-Com licença…? Porque está a casa de banho neste estado?
 2-Eu… eu já estava a tentar pôr isto direito, mas olhe para isto! Quem é que suja o chão, parte o espelho ,deixa toalhas ensopadas de água por todo o lado e ainda por cima suja a pia de sangue?
@@ -106,8 +106,8 @@ c-EMPREGADA
 %$4-Viu alguém sair?
 4-Só ouvi passos… rápidos, muito rápidos. Mas quando virei a esquina, já não vi ninguém.\nOlhe, senhor Sherlock… eu limpo muita porcaria nesta casa, mas isto?\nIsto foi alguém a esconder qualquer coisa. E eu cá não quero meter-me em sarilhos… mas se descobrir quem foi, diga-lhe que a esfregona não lhe perdoa.
 
-#----CRIANCA
-c-CRIANCA
+#----Crianca
+c-Crianca
 1-…Oo…Ooll..Olá senhor….
 1$2-Viste alguma coisa estranha?
 1$3-Podes me dizer como te chamas?

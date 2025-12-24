@@ -8,7 +8,6 @@ import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
 import Items_Inventario.UsableItem;
 
-
 /**
  *
  * @author tiago
@@ -19,7 +18,9 @@ public class Library extends Sala{
             "A sala tem estantes com livros amarelados empilhados em ordem rigorosa, janelas entreabertas filtram a luz fria.\r\n" +
             "Chão de madeira rangente sob os pés.\r\n" +
             "Um lugar onde cada detalhe poderia revelar algo importante...\r\n" +
-            "Talvez encontre algo útil aqui.", 
+            "Talvez encontre algo útil aqui.\r\n" +
+            "Npcs: \n- Margaret\r\n" +
+            "Salas: \nS - Bar\nE - Escritório\nW - Quarto", 
             null, 
             null, 
             null, 

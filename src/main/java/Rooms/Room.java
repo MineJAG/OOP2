@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-
-import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
@@ -20,7 +18,9 @@ public class Room extends Sala{
         "O Quarto pessoal de Lady Eleanor e do Lord Blackwood.\r\n" +
         "Percebo uma cama grande ensanguentada, um armário antigo e uma secretária com alguns papéis espalhados.\r\n" +
         "O corpo do lorde permanece jogado na cama, com uma expressão de choque no rosto...Uma pena de facto.\r\n" +
-        "Mas quem seria capaz de tal ato hediondo?...hum.",
+        "Mas quem seria capaz de tal ato hediondo?...hum.\r\n" +
+        "Npcs: \n- Inspector\r\n" +
+        "Salas: \nN - Varanda Nebulosa\nE - Biblioteca\n",
         null, 
         null, 
         null, 

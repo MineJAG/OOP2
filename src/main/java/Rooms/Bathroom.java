@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
 
@@ -16,7 +15,9 @@ public class Bathroom extends Sala{
         super("Casa de Banho", 
             "Tem espelhos embaciados e partidos, toalhas largadas no chão e sangue espalhado pela pia.\r\n"+
             "Como se alguém tivesse fugido num ímpeto desesperado...\r\n"+
-            "Estranho...", 
+            "Estranho...\r\n" +
+            "Npcs: \n- Empregada\r\n" +
+            "Salas: \nW - Sala Principal\n", 
             null, 
             null, 
             null, 

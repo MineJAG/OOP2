@@ -3,9 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-
-import java.util.ArrayList;
-
+import java.util.*;
 import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.UsableItem;
@@ -17,19 +15,19 @@ import Items_Inventario.UsableItem;
 public class Map_game {
     private Sala spawn;
     private Sala bar, bathroom, balcony, library, hall, office, room, storage, vipRoom;
-    private ArrayList<Npc> npcs = new ArrayList<>();
+    private List<Npc> npcs = new ArrayList<>();
     
     public Map_game(){
         createRooms();
         connectRooms();
-        spawnNpcs(new Npc("Lady_Eleanor", hall, null));
-        spawnNpcs(new Npc("Oliver_Barman", bar, new UsableItem("Chave", "Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.", "Bar")));
-        spawnNpcs(new Npc("MARGARET_PROFESSORA", library, new UsableItem("Fosforos","Uma fonte de luz fraca mas, capaz de iluminar algo.","Depósito")));
-        spawnNpcs(new Npc("INSPECTOR_GRAHAM", room, null));
-        spawnNpcs(new Npc("VICTOR_MORDOMO", vipRoom, null));
-        spawnNpcs(new Npc("RICK_DOUTOR", bar, null));
-        spawnNpcs(new Npc("EMPREGADA", bathroom, new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…")));
-        spawnNpcs(new Npc("CRIANÇA", hall, new Clues("Ursinho","Hum...estranho...Contém os números 2026")));
+        spawnNpcs(new Npc("Eleanor", hall, null));
+        spawnNpcs(new Npc("Barman", bar, new UsableItem("Chave", "Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.", "Bar")));
+        spawnNpcs(new Npc("Margaret", library, new UsableItem("Fosforos","Uma fonte de luz fraca mas, capaz de iluminar algo.","Depósito")));
+        spawnNpcs(new Npc("Inspector", room, null));
+        spawnNpcs(new Npc("Victor", vipRoom, null));
+        spawnNpcs(new Npc("Rick", bar, null));
+        spawnNpcs(new Npc("Empregada", bathroom, new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…")));
+        spawnNpcs(new Npc("Crianca", hall, new Clues("Ursinho","Hum...estranho...Contém os números 2026")));
     }
     
     // Inicializa as Salas
@@ -66,16 +64,19 @@ public class Map_game {
         spawn = hall;
     }
 
+    //Cria Npcs e coloca-os no array global
     public void spawnNpcs(Npc npc){
-    npc.getPresentRoom().addNpc(npc);
-    npcs.add(npc);
+        if(npc.getPresentRoom()!=null){
+            npc.getPresentRoom().addNpc(npc);
+        }
+        npcs.add(npc);
     }
 
     public Sala getSpawn() {
         return spawn;
     }
 
-    public ArrayList<Npc> getNpcs() {
+    public List<Npc> getNpcs() {
         return npcs;
     }
     

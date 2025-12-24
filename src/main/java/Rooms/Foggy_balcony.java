@@ -4,7 +4,6 @@
  */
 package Rooms;
 import Items_Inventario.Inventory;
-import Characters.Npc;
 
 /**
  *
@@ -15,7 +14,8 @@ public class Foggy_balcony extends Sala{
         super("Varanda Nebulosa", 
             "A Varanda está coberta pela névoa. Está silencioso...Perturbador..\r\n" + 
             "A névoa densa envolve tudo, tornando difícil de ver além de alguns metros.\r\n" + 
-            "O ar é frio e úmido, com um cheiro leve de terra molhada",
+            "O ar é frio e úmido, com um cheiro leve de terra molhada\r\n" +
+            "Salas: \nS - Quarto\n",
             null, 
             null, 
             null, 

@@ -3,12 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Rooms;
-import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
-
-
-
 
 /**
  *
@@ -21,7 +17,9 @@ public class VIP_room extends Sala{
         "É pequena, mas luxuosa e confortável\r\n" +
         "tem sofás confortáveis e elegantes como decoração requintada.\r\n" +
         "Há uma lareira acesa que emite um calor acolhedor...\r\n" +
-        "hum.", 
+        "hum.\r\n" +
+        "Npcs: \n- Victor\r\n" +
+        "Salas: \nE - Sala Principal", 
         null, 
         null, 
         null, 
