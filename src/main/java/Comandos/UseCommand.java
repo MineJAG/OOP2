@@ -10,9 +10,7 @@ import Characters.Npc;
 import Characters.Player;
 import Dialogue.DialogueManager;
 import Items_Inventario.UsableItem;
-import Rooms.Bar;
 import Rooms.ItemUsedRoom;
-import Rooms.Storage;
 /**
  *
  * @author Bibby
@@ -39,17 +37,18 @@ public class UseCommand implements Command {
             }
         } if (item == null) {
             throw new Exception("Não existe nenhum item com esse nome no inventário.");
-        } 
-
+        }
         for (Npc npc: player.getPresentRoom().getNpcs()) {
             if (npc.getName().toLowerCase().equals(item.getToBeUsed().toLowerCase())) {
                 npc.itemGiven(player, item, manager);
+                player.addItemHistory(item.getName() + "on" + npc.getName());
                 return;
             }
         } if (player.getPresentRoom().getName().equalsIgnoreCase(item.getToBeUsed())) {
             if (player.getPresentRoom() instanceof ItemUsedRoom) {
                 System.out.println("O Sherlock usa o item " + item.getName() + " na sala " + player.getPresentRoom().getName() + ".");
                 ((ItemUsedRoom) player.getPresentRoom()).useItem();
+                player.addItemHistory(item.getName() + "on" + player.getPresentRoom().getName());
                 return;
             }
         }

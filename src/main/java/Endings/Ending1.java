@@ -17,11 +17,16 @@ public class Ending1 implements Ending{
         if (!(player.getPresentRoom() instanceof Foggy_balcony)){
             return false;
         } else {
-            return true;
+            if(player.getInventory().containsItems(new String[]{"faca", "testamento_alterado", "copia_de_um_livro","verdade_sobre_o_livro","luvas","pedaco_de_cortina","cortina_rasgada","relogio_parado"})){
+                return true;
+            }
+            else{
+                return false;
+                }
+            }
         }
-    }
     @Override
     public void trigger(){
-        System.out.println("Obrigado por jogar!");
+        System.out.println("Na varanda, Sherlock apresenta todas as provas. Não há espaço para desculpas. Victor é confrontado com factos irrefutáveis e perde qualquer hipótese de negação. A polícia é chamada. O caso termina com o culpado preso.");
     }
 }

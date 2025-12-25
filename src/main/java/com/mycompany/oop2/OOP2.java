@@ -8,6 +8,7 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+
 import Characters.Player;
 import Comandos.CluesCommand;
 import Comandos.Command;
@@ -22,6 +23,11 @@ import Comandos.TalkCommand;
 import Comandos.UsableItemsCommand;
 import Comandos.UseCommand;
 import Dialogue.DialogueManager;
+import Endings.Ending;
+import Endings.Ending1;
+import Endings.Ending2;
+import Endings.Ending3;
+import Endings.Ending4;
 import Items_Inventario.AddCommand;
 import Rooms.Map_game;
 
@@ -70,12 +76,22 @@ public class OOP2 {
         CommandRunner commandRunner = new CommandRunner(commands);
         commands.add(new DialogueLoaderCommand(map.getNpcs()));
 
+        ArrayList <Ending> endings = new ArrayList<>();
+        endings.add(new Ending1());
+        endings.add(new Ending2());
+        endings.add(new Ending3());
+        endings.add(new Ending4());
         // Ciclo infinito de jogo
         while (true) {
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();
             commandRunner.runCommands(player, linha);
-
+            for (Ending ending : endings) {
+                if (ending.check(player)) {
+                    ending.trigger();
+                    break;
+                }
+            }
         }
         /*
          * if (player.getPresentRoom().getClass().toString().equals(balcony.getClass().

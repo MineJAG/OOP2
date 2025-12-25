@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Items_Inventario;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -98,5 +99,14 @@ public class Inventory {
             }
         }
         return false;
+    }
+
+    public boolean containsItems(String[] items) {
+        for(int i=0; i<items.length; i++) {
+            if(!containsItem(items[i])) {
+                return false;
+            }
+        }
+        return true;
     }
 }

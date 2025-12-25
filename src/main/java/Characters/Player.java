@@ -4,7 +4,9 @@
  */
 package Characters;
 
-import Items_Inventario.*;
+import java.util.ArrayList;
+
+import Items_Inventario.Inventory;
 import Rooms.Sala;
 
 /**
@@ -13,6 +15,7 @@ import Rooms.Sala;
  */
 public class Player extends Character {
     private Inventory inventory = new Inventory();
+    private ArrayList<String> itemHistory = new ArrayList<>();
 
     public Player(String name, Sala presentRoom){
         super(name, presentRoom);
@@ -24,5 +27,13 @@ public class Player extends Character {
     
     public void setInventory(Inventory inventory){
         this.inventory = inventory;
+    }
+
+    public ArrayList<String> getItemHistory() {
+        return itemHistory;
+    }
+    
+    public void addItemHistory(String history){
+        itemHistory.add(history);
     }
 }
