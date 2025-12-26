@@ -12,7 +12,7 @@ public class Ending4 implements Ending{
     @Override
     public boolean check(Player player){
         for(int i = 0; i < player.getItemHistory().size(); i++){
-            if(player.getInventory().getInventory().get(i).getName().toLowerCase().equals("carta_rasgada" + "on" + "lady_eleanor")){
+            if(player.getInventory().getInventory().get(i).getName().toLowerCase().equals("carta_rasgada" + "on" + "eleanor")){
                 return true;
             }
         }
