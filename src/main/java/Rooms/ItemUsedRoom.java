@@ -6,7 +6,7 @@ package Rooms;
 
 
 /**
- *
+ * 
  * @author Bibby
  */
 public interface ItemUsedRoom {

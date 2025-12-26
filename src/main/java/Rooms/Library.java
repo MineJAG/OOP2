@@ -9,8 +9,8 @@ import Items_Inventario.Inventory;
 import Items_Inventario.UsableItem;
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Biblioteca
+ * @author Tiago
  */
 public class Library extends Sala{
     public Library() {

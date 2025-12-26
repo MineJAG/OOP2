@@ -9,7 +9,7 @@ import Items_Inventario.Inventory;
 
 
 /**
- *
+ * Gere a inicialização da sala Depósito
  * @author tiago
  */
 public class Storage extends Sala implements ItemUsedRoom{

@@ -9,8 +9,8 @@ import Items_Inventario.Inventory;
 import Items_Inventario.UsableItem;
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Quarto
+ * @author Tiago
  */
 public class Room extends Sala{
     public Room() {

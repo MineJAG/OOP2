@@ -4,11 +4,11 @@
  */
 package Characters;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Dialogue.DialogueLine;
 import Dialogue.DialogueManager;
+import Items_Inventario.Inventory;
 import Items_Inventario.Item;
 import Rooms.Room;
 /**
@@ -17,12 +17,10 @@ import Rooms.Room;
  */
 
 public class Npc extends Character{ 
-    private Map<String, Item> items;
     private Map<String, DialogueLine> dialogueLines;
 
     public Npc(String name) {
-        super(name,null);
-        items = null;
+        super(name,null,null);
     }
     public void talk(Player player,DialogueManager manager) throws Exception{
         manager.startConversation(this,player);
@@ -36,25 +34,12 @@ public class Npc extends Character{
         this.dialogueLines = (HashMap<String, DialogueLine>) dialogueLines;
     }
 
-    public void setItems(Map<String, Item> items) {
-        this.items = (HashMap<String, Item>)items;
-    }
-
-    public Map<String, Item> getItems() {
-        return new HashMap<>(items);
-    }
-
-    public Npc(List<Item> items, String name, Room presentRoom){
-        super(name,presentRoom);
+    public Npc(Inventory inventory, String name, Room presentRoom){
+        super(name,inventory,presentRoom);
         this.dialogueLines = null;
-        this.items = new HashMap<>();
-        for(Item item : items){
-            this.items.put(item.getName(), item);
-        }
     }
-    public Npc(String name,Map<String, Item> items,Map<String, DialogueLine> dialogueLines,Room presentRoom){
-        super(name,presentRoom);
-        this.items = (HashMap<String, Item>)items;
+    public Npc(String name,Inventory inventory,Map<String, DialogueLine> dialogueLines,Room presentRoom){
+        super(name,inventory,presentRoom);
         this.dialogueLines = (HashMap<String, DialogueLine>)dialogueLines;
     }
 

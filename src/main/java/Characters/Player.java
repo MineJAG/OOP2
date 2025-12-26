@@ -14,21 +14,12 @@ import Rooms.Sala;
  * @author ajone
  */
 public class Player extends Character {
-    private Inventory inventory = new Inventory();
     private ArrayList<String> itemHistory = new ArrayList<>();
     
-    public Player(String name, Sala presentRoom){
-        super(name, presentRoom);
+    public Player(String name, Inventory inventory, Sala presentRoom){
+        super(name, inventory, presentRoom);
     }
     
-    public Inventory getInventory(){
-        return inventory;
-    }
-    
-    public void setInventory(Inventory inventory){
-        this.inventory = inventory;
-    }
-
     public ArrayList<String> getItemHistory() {
         return new ArrayList<>(itemHistory);
     }

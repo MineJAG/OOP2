@@ -10,8 +10,8 @@ import Items_Inventario.UsableItem;
 
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Sala Principal
+ * @author Tiago
  */
 public class Main_hall extends Sala{
     public Main_hall() {

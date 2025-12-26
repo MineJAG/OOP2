@@ -9,8 +9,8 @@ import Items_Inventario.Inventory;
 import Items_Inventario.UsableItem;
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Bar
+ * @author Tiago
  */
 public class Bar extends Sala implements ItemUsedRoom{
     private boolean lockedN;
