@@ -6,7 +6,7 @@ package Dialogue;
 
 
 /**
- *
+ * Classe que representa uma opcao de dialogo no jogo tem como responsabilidade guardar a opcao de dialogo e a proxima linha associada a essa opcao.
  * @author ajone
  */
 public class DialogueOption {

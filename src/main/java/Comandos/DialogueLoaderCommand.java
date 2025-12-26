@@ -12,7 +12,7 @@ import Characters.Player;
 import Dialogue.DialogueDistributor;
 import Dialogue.DialogueLoader;
 /**
- *
+ * Classe que representa o comando de carregar dialogos no jogo tem como responsabilidade carregar dialogos de um txt a partir de um caminho dado pelo player.
  * @author ajone
  */
 public class DialogueLoaderCommand implements Command{

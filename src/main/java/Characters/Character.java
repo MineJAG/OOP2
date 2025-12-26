@@ -7,7 +7,7 @@ package Characters;
 import Rooms.Sala;
 
 /**
- *
+ *Classe abstrata que representa uma personagem no jogo.
  * @author ajone
  */
 public abstract class Character {

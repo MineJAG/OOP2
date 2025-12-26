@@ -7,7 +7,7 @@ package Dialogue;
 
 import java.util.ArrayList;
 /**
- *
+ * Classe que representa uma linha de dialogo no jogo tem como responsabilidade guardar a linha de dialogo e as opcoes associadas a essa linha.
  * @author ajone
  */
 public class DialogueLine {

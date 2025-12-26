@@ -10,7 +10,7 @@ import Characters.Npc;
 import Characters.Player;
 import Dialogue.DialogueManager;
 /**
- *
+ * Comando que permite ao jogador falar com um Npc presente na sala atual.
  * @author ajone
  */
 public class TalkCommand implements Command{

@@ -4,12 +4,13 @@
  */
 package Comandos;
 
-import Characters.Player;
 import java.util.ArrayList;
+
+import Characters.Player;
 //import jdk.jshell.Diag;
 
 /**
- *
+ * Comando que mostra todos os comandos disponiveis no jogo bem como simples ajuda a como utilizar os mesmos.
  * @author ajone
  */
 public class HelpCommand implements Command{

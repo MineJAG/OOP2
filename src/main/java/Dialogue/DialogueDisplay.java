@@ -8,11 +8,10 @@ import java.util.List;
 
 import Characters.Player;
 /**
- *
+ * Classe que representa a exibicao do dialogo no jogo tem como responsabilidade exibir as linhas de dialogo e as opcoes de escolha.
  * @author ajone
  */
 public class DialogueDisplay {
-    
     public void showLine(DialogueLine line){
         if(line != null){
         System.out.println(line.getLine());

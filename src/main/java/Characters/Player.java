@@ -10,13 +10,13 @@ import Items_Inventario.Inventory;
 import Rooms.Sala;
 
 /**
- *
+ * Classe que representa o jogador no jogo tem como responsabilidade guardar informacoes sobre o jogador.
  * @author ajone
  */
 public class Player extends Character {
     private Inventory inventory = new Inventory();
     private ArrayList<String> itemHistory = new ArrayList<>();
-
+    
     public Player(String name, Sala presentRoom){
         super(name, presentRoom);
     }

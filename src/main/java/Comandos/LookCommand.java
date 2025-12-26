@@ -12,7 +12,7 @@ import Rooms.Sala;
 import Rooms.Storage;
 
 /**
- *
+ * 
  * @author ajone
  */
 public class LookCommand implements Command {

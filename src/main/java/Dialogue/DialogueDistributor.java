@@ -9,7 +9,7 @@ import java.util.Map;
 
 import Characters.Npc;
 /**
- *
+ * Classe que representa o distribuidor de dialogos no jogo tem como responsabilidade distribuir as linhas de dialogo para os NPCs correspondentes.
  * @author ajone
  */
 public class DialogueDistributor {

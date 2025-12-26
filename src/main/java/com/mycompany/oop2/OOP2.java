@@ -32,7 +32,7 @@ import Items_Inventario.AddCommand;
 import Rooms.Map_game;
 
 /**
- *
+ * 
  * @author ajone
  */
 public class OOP2 {

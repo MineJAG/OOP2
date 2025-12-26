@@ -10,7 +10,7 @@ import Characters.Npc;
 import Characters.Player;
 import Items_Inventario.Item;
 /**
- *
+ * Classe que representa o gestor de dialogos no jogo tem como responsabilidade gerir o fluxo de dialogos entre o jogador e os NPCs.
  * @author ajone
  */
 public class DialogueManager{
