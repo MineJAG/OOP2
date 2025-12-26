@@ -17,8 +17,8 @@ import Rooms.Room;
  */
 
 public class Npc extends Character{ 
-    private HashMap<String, Item> items;
-    private HashMap<String, DialogueLine> dialogueLines;
+    private Map<String, Item> items;
+    private Map<String, DialogueLine> dialogueLines;
 
     public Npc(String name) {
         super(name,null);
@@ -29,7 +29,7 @@ public class Npc extends Character{
     }
 
     public Map<String, DialogueLine> getDialogueLines() {
-        return dialogueLines;
+        return new HashMap<>(dialogueLines);
     }
 
     public void setDialogueLines(Map<String, DialogueLine> dialogueLines) {
@@ -52,10 +52,10 @@ public class Npc extends Character{
             this.items.put(item.getName(), item);
         }
     }
-    public Npc(String name,HashMap<String, Item> items,HashMap<String, DialogueLine> dialogueLines,Room presentRoom){
+    public Npc(String name,Map<String, Item> items,Map<String, DialogueLine> dialogueLines,Room presentRoom){
         super(name,presentRoom);
-        this.items = items;
-        this.dialogueLines = dialogueLines;
+        this.items = (HashMap<String, Item>)items;
+        this.dialogueLines = (HashMap<String, DialogueLine>)dialogueLines;
     }
 
     public void itemGiven(Player player,Item item,DialogueManager manager) throws Exception{
