@@ -44,7 +44,7 @@ public class Npc extends Character{
     }
 
     public void itemGiven(Player player,Item item,DialogueManager manager) throws Exception{
-        if (dialogueLines.containsKey("?"+ item.getName()))
+        if (dialogueLines.containsKey("?"+ item.getName().toLowerCase()))
             manager.itemGiven(player,this,item);
     }
 }

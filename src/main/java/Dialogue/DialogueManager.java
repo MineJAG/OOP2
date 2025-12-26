@@ -49,7 +49,7 @@ public class DialogueManager{
         int userInput = input.readInt();
         if(currentLine.getOptions().size() >= userInput && userInput > 0){
             if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
-                if (player.getInventory().containsItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1))){
+                if (player.getInventory().containsItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1).toLowerCase())){
                 setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
                 conversation(player);
             }
@@ -70,8 +70,8 @@ public class DialogueManager{
 
     public void itemGiven(Player player,Npc npc,Item item) throws Exception{
         player.getInventory().removeItem(item);
-        if(npc.getDialogueLines().containsKey("? " + item.getName())){
-        currentLine = npc.getDialogueLines().get("? " + item.getName());
+        if(npc.getDialogueLines().containsKey("?" + item.getName().toLowerCase())){
+        currentLine = npc.getDialogueLines().get("?" + item.getName().toLowerCase());
         currentNpc = npc;
         conversation(player);
         } else {

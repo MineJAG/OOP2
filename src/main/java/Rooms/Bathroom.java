@@ -4,6 +4,7 @@
  */
 package Rooms;
 import Items_Inventario.Clues;
+import Items_Inventario.ImmovabelItem;
 import Items_Inventario.Inventory;
 
 /**
@@ -29,7 +30,8 @@ public class Bathroom extends Sala{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…"));
+        in.addItem(new ImmovabelItem("Sanita", "É uma sanita..."));
+        in.addItem(new ImmovabelItem("Pia", "É uma pia... e está cheia de sangue..humm."));
         super.getInventory().addInventory(in);
     }
 

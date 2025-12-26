@@ -35,7 +35,7 @@ public class Map_game {
         empregadaInv.addItem(new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…"));
         spawnNpcs(new Npc(empregadaInv,"Empregada", bathroom));
         Inventory criancaInv = new Inventory();
-        criancaInv.addItem(new Clues("Ursinho","Hum...estranho...Contém os números 2026"));
+        criancaInv.addItem(new Clues("Ursinho","Hum...estranho...Contém os números 1469"));
         spawnNpcs(new Npc(criancaInv,"Crianca", hall));
     }
 

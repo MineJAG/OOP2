@@ -94,7 +94,7 @@ public class Inventory {
 
     public boolean containsItem(String item) {
         for(int i=0; i<inventory.size(); i++) {
-            if(inventory.get(i).getName().equals(item)) {
+            if(inventory.get(i).getName().toLowerCase().equals(item.toLowerCase())) {
                 return true;
             }
         }
