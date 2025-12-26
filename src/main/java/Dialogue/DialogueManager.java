@@ -54,7 +54,7 @@ public class DialogueManager{
                 conversation(player);
             }
         } else if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '%'){
-            player.getInventory().addItem(currentNpc.getItems().get(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1)));
+            player.getInventory().addItem(currentNpc.getInventory().getItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1)));
             setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
             conversation(player);
         }else {
