@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Characters;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import Dialogue.DialogueLine;
@@ -44,9 +44,10 @@ public class Npc extends Character{
         return new HashMap<>(items);
     }
 
-    public Npc(ArrayList<Item> items, Map<String, DialogueLine> dialogueLines, String name, Room presentRoom){
+    public Npc(List<Item> items, String name, Room presentRoom){
         super(name,presentRoom);
-        this.dialogueLines = (HashMap<String, DialogueLine>)dialogueLines;
+        this.dialogueLines = null;
+        this.items = new HashMap<>();
         for(Item item : items){
             this.items.put(item.getName(), item);
         }
