@@ -9,8 +9,8 @@ import Items_Inventario.Inventory;
 
 
 /**
- *
- * @author ajone
+ * Gere a estrututa base de todas as Salas
+ * @author Tiago
  */
 public abstract class Sala {
     private String name, description;

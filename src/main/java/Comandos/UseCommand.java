@@ -13,7 +13,7 @@ import Items_Inventario.UsableItem;
 import Rooms.ItemUsedRoom;
 /**
  *
- * @author Bibby
+ * @author Lara e Afonso
  */
 public class UseCommand implements Command {
     private String name = "Use command - choose an item to use ";

@@ -6,8 +6,8 @@ package Rooms;
 import Items_Inventario.Inventory;
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Varanda
+ * @author Tiago
  */
 public class Foggy_balcony extends Sala{
     public Foggy_balcony() {

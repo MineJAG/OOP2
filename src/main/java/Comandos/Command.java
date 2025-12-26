@@ -9,13 +9,13 @@ import java.util.List;
 import Characters.Player;
 
 /**
- *
+ * Define o comportamento comum de todos os comandos do jogo.
  * @author ajone
  */
 public interface Command {
     public String[] names();
 
-    default boolean matches(List<String> words) {
+    default boolean matches(ArrayList<String> words) {
         for (String c : names()) {
             for (String w : words) {
                 if (w.equalsIgnoreCase(c)) {
