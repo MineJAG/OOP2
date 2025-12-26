@@ -27,12 +27,12 @@ c-Eleanor
 #----Barman
 c-Barman
 1-AH! Senhor Holmes… eu… ee… eu ouvi alguém a correr antes do grito.\nVieram da Biblioteca… parecia alguém com pressa.
-1$%-Conte-me o que ouviu ao certo?
+1$%chave-Conte-me o que ouviu ao certo?
 1$3-Encontrou mais alguma coisa estranha por aqui?
 1$!mordomo-Viu o mordomo esta noite?
 1$?copo_remedios-Barman. Pode me dizer o que tem este copo?
 1$!relogio-Por acaso saiu alguma vez do bar esta noite?
-%-Ouvi passos apressados a sair da Biblioteca e a passar pelo corredor.\nParecia alguém a correr, desesperado. Quando fui lá ver, encontrei isto.
+%chave-Ouvi passos apressados a sair da Biblioteca e a passar pelo corredor.\nParecia alguém a correr, desesperado. Quando fui lá ver, encontrei isto.
 3-Sim… encontrei um pedaço de tecido vermelho atrás do balcão.\nNão pertence a nenhum dos cortinados daqui. Parecia arrancado à força.\nSe quiser pode levá-lo, talvez ajude.
 !mordomo-Vi o sim, entrou e saiu do Bar algumas vezes.\nDisse que vinha buscar garrafas para o salão principal… mas parecia nervoso.
 ?copo_remedios-Se não me engano o senhor Alistair ia tomar isso antes de dormir, não sei ao certo pergunte ao Doutor aí ao lado.
