@@ -10,7 +10,7 @@ import Dialogue.DialogueLine;
 import Dialogue.DialogueManager;
 import Items_Inventario.Inventory;
 import Items_Inventario.Item;
-import Rooms.Room;
+import Rooms.*;
 /**
  * Classe que representa um NPC no jogo tem como responsabilidade guardar informacoes sobre o NPC.
  * @author ajone
@@ -34,11 +34,11 @@ public class Npc extends Character{
         this.dialogueLines = (HashMap<String, DialogueLine>) dialogueLines;
     }
 
-    public Npc(Inventory inventory, String name, Room presentRoom){
+    public Npc(Inventory inventory, String name, Sala presentRoom){
         super(name,inventory,presentRoom);
         this.dialogueLines = null;
     }
-    public Npc(String name,Inventory inventory,Map<String, DialogueLine> dialogueLines,Room presentRoom){
+    public Npc(String name,Inventory inventory,Map<String, DialogueLine> dialogueLines,Sala presentRoom){
         super(name,inventory,presentRoom);
         this.dialogueLines = (HashMap<String, DialogueLine>)dialogueLines;
     }

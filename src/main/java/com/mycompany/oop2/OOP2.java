@@ -29,6 +29,7 @@ import Endings.Ending2;
 import Endings.Ending3;
 import Endings.Ending4;
 import Items_Inventario.AddCommand;
+import Items_Inventario.Inventory;
 import Rooms.Map_game;
 
 /**
@@ -71,7 +72,7 @@ public class OOP2 {
         commands.add(new TalkCommand(manager));
 
         // Spawn do player
-        Player player = new Player("Sherlock Holmes", map.getSpawn());
+        Player player = new Player("Sherlock Holmes", new Inventory(),map.getSpawn());
         UserInputReader scanner = new UserInputReader();
         CommandRunner commandRunner = new CommandRunner(commands);
         commands.add(new DialogueLoaderCommand(map.getNpcs()));

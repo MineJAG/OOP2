@@ -7,7 +7,6 @@ import java.util.*;
 import Characters.Npc;
 import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
-import Items_Inventario.Item;
 import Items_Inventario.UsableItem;
 
 /**
@@ -26,12 +25,18 @@ public class Map_game {
         Inventory barmanInv = new Inventory();
         barmanInv.addItem(new UsableItem("Chave","Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.","Bar"));
         spawnNpcs(new Npc(barmanInv, "Barman", bar));
-        spawnNpcs(new Npc("Margaret", library, new UsableItem("Fosforos","Uma fonte de luz fraca mas, capaz de iluminar algo.","Depósito")));
-        spawnNpcs(new Npc("Inspector", room, null));
-        spawnNpcs(new Npc("Victor", vipRoom, null));
-        spawnNpcs(new Npc("Rick", bar, null));
-        spawnNpcs(new Npc("Empregada", bathroom, new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…")));
-        spawnNpcs(new Npc("Crianca", hall, new Clues("Ursinho","Hum...estranho...Contém os números 2026")));
+        Inventory margaretInv = new Inventory();
+        margaretInv.addItem(new UsableItem("Fosforos","Uma fonte de luz fraca mas, capaz de iluminar algo.","Depósito"));
+        spawnNpcs(new Npc(margaretInv,"Margaret", library));
+        spawnNpcs(new Npc(null,"Inspector", room));
+        spawnNpcs(new Npc(null,"Victor", vipRoom));
+        spawnNpcs(new Npc(null,"Rick", bar));
+        Inventory empregadaInv = new Inventory();
+        empregadaInv.addItem(new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…"));
+        spawnNpcs(new Npc(empregadaInv,"Empregada", bathroom));
+        Inventory criancaInv = new Inventory();
+        criancaInv.addItem(new Clues("Ursinho","Hum...estranho...Contém os números 2026"));
+        spawnNpcs(new Npc(criancaInv,"Crianca", hall));
     }
 
     // Inicializa as Salas
