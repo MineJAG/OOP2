@@ -4,6 +4,7 @@
  */
 package Characters;
 
+import Items_Inventario.Inventory;
 import Rooms.Sala;
 
 /**
@@ -13,8 +14,10 @@ import Rooms.Sala;
 public abstract class Character {
     private String name;
     private Sala presentRoom;
-    public Character(String name, Sala presentRoom){
+    private Inventory inventory;
+    public Character(String name, Inventory inventory, Sala presentRoom){
         this.name = name;
+        this.inventory = inventory;
         this.presentRoom = presentRoom;
     }
     
@@ -28,6 +31,14 @@ public abstract class Character {
     
     public Sala setPresentRoom(Sala newSala){
         return this.presentRoom = newSala;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
             
 }
