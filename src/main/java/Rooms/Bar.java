@@ -48,7 +48,7 @@ public class Bar extends Sala implements ItemUsedRoom{
     @Override
     public void initializeInventory(){
         Inventory in = new Inventory();
-        in.addItem(new Clues("Cortina_Vermelha", "Um retalho de uma cortina vermelha... De onde será? Talvez alguém o reconheça."));
+        in.addItem(new Clues("Pedaco_de_Cortina", "Um retalho de uma cortina vermelha... De onde será? Talvez alguém o reconheça."));
         in.addItem(new UsableItem("Copo", "Um copo com algum tipo de pó dentro.", "Rick"));//Npc
         in.addItem(new ImmovabelItem( "Copos_sujos", "copos com restos de bebida, não é hora de festejar"));
         in.addItem(new UsableItem("Doces", "Uns rebuçados alguém pode gostar de os receber", "Crianca"));//Npcs

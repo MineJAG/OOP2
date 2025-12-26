@@ -9,7 +9,7 @@ import Characters.Player;
 import Rooms.Sala;
 
 /**
- *
+ * gere a lógica da movimentação do player
  * @author tiago
  */
 public class GoCommand implements Command{
