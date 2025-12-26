@@ -8,7 +8,7 @@ import java.util.*;
 import Characters.*;
 
 /**
- *
+ * Corre os comandos.
  * @author Bibby
  */
 public class CommandRunner {
@@ -49,57 +49,13 @@ public class CommandRunner {
             if (words.isEmpty()) {
                 throw new Exception("Tem de escrever um comando.");
             }
-
             for (Command c : commands) {
                 if (c.matches(words)) {
                     c.execute(player, words);
                     return;
                 }
             }
-
             throw new Exception("Comando desconhecido.");
-            
-            /*
-            if (verifyCommand(InspectCommand.COMMAND_NAMES)) {
-                if (inspectCommand.hasObject(player, words)) {
-                    inspectCommand.execute(player);
-                } else {
-                    throw new Exception("Não existe nenhum objeto com esse nome. Tente escrever comando objeto.");
-                }
-            } else if (verifyCommand(GoCommand.COMMAND_NAMES)){
-                if (!goCommand.coorrectDirection(player, words)) {
-                    throw new Exception("Não existe nenhuma direção com esse nome. Tente escrever comando direção.");
-                } else if (!goCommand.canGo(player)) {
-                    throw new Exception("Não posso ir nessa direção.");
-                } else if (goCommand.canGo(player)) {
-                    goCommand.execute(player);
-                }
-            } else if (verifyCommand(ExitCommand.COMMAND_NAMES)) {
-                    exitcommand.execute(player);
-            } else if (verifyCommand(LookCommand.COMMAND_NAMES)) {
-                lookCommand.execute(player);
-            } else if (verifyCommand(CluesCommand.COMMAND_NAMES)) {
-                cluesCommand.execute(player);
-            } else if (verifyCommand(UsableItemsCommand.COMMAND_NAMES)) {
-                usableItemsCommand.execute(player);
-            } else if (verifyCommand(UseCommand.COMMAND_NAMES)) {
-                useCommand.hasObject(player, words);
-                useCommand.execute(player);
-            } else if (verifyCommand(TalkCommand.COMMAND_NAMES)) {
-                talkCommand.talkToNpc(npcs, words, player, manager);
-                talkCommand.execute(player);
-            } else if (verifyCommand(DialogueLoaderCommand.COMMAND_NAMES)){
-                dialogueLoaderCommand.setFilepath(words);
-                dialogueLoaderCommand.execute(player);
-            } else if (verifyCommand(HelpCommand.COMMAND_NAMES)) {
-                helpCommand.execute(player);
-            } else if (verifyCommand(ExitCommand.COMMAND_NAMES)) {
-                exitcommand.execute(player);
-            }
-            else {
-                throw new Exception("Comando inválido.");
-            }
-                */
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
