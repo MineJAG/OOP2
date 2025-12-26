@@ -12,7 +12,7 @@ public class Ending4 implements Ending{
     @Override
     public boolean check(Player player){
         for(int i = 0; i < player.getItemHistory().size(); i++){
-            if(player.getInventory().getInventory().get(i).getName().toLowerCase().equals("carta" + "on" + "lady_eleanor")){
+            if(player.getInventory().getInventory().get(i).getName().toLowerCase().equals("carta_rasgada" + "on" + "lady_eleanor")){
                 return true;
             }
         }
@@ -21,5 +21,7 @@ public class Ending4 implements Ending{
     @Override
     public void trigger(){
         System.out.println("A carta das dívidas expõe a verdade financeira por trás do crime. Eleanor é responsabilizada, o motivo era controlo e dinheiro. O culpado é identificado, e o caso é encerrado. Dias depois Sherlock morre, a pessoa errada foi presa.");
+        System.out.println("thanks for playing!");
+        System.exit(0);
     }
 }

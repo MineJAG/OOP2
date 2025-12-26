@@ -28,5 +28,7 @@ public class Ending1 implements Ending{
     @Override
     public void trigger(){
         System.out.println("Na varanda, Sherlock apresenta todas as provas. Não há espaço para desculpas. Victor é confrontado com factos irrefutáveis e perde qualquer hipótese de negação. A polícia é chamada. O caso termina com o culpado preso.");
+        System.out.println("thanks for playing!");
+        System.exit(0);
     }
 }

@@ -23,5 +23,7 @@ public class Ending3 implements Ending{
     @Override
     public void trigger(){
         System.out.println("Ao ler a carta, Victor perde o controlo. As palavras falam de confiança, amizade e da quantia que a vítima planeava entregar-lhe. A culpa pesa mais do que o medo. Victor admite o crime. O caso fica resolvido.");
+        System.out.println("thanks for playing!");
+        System.exit(0);
     }
 }

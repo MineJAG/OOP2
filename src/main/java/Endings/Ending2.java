@@ -28,5 +28,7 @@ public class Ending2 implements Ending{
     @Override
     public void trigger(){
         System.out.println("Sherlock chega à varanda apenas com suspeitas. Victor percebe a falha imediatamente. Um movimento rápido, um empurrão inesperado. Sherlock morre, e o crime fica oficialmente sem solução.");
+        System.out.println("thanks for playing!");
+        System.exit(0);
     }
 }
