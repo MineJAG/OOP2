@@ -36,4 +36,9 @@ public class Player extends Character {
     public void addItemHistory(String history){
         itemHistory.add(history);
     }
+    public void itemHistoryCheck(){
+        for (String item : itemHistory) {
+            System.out.println(item);
+        }
+    }
 }

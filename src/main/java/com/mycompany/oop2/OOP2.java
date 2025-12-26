@@ -83,15 +83,16 @@ public class OOP2 {
         endings.add(new Ending4());
         // Ciclo infinito de jogo
         while (true) {
-            System.out.print("Escreva um comando: ");
-            String linha = scanner.readInputLine();
-            commandRunner.runCommands(player, linha);
             for (Ending ending : endings) {
                 if (ending.check(player)) {
                     ending.trigger();
                     break;
                 }
             }
+        player.itemHistoryCheck();
+            System.out.print("Escreva um comando: ");
+            String linha = scanner.readInputLine();
+            commandRunner.runCommands(player, linha);
         }
         /*
          * if (player.getPresentRoom().getClass().toString().equals(balcony.getClass().
