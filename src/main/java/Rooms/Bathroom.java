@@ -7,8 +7,8 @@ import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Casa de Banho
+ * @author Tiago
  */
 public class Bathroom extends Sala{
     public Bathroom() {

@@ -10,8 +10,8 @@ import Items_Inventario.UsableItem;
 
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Escritório
+ * @author Tiago
  */
 public class Office extends Sala{
     public Office() {

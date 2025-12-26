@@ -6,11 +6,13 @@ package Rooms;
 import java.util.*;
 import Characters.Npc;
 import Items_Inventario.Clues;
+import Items_Inventario.Inventory;
+import Items_Inventario.Item;
 import Items_Inventario.UsableItem;
 
 /**
- *
- * @author tiago
+ * Gere a inicialização e ligação das Salas como também inicializa/cria os NPCs 
+ * @author Tiago
  */
 public class Map_game {
     private Sala spawn;
@@ -20,8 +22,10 @@ public class Map_game {
     public Map_game(){
         createRooms();
         connectRooms();
-        spawnNpcs(new Npc("Eleanor", hall, null));
-        spawnNpcs(new Npc("Barman", bar, new UsableItem("Chave", "Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.", "Bar")));
+        spawnNpcs(new Npc(null,"Eleanor", hall));
+        Inventory barmanInv = new Inventory();
+        barmanInv.addItem(new UsableItem("Chave","Uma chave dourada, está um pouco enferrujada. hum? Talvez possa abrir algo com ela.","Bar"));
+        spawnNpcs(new Npc(barmanInv, "Barman", bar));
         spawnNpcs(new Npc("Margaret", library, new UsableItem("Fosforos","Uma fonte de luz fraca mas, capaz de iluminar algo.","Depósito")));
         spawnNpcs(new Npc("Inspector", room, null));
         spawnNpcs(new Npc("Victor", vipRoom, null));
@@ -29,7 +33,7 @@ public class Map_game {
         spawnNpcs(new Npc("Empregada", bathroom, new Clues("Luvas", "Estão sujas com manchas de sangue seco. São luvas masculinas com um “V” manuscrito no pulso das luvas. Estranho…")));
         spawnNpcs(new Npc("Crianca", hall, new Clues("Ursinho","Hum...estranho...Contém os números 2026")));
     }
-    
+
     // Inicializa as Salas
     private void createRooms() {
         bar = new Bar(true);

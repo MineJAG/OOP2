@@ -7,8 +7,8 @@ import Items_Inventario.Clues;
 import Items_Inventario.Inventory;
 
 /**
- *
- * @author tiago
+ * Gere a inicialização da sala Sala VIP
+ * @author Tiago
  */
 public class VIP_room extends Sala{
     public VIP_room() {
