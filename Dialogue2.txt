@@ -43,11 +43,11 @@ c-Margaret
 1-Sr. Holmes, finalmente alguém com cérebro nesta casa.\nEnquanto os outros gritavam, eu prestava atenção.\nVi o senhor Alistair entrar no quarto e momentos depois alguém a sair a correr.\nPareceu-me não ser um convidado.
 1$2-O que viu exatamente?
 1$3-Consegue descrever melhor essa pessoa?
-1$%-Reparou em algo fora do lugar na Biblioteca?
+1$%fosforos-Reparou em algo fora do lugar na Biblioteca?
 1$!relogio-Sabe me dizer que horas eram quando tudo aconteceu?
 2-Vi um vulto parecia um criado, não um convidado.\nPouco após o grito, ouvi a porta do escritório bater.
 3-Bem… era Alto, o cabelo parecia escuro, e com movimentos contidos.\nEu diria… alguém habituado a ser discreto. O mordomo, talvez?
-%-Agora que fala nisso, quando cheguei reparei que tinha livros fora do lugar quando fui arrumar encontrei isto.
+%fosforos-Agora que fala nisso, quando cheguei reparei que tinha livros fora do lugar quando fui arrumar encontrei isto.
 !relogio-hum.. Pelo que me lembro era por volta das 22:00.
 
 #----Inspector
