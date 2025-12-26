@@ -30,7 +30,7 @@ public class Player extends Character {
     }
 
     public ArrayList<String> getItemHistory() {
-        return itemHistory;
+        return new ArrayList<>(itemHistory);
     }
     
     public void addItemHistory(String history){

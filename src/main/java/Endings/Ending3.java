@@ -14,7 +14,7 @@ public class Ending3 implements Ending{
     @Override
     public boolean check(Player player){
         for(int i = 0; i < player.getItemHistory().size(); i++){
-            if(player.getInventory().getInventory().get(i).getName().toLowerCase().equals("carta" + "on" + "victor")){
+            if(player.getItemHistory().get(i).toLowerCase().equals("carta" + "on" + "victor")){
                 return true;
             }
         }
