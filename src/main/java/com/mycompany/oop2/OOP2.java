@@ -61,7 +61,10 @@ public class OOP2 {
 
         // Criação dos comandos
         AddCommand addCommand = new AddCommand();
-        DialogueManager manager = new DialogueManager();
+        // Spawn do player
+        Player player = new Player("Sherlock Holmes", new Inventory(),map.getSpawn());
+        UserInputReader scanner = new UserInputReader();
+        DialogueManager manager = new DialogueManager(scanner);
         ArrayList<Command> commands = new ArrayList<>();
         commands.add(new LookCommand());
         commands.add(new InspectCommand(addCommand));
@@ -73,9 +76,6 @@ public class OOP2 {
         commands.add(new HelpCommand(commands));
         commands.add(new TalkCommand(manager));
 
-        // Spawn do player
-        Player player = new Player("Sherlock Holmes", new Inventory(),map.getSpawn());
-        UserInputReader scanner = new UserInputReader();
         CommandRunner commandRunner = new CommandRunner(commands);
         DialogueLoader loader = new DialogueLoader();
         DialogueDistributor distributor = new DialogueDistributor();
