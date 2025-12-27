@@ -26,9 +26,6 @@ public class DialogueDisplay {
                         System.out.println((i+1) + ". " + options.get(i).getOption());
                     }
                     break;
-                case '?':
-                    System.out.println((i+1) + ". " + options.get(i).getOption());
-                    break;
                 default:
                     System.out.println((i+1) + ". " + options.get(i).getOption());
             }

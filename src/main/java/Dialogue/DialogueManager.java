@@ -17,7 +17,7 @@ public class DialogueManager{
     private DialogueLine currentLine;
     private Npc currentNpc;
     private UserInputReader inputReader;
-
+    
     public DialogueManager(UserInputReader inputReader) {
         this.inputReader = inputReader;
     }
