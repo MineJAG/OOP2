@@ -19,7 +19,7 @@ public class DialogueLoaderCommand implements Command{
     private String name = "Dialogue command - Loads dialogue with the syntax load Filename (the .txt is silently added)";
     public static final String[] COMMAND_NAMES = {"load","carregar"};    
     private List<Npc> npcs;
-    private String filepath; 
+    private String fileName; 
 
     public DialogueLoaderCommand(List<Npc> npcs) {
         this.npcs = npcs;
@@ -36,9 +36,9 @@ public class DialogueLoaderCommand implements Command{
     public void execute(Player player, ArrayList<String> words) throws Exception {
         DialogueLoader loader = new DialogueLoader();
         setFilepath(words);
-        String filepath = getFilepath();
+        String fileName = getFilepath();
         try {
-            loader.loadText(filepath + ".txt");
+            loader.loadText(fileName + ".txt");
             System.out.println("Dialogue loaded.");
         } catch (IOException e) {
             System.out.println("Error loading dialogue: " + e.getMessage());
@@ -49,11 +49,11 @@ public class DialogueLoaderCommand implements Command{
     }
 
     public String getFilepath() {
-        return filepath;
+        return fileName;
     }
 
-    public void setFilepath(ArrayList<String> filepath) {
-        this.filepath = filepath.get(1);
+    public void setFilepath(ArrayList<String> fileName) {
+        this.fileName = fileName.get(1);
     }
     
     public String getName() {
