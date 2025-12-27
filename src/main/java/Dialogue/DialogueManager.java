@@ -17,7 +17,7 @@ public class DialogueManager{
     private DialogueLine currentLine;
     private Npc currentNpc;
     private UserInputReader inputReader;
-    
+
     public DialogueManager(UserInputReader inputReader) {
         this.inputReader = inputReader;
     }
@@ -51,12 +51,11 @@ public class DialogueManager{
         display.showLine(getCurrentLine());
         if (!getCurrentLine().getOptions().isEmpty()){
         display.showOptions(player ,getCurrentLine().getOptions());
-        UserInputReader input = new UserInputReader();
-        int userInput = input.readInt();
-        if(currentLine.getOptions().size() >= userInput && userInput > 0){
-            if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
-                if (player.getInventory().containsItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1).toLowerCase())){
-                setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
+        int userInput = inputReader.readInt();
+        if(getCurrentLine().getOptions().size() >= userInput && userInput > 0){
+            if (getCurrentLine().getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
+                if (player.getInventory().containsItem(getCurrentLine().getOptions().get(userInput - 1).getNextLineId().substring(1).toLowerCase())){
+                setCurrentLine(currentNpc.getDialogueLines().get(getCurrentLine().getOptions().get((userInput - 1)).getNextLineId()));
                 conversation(player);
             }
         } else if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '%'){
