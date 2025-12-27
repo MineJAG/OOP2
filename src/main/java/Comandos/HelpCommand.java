@@ -14,12 +14,12 @@ import Characters.Player;
  * @author ajone
  */
 public class HelpCommand implements Command{
-    private String name = "Help Command - shows all commands";
+    private String name = "Help Command - shows all commmands";
     public static final String[] COMMAND_NAMES = {"ajuda", "help"};
-    private ArrayList<Command> commands;
+    private ArrayList<Command> commmands;
 
-    public HelpCommand(ArrayList<Command> commands) {
-        this.commands = commands;
+    public HelpCommand(ArrayList<Command> commmands) {
+        this.commmands = commmands;
     }
 
     public String[] names(){
@@ -31,7 +31,7 @@ public class HelpCommand implements Command{
     }
     
     public void execute(Player player, ArrayList<String> words){
-        for(Command command : commands){
+        for(Command command : commmands){
             System.out.println(command.toString());
         }
     }
