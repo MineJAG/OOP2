@@ -27,7 +27,7 @@ c-Barman
 1$3-Encontrou mais alguma coisa estranha por aqui?
 1$!mordomo-Viu o mordomo esta noite?
 1$!relogio-Por acaso saiu alguma vez do bar esta noite?
-%chave-Ouvi passos apressados a sair da Biblioteca e a passar pelo corredor.Parecia alguém a correr, desesperado. Quando fui lá ver, encontrei isto.
+%chave-Ouvi passos apressados a sair da Biblioteca e a passar pelo corredor.Parecia alguém a correr, desesperado. Quando fui lá ver, encontrei isto [Recebeu chave].
 3-Sim… encontrei um pedaço de tecido vermelho atrás do balcão.Não pertence a nenhum dos cortinados daqui. Parecia arrancado à força.Se quiser pode levá-lo, talvez ajude.
 !mordomo-Vi o sim, entrou e saiu do Bar algumas vezes.Disse que vinha buscar garrafas para o salão principal… mas parecia nervoso.
 ?copo-Se não me engano o senhor Alistair ia tomar isso antes de dormir, não sei ao certo pergunte ao Doutor aí ao lado.
@@ -42,7 +42,7 @@ c-Margaret
 1$!relogio-Sabe me dizer que horas eram quando tudo aconteceu?
 2-Vi um vulto parecia um criado, não um convidado.Pouco após o grito, ouvi a porta do escritório bater.
 3-Bem… era Alto, o cabelo parecia escuro, e com movimentos contidos.Eu diria… alguém habituado a ser discreto. O mordomo, talvez?
-%fosforos-Agora que fala nisso, quando cheguei reparei que tinha livros fora do lugar quando fui arrumar encontrei isto.
+%fosforos-Agora que fala nisso, quando cheguei reparei que tinha livros fora do lugar quando fui arrumar encontrei isto [Recebeu fosforos].
 !relogio-hum.. Pelo que me lembro era por volta das 22:00.
 
 #----Inspector
@@ -63,8 +63,8 @@ c-Victor
 1$!testamento_alterado-Porque há documentos no escritório que o mencionam num novo testamento?
 1$!luvas-Estas luvas com sangue são suas?
 1$!relogio-Onde estava exatamente à hora em que o relógio do Lorde parou?
-1$!relogio_barman-Estranho o Barman mencionou que o viu no Bar a repor bebidas.
-1$!relogio_professora-Estranho a senhora Margaret pensou tê-lo visto sair apressadamente da biblioteca por volta da mesma hora do relógio.
+1$!relogio-Estranho o Barman mencionou que o viu no Bar a repor bebidas.
+1$!relogio-Estranho a senhora Margaret pensou tê-lo visto sair apressadamente da biblioteca por volta da mesma hora do relógio.
 2-Passei o dia inteiro na VIP Room a preparar documentos e, no meio de tanto trabalho, perdi completamente a noção do exterior.
 3-Servi esta família durante muitos anos.O Lorde podia ser duro… mas era o meu empregador. Não tinha motivo para lhe fazer mal.
 !carta_rasgada-Não sei nada sobre isso. Os negócios eram assunto dele, não meu.Eu limpo a prata, não os livros de contas.
@@ -73,8 +73,8 @@ c-Victor
 !luvas$4-Mas elas possuem um V nos pulsos e também não mencionei onde as encontrei.
 4-O… o V pode significar várias coisas, não apenas o meu nome. E se não disse onde as encontrou, presumo que alguém as tenha colocado lá para me incriminar.
 !relogio-Já lhe disse que estive a noite toda cá trancado.. A trabalhar.
-!relogio_barman-Aah… é.. é verdade esqueci me completamente disso fui lá pois a senhora Eleanor, pediu-me para trazer bebidas aos convidados
-!relogio_professora-A senhora Margaret… viu-me?Bem, devo dizer, isso não faz sentido. Eu não saí da Sala de VIPs esta noite, senhor Holmes. Tudo o que fiz foi atender aos pedidos dos convidados aqui dentro. Sempre permaneci nesta sala.Talvez tenha confundido outra pessoa com uniforme parecido… há tantos empregados a circular pela mansão durante o baile.A memória das pessoas prega partidas quando estão assustadas não se deve confiar cegamente em testemunhos apressados.Se a senhora Margaret jura ter-me visto… é só uma coincidência infeliz.
+!relogio-Aah… é.. é verdade esqueci me completamente disso fui lá pois a senhora Eleanor, pediu-me para trazer bebidas aos convidados
+!relogio-A senhora Margaret… viu-me?Bem, devo dizer, isso não faz sentido. Eu não saí da Sala de VIPs esta noite, senhor Holmes. Tudo o que fiz foi atender aos pedidos dos convidados aqui dentro. Sempre permaneci nesta sala.Talvez tenha confundido outra pessoa com uniforme parecido… há tantos empregados a circular pela mansão durante o baile.A memória das pessoas prega partidas quando estão assustadas não se deve confiar cegamente em testemunhos apressados.Se a senhora Margaret jura ter-me visto… é só uma coincidência infeliz.
 
 #----Rick
 c-Rick
@@ -109,4 +109,4 @@ c-Crianca
 4-…
 ?doces-…Obrigada…
 ?doces$%ursinho-…
-%ursinho-Tome para ajudar na investigação…te…tem uma coisa estranha escrita
+%ursinho-Tome para ajudar na investigação…te…tem uma coisa estranha escrita[Recebeu ursinho].
