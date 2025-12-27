@@ -11,7 +11,7 @@ import Rooms.Sala;
 
 /**
  * Classe que representa o jogador no jogo tem como responsabilidade guardar informacoes sobre o jogador.
- * @author ajone
+ * @author Afonso, Lara, Tiago
  */
 public class Player extends Character {
     private ArrayList<String> itemHistory = new ArrayList<>();

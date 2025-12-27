@@ -1,35 +1,32 @@
 package Items_Inventario;
 
+/**
+ * Itens imóveis, estes poderão ter coisas dentro ou estar trancados.
+ * @author Lara
+ */
+
 public class ImmovabelItem extends Item {
 
-    // --- capacidade de conter items ---
     private final boolean CAN_HOLD_ITEMS;
-    private final Inventory items;   // NUNCA é null
+    private final Inventory items;
 
-    // --- lock / código ---
     private final boolean IS_LOCKABLE;
-    private final String CODE;       // pode ser null se não tiver código
-    private boolean unlocked;        // estado atual
+    private final String CODE;
+    private boolean unlocked;
 
-    // --- descrições base (sem lista de items colada) ---
     private final String descriptionLocked;
     private final String descriptionUnlocked;
     private final String descriptionEmpty;
 
-    // =========================
-    //       CONSTRUTORES
-    // =========================
-
-    // 1) Só um item, não guarda nada, não é trancável
     public ImmovabelItem(String name, String description) {
         super(name, description);
 
-        this.items = new Inventory();      // inventário vazio, nunca null
+        this.items = new Inventory(); 
         this.CAN_HOLD_ITEMS = false;
 
         this.IS_LOCKABLE = false;
         this.CODE = null;
-        this.unlocked = true;             // irrelevante, não é lockable
+        this.unlocked = true; 
 
         this.descriptionLocked = description;
         this.descriptionUnlocked = description;
@@ -38,7 +35,6 @@ public class ImmovabelItem extends Item {
         updateDescription();
     }
 
-    // 2) Aberto e contém itens, não é trancável
     public ImmovabelItem(String name, String description, Inventory items, String descriptionEmpty) {
         super(name, description);
 
@@ -49,15 +45,13 @@ public class ImmovabelItem extends Item {
         this.CODE = null;
         this.unlocked = true;
 
-        this.descriptionLocked = description;       // não usados, mas coerentes
+        this.descriptionLocked = description;    
         this.descriptionUnlocked = description;
         this.descriptionEmpty = descriptionEmpty;
 
         updateDescription();
     }
 
-    // 3) Pode ser trancado (com ou sem código) e conter items
-    //    Se CODE == null, significa: tranca sem código, outro sistema qualquer.
     public ImmovabelItem(String name,String descriptionLocked,Inventory items,String CODE,String descriptionUnlocked,String descriptionEmpty) {
         super(name, descriptionLocked);
 
@@ -66,7 +60,7 @@ public class ImmovabelItem extends Item {
 
         this.IS_LOCKABLE = true;
         this.CODE = CODE;
-        this.unlocked = false;                  // começa trancado
+        this.unlocked = false; 
 
         this.descriptionLocked = descriptionLocked;
         this.descriptionUnlocked = descriptionUnlocked;
@@ -75,22 +69,10 @@ public class ImmovabelItem extends Item {
         updateDescription();
     }
 
-    // =========================
-    //   LÓGICA INTERNA (privada)
-    // =========================
-
-    /**
-     * Atualiza a description (de Item) com base no estado:
-     * - locked/unlocked
-     * - vazio/com itens
-     * E depois acrescenta a lista de itens, se existirem.
-     */
     private void updateDescription() {
         if (IS_LOCKABLE && !unlocked) {
-            // está trancado
             super.setDescription(descriptionLocked);
         } else {
-            // não está trancado (ou nem é lockable)
             if (CAN_HOLD_ITEMS && items.isEmpty()) {
                 super.setDescription(descriptionEmpty);
             } else {
@@ -102,12 +84,6 @@ public class ImmovabelItem extends Item {
             }
         }
     }
-
-    // =========================
-    //        API PÚBLICA
-    // =========================
-
-    // --- container ---
 
     public boolean isHoldingItems() {
         return CAN_HOLD_ITEMS && !items.isEmpty();
@@ -123,10 +99,6 @@ public class ImmovabelItem extends Item {
         return items;
     }
 
-    /**
-     * No teu código original, unlock() não recebia código.
-     * Assumo que validas o código fora, e só chamas unlock() se estiver correto.
-     */
     public void unlock() {
         if (!IS_LOCKABLE) return;
         if (unlocked) return;
@@ -139,7 +111,6 @@ public class ImmovabelItem extends Item {
         return CODE;
     }
 
-    // (se quiseres, podes também expor isLocked())
     public boolean isLocked() {
         return IS_LOCKABLE && !unlocked;
     }

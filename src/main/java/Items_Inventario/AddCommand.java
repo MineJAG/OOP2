@@ -5,8 +5,8 @@
 package Items_Inventario;
 import Characters.*;
 /**
- *
- * @author Bibby
+ * Classe responsável por adicionar items ao inventário
+ * @author Lara
  */
 public class AddCommand {
     public void addOne(Player player, Item item) {

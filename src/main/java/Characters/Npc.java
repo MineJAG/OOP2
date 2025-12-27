@@ -13,7 +13,7 @@ import Items_Inventario.Item;
 import Rooms.*;
 /**
  * Classe que representa um NPC no jogo tem como responsabilidade guardar informacoes sobre o NPC.
- * @author ajone
+ * @author Afonso
  */
 
 public class Npc extends Character{ 

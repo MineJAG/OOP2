@@ -5,8 +5,8 @@
 package Items_Inventario;
 
 /**
- *
- * @author ajone
+ * Pistas usadas no jogo
+ * @author Lara
  */
 public class Clues extends Item{   
     public Clues(String name, String description) {

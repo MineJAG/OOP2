@@ -9,7 +9,7 @@ import Rooms.Sala;
 
 /**
  *Classe abstrata que representa uma personagem no jogo.
- * @author ajone
+ * @author Afonso, Tiago
  */
 public abstract class Character {
     private String name;

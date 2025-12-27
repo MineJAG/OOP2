@@ -5,8 +5,8 @@
 package Items_Inventario;
 
 /**
- *
- * @author ajone
+ * Classe abstrata que representa um item no jogo
+ * @author Lara
  */
 public abstract class Item {
     private String name;

@@ -5,7 +5,7 @@
 package Items_Inventario;
 
 /**
- *
+ * Items usáveis.
  * @author ajone
  */
 public class UsableItem extends Item{

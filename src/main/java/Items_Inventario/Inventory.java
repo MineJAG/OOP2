@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author ajone
+ * Contém o inventário com todos os items do jogador
+ * @author Lara
  */
 public class Inventory {
     private ArrayList<Item> inventory;
@@ -33,7 +33,6 @@ public class Inventory {
         inventory.remove(item);
     }
 
-    //usado
     public Item getItem(String name) {
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(name)) {

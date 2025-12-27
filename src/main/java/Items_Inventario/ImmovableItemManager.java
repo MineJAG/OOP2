@@ -7,8 +7,8 @@ package Items_Inventario;
 import com.mycompany.oop2.UserInputReader;
 
 /**
- *
- * @author Bibby
+ * Gere os items imóveis.
+ * @author Lara
  */
 public class ImmovableItemManager {
     private UserInputReader reader = new UserInputReader();
@@ -28,12 +28,11 @@ public class ImmovableItemManager {
         System.out.println(item.getDescription());
 
         if (item.isHoldingItems()) {
-            // faz uma cópia dos itens ANTES de limpar
             Inventory loot = item.getItems().copy();
-            item.clearItems();  // agora sim, esvazia o container
-            return loot;        // devolve a cópia com os itens
+            item.clearItems(); 
+            return loot;    
         } else {
-            return new Inventory();  // nada dentro
+            return new Inventory(); 
         }
     }
 }
