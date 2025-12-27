@@ -22,6 +22,8 @@ import Comandos.LookCommand;
 import Comandos.TalkCommand;
 import Comandos.UsableItemsCommand;
 import Comandos.UseCommand;
+import Dialogue.DialogueDistributor;
+import Dialogue.DialogueLoader;
 import Dialogue.DialogueManager;
 import Endings.Ending;
 import Endings.Ending1;
@@ -75,7 +77,9 @@ public class OOP2 {
         Player player = new Player("Sherlock Holmes", new Inventory(),map.getSpawn());
         UserInputReader scanner = new UserInputReader();
         CommandRunner commandRunner = new CommandRunner(commands);
-        commands.add(new DialogueLoaderCommand(map.getNpcs()));
+        DialogueLoader loader = new DialogueLoader();
+        DialogueDistributor distributor = new DialogueDistributor();
+        commands.add(new DialogueLoaderCommand(map.getNpcs(), loader, distributor));
 
         ArrayList <Ending> endings = new ArrayList<>();
         endings.add(new Ending1());

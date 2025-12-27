@@ -24,6 +24,7 @@ public class TalkCommand implements Command{
     public TalkCommand(DialogueManager manager) {
         this.manager = manager;
     }
+    @Override
     public void execute(Player player, ArrayList<String> words) throws Exception {
         talkToNpc(player.getPresentRoom().getNpcs(), words, player);
     }
@@ -42,9 +43,11 @@ public class TalkCommand implements Command{
         }
         throw new Exception("Npc nao encontrado");
     }
+    @Override
     public String getName() {
         return name;
     }
+    @Override
     public String[] names(){
         return COMMAND_NAMES;
     }

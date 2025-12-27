@@ -22,20 +22,22 @@ public class HelpCommand implements Command{
         this.commmands = commmands;
     }
 
+    @Override
     public String[] names(){
         return COMMAND_NAMES;
     }
 
+    @Override
     public String getName(){
         return name;
     }
-    
+    @Override
     public void execute(Player player, ArrayList<String> words){
         for(Command command : commmands){
             System.out.println(command.toString());
         }
     }
-
+    @Override
     public String toString() {
         String result = getName() + "\n Command names: \n\t-";
         result += COMMAND_NAMES[0];

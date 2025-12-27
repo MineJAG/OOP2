@@ -20,11 +20,15 @@ public class DialogueLoaderCommand implements Command{
     public static final String[] COMMAND_NAMES = {"load","carregar"};    
     private List<Npc> npcs;
     private String fileName; 
+    private final DialogueLoader loader;
+    private final DialogueDistributor distributor;
 
-    public DialogueLoaderCommand(List<Npc> npcs) {
+    public DialogueLoaderCommand(List<Npc> npcs, DialogueLoader loader, DialogueDistributor distributor) {
         this.npcs = npcs;
+        this.loader = loader;
+        this.distributor = distributor;
     }
-
+    @Override
     public String[] names() {
         return COMMAND_NAMES;
     }
@@ -32,30 +36,27 @@ public class DialogueLoaderCommand implements Command{
     public List<Npc> getNpcs() {
         return npcs;
     }
-
+    @Override
     public void execute(Player player, ArrayList<String> words) throws Exception {
-        DialogueLoader loader = new DialogueLoader();
-        setFilepath(words);
-        String fileName = getFilepath();
+        setFileName(words);
         try {
-            loader.loadText(fileName + ".txt");
+            loader.loadText(getFileName() + ".txt");
             System.out.println("Dialogue loaded.");
         } catch (IOException e) {
             System.out.println("Error loading dialogue: " + e.getMessage());
         }
-        DialogueDistributor distributor = new DialogueDistributor();
         distributor.setDialogue(loader.getDialogue());
         distributor.DistributeDialogue(npcs);
     }
 
-    public String getFilepath() {
+    public String getFileName() {
         return fileName;
     }
 
-    public void setFilepath(ArrayList<String> fileName) {
+    public void setFileName(ArrayList<String> fileName) {
         this.fileName = fileName.get(1);
     }
-    
+    @Override
     public String getName() {
         return name;
     }
