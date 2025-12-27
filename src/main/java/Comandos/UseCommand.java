@@ -49,6 +49,7 @@ public class UseCommand implements Command {
                 System.out.println("O Sherlock usa o item " + item.getName() + " na sala " + player.getPresentRoom().getName() + ".");
                 ((ItemUsedRoom) player.getPresentRoom()).useItem();
                 player.addItemHistory(item.getName() + "on" + player.getPresentRoom().getName());
+                player.getInventory().removeItem(item);
                 return;
             }
         }
