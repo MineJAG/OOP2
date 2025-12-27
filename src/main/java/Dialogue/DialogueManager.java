@@ -16,6 +16,12 @@ import Items_Inventario.Item;
 public class DialogueManager{
     private DialogueLine currentLine;
     private Npc currentNpc;
+    private UserInputReader inputReader;
+
+    public DialogueManager(UserInputReader inputReader) {
+        this.inputReader = inputReader;
+    }
+    
     public DialogueLine getCurrentLine() {
         return currentLine;
     }
