@@ -8,7 +8,7 @@ package Items_Inventario;
 public class ImmovabelItem extends Item {
 
     private final boolean CAN_HOLD_ITEMS;
-    private final Inventory items;
+    private final Inventory ITEMS;
 
     private final boolean IS_LOCKABLE;
     private final String CODE;
@@ -21,7 +21,7 @@ public class ImmovabelItem extends Item {
     public ImmovabelItem(String name, String description) {
         super(name, description);
 
-        this.items = new Inventory(); 
+        this.ITEMS = new Inventory(); 
         this.CAN_HOLD_ITEMS = false;
 
         this.IS_LOCKABLE = false;
@@ -35,10 +35,10 @@ public class ImmovabelItem extends Item {
         updateDescription();
     }
 
-    public ImmovabelItem(String name, String description, Inventory items, String descriptionEmpty) {
+    public ImmovabelItem(String name, String description, Inventory ITEMS, String descriptionEmpty) {
         super(name, description);
 
-        this.items = (items != null) ? items : new Inventory();
+        this.ITEMS = (ITEMS != null) ? ITEMS : new Inventory();
         this.CAN_HOLD_ITEMS = true;
 
         this.IS_LOCKABLE = false;
@@ -52,10 +52,10 @@ public class ImmovabelItem extends Item {
         updateDescription();
     }
 
-    public ImmovabelItem(String name,String descriptionLocked,Inventory items,String CODE,String descriptionUnlocked,String descriptionEmpty) {
+    public ImmovabelItem(String name,String descriptionLocked,Inventory ITEMS,String CODE,String descriptionUnlocked,String descriptionEmpty) {
         super(name, descriptionLocked);
 
-        this.items = (items != null) ? items : new Inventory();
+        this.ITEMS = (ITEMS != null) ? ITEMS : new Inventory();
         this.CAN_HOLD_ITEMS = true;
 
         this.IS_LOCKABLE = true;
@@ -73,11 +73,11 @@ public class ImmovabelItem extends Item {
         if (IS_LOCKABLE && !unlocked) {
             super.setDescription(descriptionLocked);
         } else {
-            if (CAN_HOLD_ITEMS && items.isEmpty()) {
+            if (CAN_HOLD_ITEMS && ITEMS.isEmpty()) {
                 super.setDescription(descriptionEmpty);
             } else {
-                if (CAN_HOLD_ITEMS && !items.isEmpty()) {
-                    super.setDescription(descriptionUnlocked + "\nEstá contido dentro deste objeto:\n"+ items.toString());
+                if (CAN_HOLD_ITEMS && !ITEMS.isEmpty()) {
+                    super.setDescription(descriptionUnlocked + "\nEstá contido dentro deste objeto:\n"+ ITEMS.toString());
                 } else {
                     super.setDescription(descriptionUnlocked);
                 }
@@ -85,18 +85,18 @@ public class ImmovabelItem extends Item {
         }
     }
 
-    public boolean isHoldingItems() {
-        return CAN_HOLD_ITEMS && !items.isEmpty();
+    public boolean isHoldingITEMS() {
+        return CAN_HOLD_ITEMS && !ITEMS.isEmpty();
     }
 
-    public void clearItems() {
+    public void clearITEMS() {
         if (!CAN_HOLD_ITEMS) return;
-        items.clear();
+        ITEMS.clear();
         updateDescription();
     }
 
-    public Inventory getItems() {
-        return items;
+    public Inventory getITEMS() {
+        return ITEMS;
     }
 
     public void unlock() {

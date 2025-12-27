@@ -27,9 +27,9 @@ public class ImmovableItemManager {
 
         System.out.println(item.getDescription());
 
-        if (item.isHoldingItems()) {
-            Inventory loot = item.getItems().copy();
-            item.clearItems(); 
+        if (item.isHoldingITEMS()) {
+            Inventory loot = item.getITEMS().copy();
+            item.clearITEMS(); 
             return loot;    
         } else {
             return new Inventory(); 
