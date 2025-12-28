@@ -30,4 +30,4 @@ public class DialogueOption {
         this.nextLineId = nextLineId;
     }
 
-    }
+}
