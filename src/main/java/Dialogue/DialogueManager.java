@@ -52,6 +52,10 @@ public class DialogueManager{
     display.showLine(getCurrentLine());
     
     if (!getCurrentLine().getOptions().isEmpty()){
+        if (getCurrentLine()==null){
+            System.out.println("please load the dialogue");
+            return;
+        }
         display.showOptions(player, getCurrentLine().getOptions());
         int userInput;
         try {
