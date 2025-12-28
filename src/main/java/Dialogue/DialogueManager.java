@@ -44,12 +44,7 @@ public class DialogueManager{
 
     public void startConversation (Npc npc,Player player){
         setCurrentNpc(npc);
-        if (currentNpc.getDialogueLines() != null && currentNpc.getDialogueLines().containsKey("1")){
-            setCurrentLine(currentNpc.getDialogueLines().get("1"));
-        } else {
-            System.out.println("Please load the dialogue lines for this NPC.");
-            return;
-        }
+        setCurrentLine(npc.getDialogueLines().get("1"));
         conversation(player);
     }
 

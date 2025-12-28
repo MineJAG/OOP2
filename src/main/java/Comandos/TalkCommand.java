@@ -30,6 +30,9 @@ public class TalkCommand implements Command{
     }
     public void talkToNpc(List<Npc> npcs, List<String> words, Player player) throws Exception {
         for (int i = 0; i < npcs.size(); i++) {
+            if (words == null || words.isEmpty()) {
+                throw new Exception("Please load the dialogue");
+            }
             for (int o = 0; o < words.size(); o++) {
                 if (npcs.get(i).getName().toLowerCase().equals(words.get(o).toLowerCase())) {
                     if (npcs.get(i).getPresentRoom() == player.getPresentRoom()) {
