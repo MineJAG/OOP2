@@ -12,8 +12,8 @@ import Rooms.Sala;
 import Rooms.Storage;
 
 /**
- * 
- * @author ajone
+ * Vê a sala.
+ * @author Lara
  */
 public class LookCommand implements Command {
     private String name = "Look Command - see what is arround syntax Look";

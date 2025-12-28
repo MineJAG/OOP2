@@ -12,7 +12,7 @@ import Dialogue.DialogueManager;
 import Items_Inventario.UsableItem;
 import Rooms.ItemUsedRoom;
 /**
- *
+ * Usa o item.
  * @author Lara e Afonso
  */
 public class UseCommand implements Command {

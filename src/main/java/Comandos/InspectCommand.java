@@ -13,8 +13,8 @@ import Items_Inventario.Inventory;
 import Items_Inventario.Item;
 import Rooms.Sala;
 /**
- *
- * @author lara
+ * Inspeciona os items do jogador e da sala
+ * @author Lara
  */
 public class InspectCommand implements Command {
     private String name = "Inspect Command - chose what to inspect syntax inpet then what to inspect";

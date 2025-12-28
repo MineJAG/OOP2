@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import Characters.Player;
 
 /**
- *
- * @author Bibby
+ * Imprime o inventário de itens usáveis
+ * @author Lara
  */
 public class UsableItemsCommand implements Command {
     private String name = "Usable Items Command(inventory) - show the usable items in the inventory";
