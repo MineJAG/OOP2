@@ -11,7 +11,7 @@ import Characters.Player;
 
 /**
  * Comando que mostra todos os comandos disponiveis no jogo bem como simples ajuda a como utilizar os mesmos.
- * @author ajone
+ * @author Afonso
  */
 public class HelpCommand implements Command{
     private String name = "Help Command - shows all commmands";

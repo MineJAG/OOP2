@@ -11,7 +11,7 @@ import Characters.Player;
 import Dialogue.DialogueManager;
 /**
  * Comando que permite ao jogador falar com um Npc presente na sala atual.
- * @author ajone
+ * @author Afonso
  */
 public class TalkCommand implements Command{
     private String name = "Talk command - talk to an Npc syntax talk then the name of the npc";

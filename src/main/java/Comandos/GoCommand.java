@@ -10,7 +10,7 @@ import Rooms.Sala;
 
 /**
  * gere a lógica da movimentação do player
- * @author tiago
+ * @author Tiago
  */
 public class GoCommand implements Command{
     private String name = "Go Command - choose where to go syntax go then direction";

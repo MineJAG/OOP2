@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import Characters.Player;
 
 /**
- * gere a logica para finalizar a execução do jogo
- * @author tiago
+ * Gere a logica para finalizar a execução do jogo
+ * @author Tiago
  */
 public class ExitCommand implements Command {
     private String name = "Exit Command - Exit the game";
