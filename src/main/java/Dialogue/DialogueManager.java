@@ -49,7 +49,6 @@ public class DialogueManager{
     }
 
     public void conversation(Player player){
-public void conversation(Player player){
     display.showLine(getCurrentLine());
     
     if (!getCurrentLine().getOptions().isEmpty()){
@@ -97,8 +96,8 @@ public void conversation(Player player){
             System.out.println("Invalid option, try again.");
             conversation(player);
         }
+     }
     }
-}
 
     public void itemGiven(Player player,Npc npc,Item item) throws Exception{
         player.getInventory().removeItem(item);
