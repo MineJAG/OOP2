@@ -35,7 +35,7 @@ import Items_Inventario.Inventory;
 import Rooms.Map_game;
 
 /**
- * 
+ * Main do jogo.
  * @author Afonso, Lara, Tiago
  */
 public class OOP2 {

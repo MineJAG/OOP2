@@ -6,8 +6,8 @@ package Rooms;
 
 
 /**
- * 
- * @author Bibby
+ * Interface para usar items nas salas.
+ * @author Tiago
  */
 public interface ItemUsedRoom {
     public void useItem();

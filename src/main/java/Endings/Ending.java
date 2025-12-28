@@ -6,7 +6,7 @@ package Endings;
 
 /**
  * Interface que representa um ending no jogo.
- * @author ajone
+ * @author Afonso
  */
 
 import Characters.Player;

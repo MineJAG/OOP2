@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 /**
  * Classe que representa o carregador de dialogos no jogo tem como responsabilidade carregar os dialogos a partir de um ficheiro de texto.
- * @author ajone
+ * @author Afonso
  */
 public class DialogueLoader {
     private Map<String, Map<String, DialogueLine>> storedDialogue;

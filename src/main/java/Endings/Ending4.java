@@ -6,7 +6,7 @@ package Endings;
 import Characters.Player;
 /**
  * Classe que representa o ending 4 no jogo. Esta classe verifica se o jogador cumpriu os requisitos para ativar este ending e executa as acções associadas a este ending.
- * @author Bibby
+ * @author Afonso
  */
 public class Ending4 implements Ending{
     @Override

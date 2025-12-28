@@ -6,7 +6,7 @@ package Items_Inventario;
 
 /**
  * Items usáveis.
- * @author ajone
+ * @author Lara
  */
 public class UsableItem extends Item{
     private String toBeUsed;
