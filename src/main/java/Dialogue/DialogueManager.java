@@ -63,30 +63,24 @@ public class DialogueManager{
             conversation(player);
             return;
         }
-        // Fix 2: Check if input is within valid range
         if (userInput > 0 && userInput <= getCurrentLine().getOptions().size()){
             String nextLineId = getCurrentLine().getOptions().get(userInput - 1).getNextLineId();
-            // Handle special dialogue options
             if (nextLineId.charAt(0) == '!'){
-                // Check if player has required item
                 String requiredItem = nextLineId.substring(1).toLowerCase();
                 if (player.getInventory().containsItem(requiredItem)){
                     setCurrentLine(currentNpc.getDialogueLines().get(nextLineId));
                     conversation(player);
                 } else {
-                    // Fix 3: Handle case when player doesn't have item
                     System.out.println("You don't have the required item.");
                     conversation(player);
                 }
             } else if (nextLineId.charAt(0) == '%'){
-                // Give item to player
                 String itemId = nextLineId.substring(1);
                 player.getInventory().addItem(currentNpc.getInventory().getItem(itemId));
                 System.out.println("O item " + currentNpc.getInventory().getItem(itemId).getName() + " foi adicionado ao inventário.");
                 setCurrentLine(currentNpc.getDialogueLines().get(nextLineId));
                 conversation(player);
             } else {
-                // Normal dialogue progression
                 setCurrentLine(currentNpc.getDialogueLines().get(nextLineId));
                 conversation(player);
             }

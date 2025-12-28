@@ -4,7 +4,7 @@ c-Eleanor
 1$2-O que sabe sobre o crime?
 1$3-Havia alguém que tivesse motivos para matar o seu marido?
 1$!carta_rasgada-Poderia me dizer o porquê de todas as poupanças restantes de Alistair terem passado para seu nome ontem mesmo?
-1$!cortina_vermelha-Encontrei isto por acaso sabe onde se encaixa?
+1$!tecido-Encontrei isto por acaso sabe onde se encaixa?
 1$!relogio-Diga-me o que esteve a fazer a noite toda?
 2-Eu não sei ao certo, só lembro de ouvir gritos vindos do quarto
 2$4-Antes dos gritos o seu quarto foi mexido?
@@ -14,7 +14,7 @@ c-Eleanor
 ?livro$5-Porque é que ele faria tal coisa?
 5-Não sei bem… eles sempre se apoiaram nas ideias de negócio.
 !carta_rasgada-Também fiquei surpreendida ao ver as poupanças no meu nome… juro-lhe que não pedi tal coisa, embora perceba perfeitamente como isso pode parecer.
-!cortina_vermelha-Sim sim sei… isso são… das cortinas do meu quarto?Onde foi que encontrou?
+!tecido-Sim sim sei… isso são… das cortinas do meu quarto?Onde foi que encontrou?
 9-Não sei mais nada. Fale com o doutor, talvez saiba mais, afinal foi ele quem lhe receitou.
 !relogio-Como já lhe tinha dito estive sempre aqui com os convidados, se bem que sai para ir à casa de banho.
 !relogio$11-Saiu hum… poderia me dizer mais ao menos a que horas foi?
