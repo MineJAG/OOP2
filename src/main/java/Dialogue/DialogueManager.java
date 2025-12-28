@@ -42,15 +42,17 @@ public class DialogueManager{
         setCurrentLine(currentNpc.getDialogueLines().get(line));
     }
 
-    public void startConversation (Npc npc,Player player){
+    public void startConversation (Npc npc,Player player) throws Exception{
+        if (npc.getDialogueLines() == null || !npc.getDialogueLines().containsKey("1")){
+            throw new Exception("Dialogue lines not found for npc " + npc.getName() + "Please load the dialogue");
+        }
         setCurrentNpc(npc);
         setCurrentLine(npc.getDialogueLines().get("1"));
         conversation(player);
     }
 
-    public void conversation(Player player){
+    public void conversation(Player player) throws Exception{
     display.showLine(getCurrentLine());
-    
     if (!getCurrentLine().getOptions().isEmpty()){
         display.showOptions(player, getCurrentLine().getOptions());
         int userInput;
