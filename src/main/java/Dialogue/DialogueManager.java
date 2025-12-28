@@ -61,6 +61,7 @@ public class DialogueManager{
             }
         } else if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '%'){
             player.getInventory().addItem(currentNpc.getInventory().getItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1)));
+            System.out.println("O item " + currentNpc.getInventory().getItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1)).getName() + " foi adicionado ao inventário.");
             setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
             conversation(player);
         }else {
