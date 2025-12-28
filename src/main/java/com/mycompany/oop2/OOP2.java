@@ -99,7 +99,6 @@ public class OOP2 {
         if (!running) {
                 break;
             }
-        player.itemHistoryCheck();
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();
             commandRunner.runCommands(player, linha);
