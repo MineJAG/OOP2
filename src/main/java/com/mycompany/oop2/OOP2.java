@@ -36,7 +36,7 @@ import Rooms.Map_game;
 
 /**
  * 
- * @author ajone
+ * @author Afonso, Lara, Tiago
  */
 public class OOP2 {
 

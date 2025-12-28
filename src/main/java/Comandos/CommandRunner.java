@@ -9,7 +9,7 @@ import Characters.*;
 
 /**
  * Corre os comandos.
- * @author Bibby
+ * @author Lara
  */
 public class CommandRunner {
     ArrayList<Command> commands;
