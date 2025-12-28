@@ -10,7 +10,7 @@ import Dialogue.DialogueLine;
 import Dialogue.DialogueManager;
 import Items_Inventario.Inventory;
 import Items_Inventario.Item;
-import Rooms.*;
+import Rooms.Sala;
 /**
  * Classe que representa um NPC no jogo tem como responsabilidade guardar informacoes sobre o NPC.
  * @author Afonso
@@ -30,6 +30,9 @@ public class Npc extends Character{
     }
 
     public Map<String, DialogueLine> getDialogueLines() {
+        if (dialogueLines == null) {
+            return new HashMap<>();
+        }
         return new HashMap<>(dialogueLines);
     }
 
