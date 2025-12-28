@@ -45,7 +45,7 @@ public class OOP2 {
             System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out),true,"UTF-8"));
             System.setErr(new PrintStream(new FileOutputStream(FileDescriptor.err),true,"UTF-8"));
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Erro no PrintStream: " + e.getMessage());
         }
         
         Map_game map = new Map_game();
