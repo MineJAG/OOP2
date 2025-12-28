@@ -49,31 +49,56 @@ public class DialogueManager{
     }
 
     public void conversation(Player player){
-        display.showLine(getCurrentLine());
-        if (!getCurrentLine().getOptions().isEmpty()){
-        display.showOptions(player ,getCurrentLine().getOptions());
-        int userInput = inputReader.readInt();
-        if(getCurrentLine().getOptions().size() >= userInput && userInput > 0){
-            if (getCurrentLine().getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
-                if (player.getInventory().containsItem(getCurrentLine().getOptions().get(userInput - 1).getNextLineId().substring(1).toLowerCase())){
-                setCurrentLine(currentNpc.getDialogueLines().get(getCurrentLine().getOptions().get((userInput - 1)).getNextLineId()));
+public void conversation(Player player){
+    display.showLine(getCurrentLine());
+    
+    if (!getCurrentLine().getOptions().isEmpty()){
+        display.showOptions(player, getCurrentLine().getOptions());
+        
+        // Fix 1: Handle non-integer input properly
+        int userInput;
+        try {
+            userInput = inputReader.readInt();
+            inputReader.readLine(); // Clear the buffer to prevent extra line reading
+        } catch (Exception e) {
+            inputReader.readLine(); // Clear the invalid input
+            System.out.println("Invalid option, please enter a number.");
+            conversation(player);
+            return;
+        }
+        // Fix 2: Check if input is within valid range
+        if (userInput > 0 && userInput <= getCurrentLine().getOptions().size()){
+            String nextLineId = getCurrentLine().getOptions().get(userInput - 1).getNextLineId();
+            // Handle special dialogue options
+            if (nextLineId.charAt(0) == '!'){
+                // Check if player has required item
+                String requiredItem = nextLineId.substring(1).toLowerCase();
+                if (player.getInventory().containsItem(requiredItem)){
+                    setCurrentLine(currentNpc.getDialogueLines().get(nextLineId));
+                    conversation(player);
+                } else {
+                    // Fix 3: Handle case when player doesn't have item
+                    System.out.println("You don't have the required item.");
+                    conversation(player);
+                }
+            } else if (nextLineId.charAt(0) == '%'){
+                // Give item to player
+                String itemId = nextLineId.substring(1);
+                player.getInventory().addItem(currentNpc.getInventory().getItem(itemId));
+                System.out.println("O item " + currentNpc.getInventory().getItem(itemId).getName() + " foi adicionado ao inventário.");
+                setCurrentLine(currentNpc.getDialogueLines().get(nextLineId));
+                conversation(player);
+            } else {
+                // Normal dialogue progression
+                setCurrentLine(currentNpc.getDialogueLines().get(nextLineId));
                 conversation(player);
             }
-        } else if (currentLine.getOptions().get(userInput - 1).getNextLineId().charAt(0) == '%'){
-            player.getInventory().addItem(currentNpc.getInventory().getItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1)));
-            System.out.println("O item " + currentNpc.getInventory().getItem(currentLine.getOptions().get(userInput - 1).getNextLineId().substring(1)).getName() + " foi adicionado ao inventário.");
-            setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get((userInput - 1)).getNextLineId()));
-            conversation(player);
-        }else {
-            setCurrentLine(currentNpc.getDialogueLines().get(currentLine.getOptions().get(userInput - 1).getNextLineId()));
-            conversation(player);
-        }
         } else {
-            System.out.println("Invalid option try again");
+            System.out.println("Invalid option, try again.");
             conversation(player);
-            }
         }
     }
+}
 
     public void itemGiven(Player player,Npc npc,Item item) throws Exception{
         player.getInventory().removeItem(item);
