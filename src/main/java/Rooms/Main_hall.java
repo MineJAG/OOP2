@@ -20,7 +20,7 @@ public class Main_hall extends Sala{
             "o piso de mármore está molhado e a chuva ecoa lá fora.\r\n" +
             "Os convidados parecem assustados.\r\n" +
             "Um rastro de água leva até à porta norte, está entreaberta...hum?\n\r" + 
-            "Npcs: \n- Eleanor\n- Criança\r\n " +
+            "Npcs: \n- Eleanor\n- Crianca\r\n " +
             "Salas: \nN - Bar\nW - Sala VIP\nE - Casa de Banho\n", 
             null, 
             null, 
