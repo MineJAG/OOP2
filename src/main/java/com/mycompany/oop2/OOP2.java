@@ -87,28 +87,22 @@ public class OOP2 {
         endings.add(new Ending3());
         endings.add(new Ending4());
         // Ciclo infinito de jogo
-        while (true) {
+        boolean running = true;
+        while (running) {
             for (Ending ending : endings) {
                 if (ending.check(player)) {
                     ending.trigger();
+                    running = false;
                     break;
                 }
+            }
+        if (!running) {
+                break;
             }
         player.itemHistoryCheck();
             System.out.print("Escreva um comando: ");
             String linha = scanner.readInputLine();
             commandRunner.runCommands(player, linha);
         }
-        /*
-         * if (player.getPresentRoom().getClass().toString().equals(balcony.getClass().
-         * toString())) {
-         * if (player.getInventory().containsItem("Tecido") &&
-         * player.getInventory().containsItem("Faca")) {
-         * System.out.println("A sair do jogo. Até à próxima!");
-         * commandRunner.runCommands(player, "sair");
-         * }
-         * }
-         * 
-         */
     }
 }
