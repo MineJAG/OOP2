@@ -73,7 +73,6 @@ public class DialogueManager{
             conversation(player);
             }
         }
-        inputReader.readInputLine();
     }
 
     public void itemGiven(Player player,Npc npc,Item item) throws Exception{
