@@ -17,6 +17,8 @@ public class DialogueManager{
     private DialogueLine currentLine;
     private Npc currentNpc;
     private UserInputReader inputReader;
+    private DialogueDisplay display = new DialogueDisplay();
+
 
     public DialogueManager(UserInputReader inputReader) {
         this.inputReader = inputReader;
@@ -47,14 +49,10 @@ public class DialogueManager{
     }
 
     public void conversation(Player player){
-        DialogueDisplay display = new DialogueDisplay();
         display.showLine(getCurrentLine());
         if (!getCurrentLine().getOptions().isEmpty()){
         display.showOptions(player ,getCurrentLine().getOptions());
-        try{
         int userInput = inputReader.readInt();
-        inputReader.readInputLine();
-        
         if(getCurrentLine().getOptions().size() >= userInput && userInput > 0){
             if (getCurrentLine().getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
                 if (player.getInventory().containsItem(getCurrentLine().getOptions().get(userInput - 1).getNextLineId().substring(1).toLowerCase())){
@@ -74,11 +72,8 @@ public class DialogueManager{
             System.out.println("Invalid option try again");
             conversation(player);
             }
-        } catch (Exception e){
-            System.out.println("Invalid option try again");
-            conversation(player);
-            }
         }
+        inputReader.readInputLine();
     }
 
     public void itemGiven(Player player,Npc npc,Item item) throws Exception{
