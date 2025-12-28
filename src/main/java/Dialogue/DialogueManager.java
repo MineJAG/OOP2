@@ -51,8 +51,10 @@ public class DialogueManager{
         display.showLine(getCurrentLine());
         if (!getCurrentLine().getOptions().isEmpty()){
         display.showOptions(player ,getCurrentLine().getOptions());
+        try{
         int userInput = inputReader.readInt();
         inputReader.readInputLine();
+        
         if(getCurrentLine().getOptions().size() >= userInput && userInput > 0){
             if (getCurrentLine().getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
                 if (player.getInventory().containsItem(getCurrentLine().getOptions().get(userInput - 1).getNextLineId().substring(1).toLowerCase())){
@@ -69,6 +71,10 @@ public class DialogueManager{
             conversation(player);
         }
         } else {
+            System.out.println("Invalid option try again");
+            conversation(player);
+            }
+        } catch (Exception e){
             System.out.println("Invalid option try again");
             conversation(player);
             }

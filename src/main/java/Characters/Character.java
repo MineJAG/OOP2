@@ -28,9 +28,9 @@ public abstract class Character {
     public Sala getPresentRoom(){
         return presentRoom;
     }
-    
-    public Sala setPresentRoom(Sala newSala){
-        return this.presentRoom = newSala;
+
+    public void setPresentRoom(Sala newSala){
+        this.presentRoom = newSala;
     }
 
     public Inventory getInventory() {
