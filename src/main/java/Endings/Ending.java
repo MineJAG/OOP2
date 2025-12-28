@@ -5,7 +5,7 @@
 package Endings;
 
 /**
- *
+ * Interface que representa um ending no jogo.
  * @author ajone
  */
 
