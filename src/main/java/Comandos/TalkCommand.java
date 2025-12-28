@@ -33,6 +33,9 @@ public class TalkCommand implements Command{
             for (int o = 0; o < words.size(); o++) {
                 if (npcs.get(i).getName().toLowerCase().equals(words.get(o).toLowerCase())) {
                     if (npcs.get(i).getPresentRoom() == player.getPresentRoom()) {
+                        if (npcs.get(i).getDialogueLines() == null) {
+                            throw new Exception("Npc has no dialogue lines loaded");
+                        }
                         npcs.get(i).talk(player, manager);
                         return;
                     } else {
