@@ -23,6 +23,9 @@ public class Npc extends Character{
         super(name,null,null);
     }
     public void talk(Player player,DialogueManager manager) throws Exception{
+    if (this.dialogueLines == null || this.dialogueLines.isEmpty()) {
+        throw new Exception("please load the dialogue");
+    }
         manager.startConversation(this,player);
     }
 
