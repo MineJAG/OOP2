@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import Characters.Player;
 
 /**
- *
- * @author Bibby
+ * Classe que representa o comando de pistas no jogo tem como responsabilidade imprimir o inventario de pistas do jogo.
+ * @author Lara
  */
 public class CluesCommand implements Command {
     private String name = "clues command -- Opens the collected clues";

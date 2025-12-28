@@ -13,7 +13,7 @@ import Dialogue.DialogueDistributor;
 import Dialogue.DialogueLoader;
 /**
  * Classe que representa o comando de carregar dialogos no jogo tem como responsabilidade carregar dialogos de um txt a partir de um caminho dado pelo player.
- * @author ajone
+ * @author Afonso
  */
 public class DialogueLoaderCommand implements Command{
     private String name = "Dialogue command - Loads dialogue with the syntax load Filename (the .txt is silently added)";

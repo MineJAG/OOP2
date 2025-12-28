@@ -10,7 +10,7 @@ import Characters.Player;
 
 /**
  * Define o comportamento comum de todos os comandos do jogo.
- * @author ajone
+ * @author Afonso
  */
 public interface Command {
     public String[] names();
