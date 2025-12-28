@@ -53,14 +53,12 @@ public class DialogueManager{
     
     if (!getCurrentLine().getOptions().isEmpty()){
         display.showOptions(player, getCurrentLine().getOptions());
-        
-        // Fix 1: Handle non-integer input properly
         int userInput;
         try {
             userInput = inputReader.readInt();
-            inputReader.readLine(); // Clear the buffer to prevent extra line reading
+            inputReader.readInputLine();
         } catch (Exception e) {
-            inputReader.readLine(); // Clear the invalid input
+            inputReader.readInputLine(); 
             System.out.println("Invalid option, please enter a number.");
             conversation(player);
             return;
@@ -95,8 +93,8 @@ public class DialogueManager{
         } else {
             System.out.println("Invalid option, try again.");
             conversation(player);
+            }
         }
-     }
     }
 
     public void itemGiven(Player player,Npc npc,Item item) throws Exception{
