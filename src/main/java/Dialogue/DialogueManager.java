@@ -52,6 +52,7 @@ public class DialogueManager{
         if (!getCurrentLine().getOptions().isEmpty()){
         display.showOptions(player ,getCurrentLine().getOptions());
         int userInput = inputReader.readInt();
+        inputReader.readInputLine();
         if(getCurrentLine().getOptions().size() >= userInput && userInput > 0){
             if (getCurrentLine().getOptions().get(userInput - 1).getNextLineId().charAt(0) == '!'){
                 if (player.getInventory().containsItem(getCurrentLine().getOptions().get(userInput - 1).getNextLineId().substring(1).toLowerCase())){
